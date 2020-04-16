@@ -1,6 +1,8 @@
 $keyColor: #3CCACE;
 
 .head{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  padding-bottom: 15px;;
   &__in{
     width: 1040px;
     margin: auto;
@@ -40,7 +42,6 @@ $keyColor: #3CCACE;
       justify-content: space-between;
       margin-top: 15px;
       font-size: 0.9em;
-      box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
       &__left{
         display: flex;
         ul{
