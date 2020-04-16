@@ -1,6 +1,16 @@
-.wrapper
+.wrap
   %main.main
     .main__name
       商品名
-    =image_tag "https://static.mercdn.net/item/detail/orig/photos/m97353057329_1.jpg?1585532130", class: "main__img"
+    .main__imgs
+      =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "main__imgs__firstImg"
+
+      %ul.main__imgs__list
+        %li.main__imgs__list__img
+          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: ""
+        %li.main__imgs__list__img
+          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", class: ""
+        %li.main__imgs__list__img
+          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: ""
+
 
