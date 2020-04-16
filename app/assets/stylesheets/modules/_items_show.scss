@@ -1,0 +1,49 @@
+.wrap{
+  background: #f8f8f8;
+  padding-top: 30px;
+  .main{
+    background: white;
+    width: 700px;
+    margin: auto;
+    padding: 24px 40px 40px;
+    &__name{
+      text-align: center;
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    &__imgs{
+      margin: auto;
+      text-align: center;
+      &__firstImg{
+        width: 560px;
+        height: 346px;
+        object-fit: cover;
+      }
+      &__list{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        &__img{
+          width: 25%;
+          height: 87px;
+          object-fit: cover;
+          margin: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
