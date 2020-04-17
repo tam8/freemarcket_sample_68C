@@ -44,7 +44,7 @@ Things you may want to cover:
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|true|
+|card_number|integer|null: false|
 |expiration_month|date|null: false|
 |expiration_year|date|null: false|
 |card_first_name|string|null: false|
@@ -52,7 +52,7 @@ Things you may want to cover:
 |security_code|integer|null: false|
 |use_id|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -65,11 +65,11 @@ Things you may want to cover:
 |shipping_method|string|null: false|
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
-|explain|string|
+|explain|string||
 |user_id|reference|null: false, foreign_key: true|
-|buyer_id|integer|
+|buyer_id|integer||
 ### Association
-- belongs_to :users
+- belongs_to :user
 - has_many :items_categorys
 - has_many :categorys, through: :items_categorys
 
@@ -79,8 +79,8 @@ Things you may want to cover:
 |item_id|reference|null: false, foreign_key true|
 |category_id|reference|null: false, foreign_key true|
 ### Association
-- belongs_to :items
-- belongs_to :categorys
+- belongs_to :item
+- belongs_to :category
 
 ## categorys
 |Column|Type|Options|
@@ -95,4 +95,4 @@ Things you may want to cover:
 |imsgr_url|string|null: false|
 |item_id|reference|null: false, foreign_key: true|
 ### Association
-- belongs_to :items
+- belongs_to :item
