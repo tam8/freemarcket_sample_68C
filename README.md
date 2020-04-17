@@ -71,7 +71,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :users
 - has_many :items_categorys
-- has_many :item_images
+- has_many :categorys, through: :items_categorys
 
 ## items_categorysテーブル
 |Column|Type|Options|
@@ -85,3 +85,14 @@ Things you may want to cover:
 ## categorys
 |Column|Type|Options|
 |------|----|-------|
+|name|string|null: false, unique: true|
+### Association
+- hasmany :items_categorys
+
+## item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|imsgr_url|string|null: false|
+|item_id|reference|null: false, foreign_key: true|
+### Association
+- belongs_to :items
