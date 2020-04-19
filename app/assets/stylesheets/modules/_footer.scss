@@ -1,4 +1,5 @@
 .footer{
+  color: #fff;
   .up_area{
     height: 360px;
     width:  100%;
@@ -8,6 +9,15 @@
     align-items: center;
     .inner{
       background-color: red;
+      text-align: center;
+      &__title{
+        font-size:24px;
+        font-weight: bold;
+      }
+      &__text{
+        font-size: 35px;
+      }
+
     }
   }
   .low_area{
