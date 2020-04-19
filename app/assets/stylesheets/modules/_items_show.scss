@@ -6,6 +6,9 @@
     width: 700px;
     margin: auto;
     padding: 24px 40px 40px;
+    a{
+      color: $keyColor;
+    }
     &__name{
       text-align: center;
       font-size: 1.3em;
@@ -65,7 +68,6 @@
       td{
         padding: 16px;
         border: 1px solid #dedede;
-        color: $keyColor;
       }
     }
     &__low{
@@ -80,11 +82,42 @@
       }
       &--report{
         padding: 6px 10px;
-        color: #333;
+        color: #333 !important;
         border: 1px solid #333;
         border-radius: 4px;
         text-decoration: none;
       }
+    }
+  }
+  .comment{
+    background: white;
+    width: 700px;
+    margin: 10px auto;
+    padding: 24px;
+    text-align: center;
+    &__txt{
+      width: 482px;
+      min-height: 104px;
+      display: block;
+      margin: auto;
+      border: 1px solid #000;
+    }
+    &__caution{
+      background: #f8f8f8;
+      padding: 8px;
+      margin-top: 15px;
+      font-size: 14px;
+      text-align: left;
+    }
+    &__btn{
+      background: #3CCACE;
+      width: 60%;
+      height: 48px;
+      margin-top: 30px;
+      border: 1px solid #3CCACE;
+      color: #fff;
+      font-size: 18px;
+      border-radius: 100px;
     }
   }
 }
