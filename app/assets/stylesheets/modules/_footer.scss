@@ -1,8 +1,11 @@
-footer{
-  // .up{
-  //   background-image: url(/assets/bg-appBanner-pict-ce684a4….jpg);
-  // }
-  .low{
+.footer{
+  .up_area{
+    height: 360px;
+    width:  100%;
+    background-image: url(/assets/images/pict/bg-appBanner-pict.jpg);
+    
+  }
+  .low_area{
     background: black;
     color: white;
   }
