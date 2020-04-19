@@ -3,7 +3,12 @@
     height: 360px;
     width:  100%;
     background-image: url(/assets/images/pict/bg-appBanner-pict.jpg);
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner{
+      background-color: red;
+    }
   }
   .low_area{
     background: black;
