@@ -1,28 +1,43 @@
-.footer{
+.footer {
   color: #fff;
-  .up_area{
+  .up_area {
     height: 360px;
     width:  100%;
-    background-image: url(/assets/images/pict/bg-appBanner-pict.jpg);
+    background-image: url("bg-appBanner-pict.jpg");
+    // ここは上手く画像を表示できないのであとで行います。
     display: flex;
     justify-content: center;
     align-items: center;
-    .inner{
+    .inner {
       background-color: red;
       text-align: center;
-      &__title{
+      &__title {
         font-size:24px;
         font-weight: bold;
       }
-      &__text{
+      &__text {
         font-size: 35px;
       }
-
+      .download_form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__icon {
+          width: 180px;
+        }
+        &__google_play{
+          width: 220px;;
+        }
+      }
     }
   }
-  .low_area{
+  .low_area {
     background: black;
     color: white;
+    .contents{
+      display: flex;
+      justify-content: center;
+    }
   }
 }
 

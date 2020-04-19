@@ -5,8 +5,43 @@
         だれでもかんたん、人生を変えるフリマアプリ
       .inner__text
         今すぐ無料ダウンロード！
-      %ul.inner__icon
-        %li.inner_icon--app_store
-        %li.inner_icon--google_play
+      .download_form
+        = link_to "#" do 
+          =image_tag src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "download_form__icon"
+        = link_to "#" do
+          =image_tag src="google-play-badge.png", class: "download_form__google_play"
   .low_area
-    Fulimaについて
+    %ul.contents
+      %li.content
+        .content__titele
+          Fulimaについて
+        %ul
+          %li
+            会社概要(運営会社)
+          %li
+            プライバシーポリシー
+          %li
+            FURIMA利用規約
+          %li
+            ポイントに関する特約
+      %li.content
+        .content__titele
+          Fulimaを見る
+        %ul
+          %li
+            カテゴリー一覧
+          %li
+            ブランド一覧
+      %li.content
+        .content__titele
+          ヘルプ＆ガイド
+        %ul
+          %li
+            FURIMAガイド
+          %li
+            FURIMAロゴ利用ガイドライン
+          %li
+            お知らせ
+    .footer_logo
+      
+ 
