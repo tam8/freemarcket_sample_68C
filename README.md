@@ -81,39 +81,9 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|hokkaidou|index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
-||index|true, null: false|
+|Prefectures|index|true, null: false|
+|City＿name|index|true, null: false|
+|address|index|true, null: false|
+|Building_name|index|true, null: false|
+### Association
+- belongs_to :user
