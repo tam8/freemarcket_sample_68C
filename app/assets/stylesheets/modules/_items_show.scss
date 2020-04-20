@@ -1,14 +1,15 @@
 .wrap{
   background: #f8f8f8;
   padding-top: 30px;
+  a{
+    color: $keyColor;
+    text-decoration: none;
+  }
   .main{
     background: white;
     width: 700px;
     margin: auto;
     padding: 24px 40px 40px;
-    a{
-      color: $keyColor;
-    }
     &__name{
       text-align: center;
       font-size: 1.3em;
@@ -96,7 +97,7 @@
     padding: 24px;
     text-align: center;
     &__txt{
-      width: 482px;
+      width: 100%;
       min-height: 104px;
       display: block;
       margin: auto;
@@ -118,6 +119,21 @@
       color: #fff;
       font-size: 18px;
       border-radius: 100px;
+    }
+  }
+  .more{
+    width: 700px;
+    margin: auto;
+    padding-bottom: 50px;
+    .preNextBox{
+      display: flex;
+      justify-content: space-between;
+    }
+    .moreBtn{
+      display: block;
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
     }
   }
 }
