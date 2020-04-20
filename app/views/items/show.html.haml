@@ -34,11 +34,44 @@
           %td
             %a
               ベビー・キッズ
+              アウター
+        %tr
+          %th
+            ブランド
+          %td
+            エルメス
+        %tr
+          %th
+            商品のサイズ
+          %td
+            60cm
+        %tr
+          %th
+            商品の状態
+          %td
+            未使用に近い
+        %tr
+          %th
+            配送料の負担
+          %td
+            送料込み（出品者負担）
+        %tr
+          %th
+            発送元の地域
+          %td
+            %a
+              岩手県
+        %tr
+          %th
+            発送日の目安
+          %td
+            4-7日で発送
 
     .main__low
       %a.main__low--like
         \★ お気に入り 3
       %a.main__low--report
+        =icon("fa", "flag")
         不適切な商品の通報
 
   %form.comment
@@ -46,7 +79,16 @@
     .comment__caution
       相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
     %button.comment__btn
+      =icon("fas", "comment")
       コメントする
+  
+  .more
+    .preNextBox
+      =link_to "< 前の商品", "#", class: "preBtn"
+      =link_to "#", class: "nextBtn" do
+        次の商品 >
+    =link_to "ベビー・キッズをもっと見る", "#", class:"moreBtn"
+
 
 
 
