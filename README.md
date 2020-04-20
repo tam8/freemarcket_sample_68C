@@ -24,7 +24,7 @@
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
+|card_number|integer|null: false, unique: true|
 |expiration_month|date|null: false|
 |expiration_year|date|null: false|
 |card_first_name|string|null: false|
@@ -50,8 +50,8 @@
 |buyer_id|integer||
 ### Association
 - belongs_to :user
-- has_many :items_category
-- has_many :category, through: :items_category
+- has_many :items_categories
+- has_many :category, through: :items_categories
 
 ## items_categoriesテーブル
 |Column|Type|Options|
