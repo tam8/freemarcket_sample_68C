@@ -20,6 +20,7 @@
 ### Association
 - has_many :credit_cards
 - has_many :items
+- has_many :address
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -76,3 +77,43 @@
 |item_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|hokkaidou|index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
+||index|true, null: false|
