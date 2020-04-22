@@ -51,8 +51,8 @@
 |buyer_id|integer||
 ### Association
 - belongs_to :user
-- has_many :items_categories
-- has_many :category, through: :items_categories
+
+- belongs_to :category, through: :items_categories
 
 
 ## categories
