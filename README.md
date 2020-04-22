@@ -6,9 +6,8 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|index|true, null: false, unique: true|
-|address|index|true, null: false|
-|email|index|true, null: false, unique: true|
+|nickname|string|true, null: false, unique: true|
+|email|string|true, null: false, unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -20,7 +19,7 @@
 ### Association
 - has_many :credit_cards
 - has_many :items
-- has_many :address
+- has_many :address, dependent: :destroy
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -47,6 +46,7 @@
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
 |explain|string||
+|categories_id|reference|null: false,foreign_key: true|
 |user_id|reference|null: false, foreign_key: true|
 |buyer_id|integer||
 ### Association
@@ -54,18 +54,11 @@
 - has_many :items_categories
 - has_many :category, through: :items_categories
 
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item|reference|null: false, foreign_key true|
-|category|reference|null: false, foreign_key true|
-### Association
-- belongs_to :item
-- belongs_to :category
 
 ## categories
 |Column|Type|Options|
 |------|----|-------|
+|ancestry|string||
 |name|string|null: false, unique: true|
 ### Association
 - hasmany :items_categories
@@ -81,9 +74,9 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|Prefectures|index|true, null: false|
-|City＿name|index|true, null: false|
-|address|index|true, null: false|
-|Building_name|index|true, null: false|
+|Prefectures|string|true, null: false|
+|City_name|string|true, null: false|
+|address|string|true, null: false|
+|Building_name|string|true, null: false|
 ### Association
 - belongs_to :user
