@@ -17,9 +17,9 @@
 |month_birth_at|date|null: false|
 |day_birth_at|date|null: false|
 ### Association
-- has_many :credit_cards
-- has_many :items
-- has_many :address, dependent: :destroy
+- has_one :credit_cards
+- has_one :items
+- has_one :address, dependent: :destroy
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -39,7 +39,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |brand|string|null: false|
 |shipping_fee|integer|null: false|
 |shipping_method|string|null: false|
