@@ -17,8 +17,8 @@
 |month_birth_at|date|null: false|
 |day_birth_at|date|null: false|
 ### Association
-- has_one :credit_cards
-- has_one :items
+- has_one :credit_card
+- has_many :items
 - has_one :address, dependent: :destroy
 
 ## credit_cardsテーブル
@@ -46,13 +46,13 @@
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
 |explain|string||
-|categories_id|reference|null: false,foreign_key: true|
+|category_id|reference|null: false,foreign_key: true|
 |user_id|reference|null: false, foreign_key: true|
 |buyer_id|integer||
 ### Association
 - belongs_to :user
 
-- belongs_to :category, through: :items_categories
+- belongs_to :category
 
 
 ## categories
@@ -61,7 +61,7 @@
 |ancestry|string||
 |name|string|null: false, unique: true|
 ### Association
-- hasmany :items_categories
+- has_many :items
 
 ## item_imagesテーブル
 |Column|Type|Options|
