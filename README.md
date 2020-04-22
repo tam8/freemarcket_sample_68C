@@ -74,6 +74,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
 |Prefectures|string|true, null: false|
 |City_name|string|true, null: false|
 |address|string|true, null: false|
