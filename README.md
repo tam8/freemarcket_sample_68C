@@ -30,7 +30,7 @@
 |card_first_name|string|null: false|
 |card_family_name|string|null: false|
 |security_code|integer|null: false|
-|use_id|reference|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
