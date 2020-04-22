@@ -6,9 +6,8 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|index|true, null: false, unique: true|
-|address|index|true, null: false|
-|email|index|true, null: false, unique: true|
+|nickname|string|true, null: false, unique: true|
+|email|string|true, null: false, unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -18,19 +17,20 @@
 |month_birth_at|date|null: false|
 |day_birth_at|date|null: false|
 ### Association
-- has_many :credit_cards
+- has_one :credit_card
 - has_many :items
+- has_one :address, dependent: :destroy
 
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
+|card_number|integer|null: false, unique: true|
 |expiration_month|date|null: false|
 |expiration_year|date|null: false|
 |card_first_name|string|null: false|
 |card_family_name|string|null: false|
 |security_code|integer|null: false|
-|use_id|reference|null: false, foreign_key: true|
+|user_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -39,35 +39,29 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |brand|string|null: false|
 |shipping_fee|integer|null: false|
 |shipping_method|string|null: false|
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
 |explain|string||
+|category_id|reference|null: false,foreign_key: true|
 |user_id|reference|null: false, foreign_key: true|
 |buyer_id|integer||
 ### Association
 - belongs_to :user
-- has_many :items_category
-- has_many :category, through: :items_category
 
-## items_categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|item|reference|null: false, foreign_key true|
-|category|reference|null: false, foreign_key true|
-### Association
-- belongs_to :item
 - belongs_to :category
+
 
 ## categories
 |Column|Type|Options|
 |------|----|-------|
+|ancestry|string||
 |name|string|null: false, unique: true|
 ### Association
-- hasmany :items_categories
+- has_many :items
 
 ## item_imagesテーブル
 |Column|Type|Options|
@@ -76,3 +70,14 @@
 |item_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|reference|null: false, foreign_key: true|
+|Prefectures|string|true, null: false|
+|City_name|string|true, null: false|
+|address|string|true, null: false|
+|Building_name|string|true, null: false|
+### Association
+- belongs_to :user
