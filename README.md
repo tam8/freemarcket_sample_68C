@@ -30,7 +30,7 @@
 |card_first_name|string|null: false|
 |card_family_name|string|null: false|
 |security_code|integer|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -46,8 +46,8 @@
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
 |explain|string||
-|category_id|reference|null: false,foreign_key: true|
-|user_id|reference|null: false, foreign_key: true|
+|category_id|references|null: false,foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |buyer_id|integer||
 ### Association
 - belongs_to :user
@@ -67,14 +67,14 @@
 |Column|Type|Options|
 |------|----|-------|
 |image_url|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
 
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |Prefectures|string|true, null: false|
 |City_name|string|true, null: false|
 |address|string|true, null: false|
