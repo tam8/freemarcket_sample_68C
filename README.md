@@ -6,8 +6,12 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+<!-- 最初のtrue不要な気がする？ (田村) -->
 |nickname|string|true, null: false, unique: true|
+<!-- 最初のtrue不要な気がする？ (田村) -->
 |email|string|true, null: false, unique: true|
+<!-- 足りない気がする？ (田村) -->
+|address|string|null: false|
 |first_name|string|null: false|
 |last_name|string|null: false|
 |first_name_kana|string|null: false|
@@ -46,13 +50,18 @@
 |owners_area|string|null: false|
 |arrival_date|integer|null: false|
 |explain|string||
+<!-- _id不要な気がする？ (田村) -->
 |category_id|references|null: false,foreign_key: true|
+<!-- _id不要な気がする？ (田村) -->
 |user_id|references|null: false, foreign_key: true|
 |buyer_id|integer||
+<!-- 足りない気がする？ (田村) -->
+|item_image|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-
 - belongs_to :category
+<!-- 足りない気がする？ (田村) -->
+- has_many :item_images
 
 
 ## categories
@@ -67,6 +76,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image_url|string|null: false|
+<!-- _id不要な気がする？ (田村) -->
 |item_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
