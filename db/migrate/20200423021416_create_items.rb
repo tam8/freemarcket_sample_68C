@@ -10,11 +10,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :owners_area, null:false
       t.integer :arrival_date, null:false
       t.string :explain
-      # _idいらないっぽい
-      t.references :category, foreign_key: true, null:false
-      t.references :user, foreign_key: true, null:false
+      t.integer :category_id, null: false
+      t.integer :user_id, foreign_key: true, null:false
       t.integer :buyer_id
-      t.references :item_image, foreign_key: true, null:false
+      t.integer :item_image_id, foreign_key: true, null:false
       t.timestamps
     end
   end
