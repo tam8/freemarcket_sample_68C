@@ -2,11 +2,12 @@ class ItemsController < ApplicationController
 
   # 商品詳細ページ (田村)
   def show
+    @item = Item.find(params[:id])
   end
 
   # トップページ・商品一覧ページ
   def index
-  end
+   end
 
   # 商品出品ページ
   def new
