@@ -3,15 +3,12 @@
     .main__name
       =@item.name
     .main__imgs
-      =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "main__imgs__img"
+      =image_tag @item_imgs[0].image_url, class: "main__imgs__img"
 
       %ul.main__imgs__list
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: ""
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", class: ""
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: ""
+        -@item_imgs.each do |i|
+          %li.main__imgs__list__img
+            =image_tag i.image_url, class: ""
 
     %p.main__price
       \\
@@ -33,7 +30,8 @@
           %th
             ブランド
           %td
-            =@item.brand
+            %a
+              =@item.brand
         %tr
           %th
             配送料の負担
@@ -48,8 +46,7 @@
           %th
             発送元の地域
           %td
-            %a
-              =@item.owners_area
+            =@item.owners_area
         %tr
           %th
             発送日の目安
@@ -59,13 +56,13 @@
           %th
             出品者
           %td
-            =@item.user_id
+            =User.find(@item.user_id).nickname
         %tr
           %th
             カテゴリー
           %td
             %a
-              =@item.category_id
+              =Category.find(@item.category_id).name
 
     .main__low
       %a.main__low--like
@@ -77,7 +74,8 @@
   %form.comment
     %textarea.comment__txt
     .comment__caution
-      相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      相手のことを考え丁寧なコメントを心がけましょう。<br>
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
     %button.comment__btn
       =icon("fas", "comment")
       コメントする
@@ -86,8 +84,10 @@
     .preNextBox
       =link_to "< 前の商品", "#", class: "preBtn"
       =link_to "#", class: "nextBtn" do
-        次の商品 >
-    =link_to "ベビー・キッズをもっと見る", "#", class:"moreBtn"
+        -# =params[:id].to_i - 1
+        -# = "#{item_path}" + "#{params[:id].to_i - 1}"
+        >
+    =link_to "#{Category.find(@item.category_id).name}をもっと見る", "#", class:"moreBtn"
 
 
 

@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
   # 商品詳細ページ (田村)
   def show
     @item = Item.find(params[:id])
+    # 配列なのでs付けておく
+    @item_imgs = ItemImage.where(item_id: params[:id]) 
   end
 
   # トップページ・商品一覧ページ
