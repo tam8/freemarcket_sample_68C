@@ -2,12 +2,15 @@
   background-color: blue;
   height:  100vh;
   width: 100vw;
-  padding-top: 30px;
+  padding: 40px;
   // ここの幅・高さは仮置きです。
-  .main_area {
+  display: flex;
+  justify-content: center;
+  .input_area {
     background-color: red;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 700px;
   // ここの幅・高さは仮置きです。
+    text-align: center;
   }
 }
