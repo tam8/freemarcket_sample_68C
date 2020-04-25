@@ -1,0 +1,283 @@
+.container {
+  .intro {
+    width: 100%;
+    height: 560px;
+    background-image: url('pict/bg-mainVisual-pict_pc.jpg');
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    &__content {
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 35px;
+      &__subtitle {
+        font-size: 60px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        line-height: 1.2;
+      }
+      &__text {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+      &__btn {
+        .g-btn {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  .top-container {
+    padding: 60px 20px;
+
+    &__title {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    &__title::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: $keyColor;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__lists {
+      display: flex;
+      // text-align: center;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+
+      .list {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image {
+          position: relative;
+          margin-bottom: 20px;
+
+          &--number {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 30px;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: $keyColor;
+            color: white;
+          }
+          &--img {
+            width: 100%;
+          }
+        }
+        &__text {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          &--strong {
+            color: $keyColor;
+          }
+        }
+        &__description {
+          font-size: 18px;
+
+        }
+      }
+      // ３番目のliのみ、margin-rightを効かないようにする
+      .list__last {
+        margin: 16px 0 0 0;
+      }
+    }
+  }
+
+  .intro-middle {
+    width: 100%;
+    height: 400px;
+    //相違点
+    background-image: url('pict/bg-topMiddleDl-pict.jpg');
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    padding: 0 120px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    &__content {
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 35px;
+      //相違点
+      &__subtitle {
+        font-size: 27px;
+        font-weight: bold;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        line-height: 1.2;
+      }
+      &__text {
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.8;
+        margin-top: 20px;
+      }
+      &__btn {
+        .g-btn {
+          width: 180px;
+        }
+      }
+    }
+  }
+
+  .middle-container {
+    padding: 60px 20px;
+
+    &__title {
+      text-align: center;
+      font-size: 26px;
+      line-height: 1.4;
+      font-weight: bold;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      position: relative;
+    }
+    &__title::after {
+      content: "";
+      width: 70px;
+      height: 4px;
+      background-color: $keyColor;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &__lists {
+      display: flex;
+      // text-align: center;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+
+      .list {
+        width: 30%;
+        margin: 16px 5% 0 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image {
+          // position: relative;
+          margin-bottom: 20px;
+          width: 60%;
+
+          // &--number {
+          //   display: inline-block;
+          //   position: absolute;
+          //   top: 0;
+          //   left: 0;
+          //   font-size: 30px;
+          //   text-align: center;
+          //   padding: 10px 20px;
+          //   background-color: $keyColor;
+          //   color: white;
+          // }
+          &--img {
+            width: 100%;
+            box-sizing: border-box;
+            
+          }
+        }
+        &__text {
+          font-size: 19px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          &--strong {
+            color: $keyColor;
+          }
+        }
+        &__description {
+          font-size: 17px;
+
+        }
+      }
+      // ３番目のliのみ、margin-rightを効かないようにする
+      .list__last {
+        margin: 16px 0 0 0;
+      }
+    }
+  }
+
+  .category-pickup {
+    // height: 500px;
+    width: 100%;
+    // background-color: green;
+    padding: 80px 0 0;
+    background-color: #f8f8f8;
+    height: 100%;
+    &__title {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__box1 {
+      .box1__heder {
+        text-align: center;
+        .title {
+          font-size: 24px;
+          text-decoration: none;
+          color: #3CCACE;
+        }
+      }
+    // &__box2 {
+    //   .box__heder {
+    //     text-align: center;
+    //     .title {
+    //       font-size: 24px;
+    //       text-decoration: none;
+    //       color: #3CCACE;
+    //     .heder__title {
+    //       font-weight: bold;
+    //     }
+    //     }
+    //   }
+    // }
+  }
+  }
+
+  .brand {
+    height: 500px;
+    width: 100%;
+    background-color: grey;
+  }
+
+  .bottom {
+    height: 500px;
+    width: 100%;
+    background-color:green;
+  }
+
+}
