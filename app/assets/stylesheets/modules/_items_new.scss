@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: blue;
+  height:  100vh;
+  width: 100vw;
+  padding-top: 30px;
+  // ここの幅・高さは仮置きです。
+  .main_area {
+    background-color: red;
+    height: 100vh;
+    width: 100vw;
+  // ここの幅・高さは仮置きです。
+  }
+}
