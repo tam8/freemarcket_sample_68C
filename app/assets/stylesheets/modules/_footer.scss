@@ -40,12 +40,13 @@
   .low_area {
     background: #272727;
     color: white;
-    padding: 60px;
+    padding: 60px 0;
     .contents{ 
       width: 840px;
       height: 172px;
       display: flex;
       justify-content: center;
+      margin: 0 300px;
       .content {
         font-size: 12px;
         display: flex;
@@ -58,13 +59,16 @@
           font-weight: bold;
           margin-bottom: 20px;
         }
-        &__link {
-          text-decoration: none;
-          color: white;
-        }
-        &__link:hover {
-          color: white;
-          text-decoration: underline;
+        .list{
+          margin-bottom: 12px;
+          &__link {
+            text-decoration: none;
+            color: white;
+          }
+          &__link:hover {
+            color: white;
+            text-decoration: underline;
+          }
         }
       }
     }
