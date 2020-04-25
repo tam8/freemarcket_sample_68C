@@ -5,6 +5,7 @@
   // ここの幅・高さは仮置きです。
   display: flex;
   justify-content: center;
+  font-size: 14px;
   .input_area {
     background-color: #fff;
     height: 100%;
@@ -15,6 +16,25 @@
       height: 300px;
       padding: 40px;
       border: 1px solid #f8f8f8;
+      &__top {
+        &--red {
+          background-color: red;
+          color: #ffffff;
+          font-size: 14px;
+          // 文字の大きさは後で調整する
+          margin-left: 8px;
+          padding: 0 4px;
+        }
+      }
+      &__text {
+        margin-top: 16px;
+      }
+      &__form {
+        height: 158px;
+        background-color: #f8f8f8;
+        border: 1px dotted grey;
+        // borderの色は再度調整の必要あり
+      }
     }
     .overview{
       height: 416px;
