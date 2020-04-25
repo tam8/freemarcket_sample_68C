@@ -3,13 +3,13 @@
   .up_area {
     height: 360px;
     width:  100%;
-    background-image: url("bg-appBanner-pict.jpg");
-    // ここは上手く画像を表示できないのであとで行います。
+    background-image: url("pict/bg-appBanner-pict.jpg");
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     .inner {
-      background-color: red;
       text-align: center;
       &__title {
         font-size:24px;
@@ -26,7 +26,7 @@
           width: 180px;
         }
         &__google_play{
-          width: 220px;;
+          width: 220px;
         }
       }
     }
@@ -57,6 +57,15 @@
           font-weight: bold;
           margin-bottom: 20px;
         }
+      }
+    }
+    .footer_logo {
+      text-align: center;
+      &__icon {
+        width: 160px;
+      }
+      &__copyright {
+        font-size: 14px;
       }
     }
   }
