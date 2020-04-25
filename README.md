@@ -43,7 +43,7 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|status|integer|null: false|
+|status|string|null: false|
 |brand|string|null: false|
 |shipping_fee|integer|null: false|
 |shipping_method|string|null: false|
