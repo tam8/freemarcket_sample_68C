@@ -43,15 +43,15 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|status|integer|null: false|
-|brand|string|null: false|
-|shipping_fee|integer|null: false|
+|status|string||
+|brand|string||
+|shipping_fee|string|null: false|
 |shipping_method|string|null: false|
-|owners_area|string|null: false|
-|arrival_date|integer|null: false|
+|owners_area|string||
+|arrival_date|string||
 |explain|string||
 <!-- _id不要な気がする？ (田村) -->
-|category_id|references|null: false,foreign_key: true|
+|category_id|references|foreign_key: true|
 <!-- _id不要な気がする？ (田村) -->
 |user_id|references|null: false, foreign_key: true|
 |buyer_id|integer||
