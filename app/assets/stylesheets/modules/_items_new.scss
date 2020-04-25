@@ -1,16 +1,46 @@
 .wrapper {
-  background-color: blue;
-  height:  100vh;
+  background-color: #f8f8f8;
   width: 100vw;
   padding: 40px;
   // ここの幅・高さは仮置きです。
   display: flex;
   justify-content: center;
   .input_area {
-    background-color: red;
+    background-color: #fff;
     height: 100%;
     width: 700px;
   // ここの幅・高さは仮置きです。
-    text-align: center;
+    .image {
+      width: 100%;
+      height: 300px;
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
+    .overview{
+      height: 416px;
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
+    .detail {
+      height: 479px;
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
+    .shipping_relation {
+      height: 479px;
+      // ここの高さはより大きくする可能性あり
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
+    .price {
+      height: 270px;
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
+    .submit {
+      height: 164px;
+      padding: 40px;
+      border: 1px solid #f8f8f8;
+    }
   }
 }
