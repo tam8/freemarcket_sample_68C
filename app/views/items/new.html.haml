@@ -92,20 +92,43 @@
         .owner_area
           .owner_area__top
             発送元の地域
-            %span.method__top--red
+            %span.owner_area--red
               必須
-          %select.method__form
+          %select.owner_area__form
             %option
               ✔︎ 選択してください
             %option
               北海道
             %option
               グンマー
-
         .arrival_date
-          発送までの日数
+          .arrival_date__top
+            発送までの日数
+            %span.arrival_date__top--red
+              必須
+          %select.arrival_date__form
+            %option
+              ✔︎ 選択してください
+            %option
+              1~2日で発送
+            %option
+              3~4日で発送
       .price
-        販売価格
+        .price__limit
+          価格（¥300~9,999,999）
+        .price_input
+          .price_input__top
+            販売価格
+            %span.price_input__top--red
+              必須
+          .price_input__form
+            ¥
+            %input.price_input__form--number{type: "number", placeholder: "0"}
+        .brokerge_fee
+          .brokerge_fee__rate
+            販売手数料（10％）
+          .brokerge_fee__calculation
+            ー
       .submit
         出品する
       .cautions_information
