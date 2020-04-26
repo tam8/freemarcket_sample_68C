@@ -78,9 +78,30 @@
             %option
               着払い（購入者負担）
         .method
-          配送方法
+          .method__top
+            配送方法
+            %span.method__top--red
+              必須
+          %select.method__form
+            %option
+              ✔︎ 選択してください
+            %option
+              通常発送
+            %option
+              お急ぎ便
         .owner_area
-          発送元の地域
+          .owner_area__top
+            発送元の地域
+            %span.method__top--red
+              必須
+          %select.method__form
+            %option
+              ✔︎ 選択してください
+            %option
+              北海道
+            %option
+              グンマー
+
         .arrival_date
           発送までの日数
       .price
