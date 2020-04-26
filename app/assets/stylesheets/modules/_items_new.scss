@@ -74,6 +74,31 @@
           margin-top: 16px;
         }
       }
+      .explain {
+        &__top {
+          &--red {
+            background-color: red;
+            color: #ffffff;
+            font-size: 14px;
+            // 文字の大きさは後で調整する
+            margin-left: 8px;
+            padding: 0 4px;
+          }
+        }
+        &__form {
+          width: 100%;
+          height: 140px;
+          padding: 13px 16px;
+          margin-top: 16px;
+        }
+        .explain_bottom {
+          position: relative;
+          &__caracters_number {
+            position: absolute;
+            right: 0px;   
+          }
+        }
+      }
     }
     .detail {
       height: 479px;

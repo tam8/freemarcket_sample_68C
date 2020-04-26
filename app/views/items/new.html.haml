@@ -25,7 +25,14 @@
               必須
           %input.name__form{type: "text", placeholder: "40文字まで"}
         .explain
-          商品の説明
+          .explain__top
+            商品の説明
+            %span.name__top--red
+              必須
+          %textarea.explain__form{type: "text", placeholder: "商品の説明 (1000文字まで)"}
+          .explain_bottom
+            .explain_bottom__caracters_number
+              0/1000
       .detail
         商品の詳細
         .category
