@@ -27,13 +27,28 @@
         }
       }
       &__text {
-        margin-top: 16px;
+        margin: 16px 0;
       }
-      &__form {
+      .image_form {
         height: 158px;
         background-color: #f8f8f8;
         border: 1px dotted grey;
         // borderの色は再度調整の必要あり
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &__item {
+          &--icon {
+            font-size: 20px;
+            // ここのネスト構造はシンプルにできるかもしれない
+            // font-sizeの兼ね合い次第
+          }
+          &--display {
+            display: none;
+          }
+        }
       }
     }
     .overview{
