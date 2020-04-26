@@ -19,7 +19,11 @@
             %input.image_form__item--display{type: "file"}
       .overview
         .name
-          商品名
+          .name__top
+            商品名
+            %span.name__top--red
+              必須
+          %input.name__form{type: "text", placeholder: "40文字まで"}
         .explain
           商品の説明
       .detail
