@@ -250,7 +250,6 @@
     .price {
       height: 270px;
       padding: 40px;
-      border: 1px solid #f8f8f8;
       &__limit {
         margin-bottom: 16px;
       }
@@ -292,9 +291,27 @@
       }
     }
     .submit {
-      height: 164px;
-      padding: 40px;
-      border: 1px solid #f8f8f8;
+      text-align:center;
+      &__btn {
+        width: 360px;
+        height: 46px;
+        background-color: #3ccace;
+        color: #ffffff;
+        border-radius: 16px;
+        font-size: 25px;
+      }
+    }
+    .link_top_page {
+      text-align:center;
+      margin-top: 12px;
+      &__text {
+        color: #3ccace;
+        font-size: 18px;
+      }
+    }
+    .cautions_information {
+      padding: 30px 30px 60px 30px;
+      font-size: 12px;
     }
   }
 }
