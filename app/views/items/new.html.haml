@@ -52,7 +52,17 @@
               任意
           %input.brand__form{type: "text", placeholder: "例) シャネル"}
         .status
-          商品の状態
+          .status__top
+            商品の状態
+            %span.status__top--red
+              必須
+          %select.status__form
+            %option
+              ✔︎ 選択してください
+            %option
+              新品
+            %option
+              中古
       .shipping_relation
         配送について
         .fee
