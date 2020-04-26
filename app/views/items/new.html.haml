@@ -66,7 +66,17 @@
       .shipping_relation
         配送について
         .fee
-          配送料の負担
+          .fee__top
+            配送料の負担
+            %span.fee__top--red
+              必須
+          %select.fee__form
+            %option
+              ✔︎ 選択してください
+            %option
+              送料込み（出品者負担）
+            %option
+              着払い（購入者負担）
         .method
           配送方法
         .owner_area
