@@ -1,12 +1,12 @@
 .wrapper {
-  background-color: #f8f8f8;
+  background-color: $main_light_gray;
   width: 100vw;
   padding: 40px;
   display: flex;
   justify-content: center;
-  font-size: 14px;
+  font-size: $main_font_size;
   .input_area {
-    background-color: #fff;
+    background-color: $main_white;
     height: 100%;
     width: 700px;
   // ここの幅・高さは仮置きです。
@@ -14,7 +14,7 @@
       width: 100%;
       height: 300px;
       padding: 40px;
-      border: 1px solid #f8f8f8;
+      border: 1px solid  $main_light_gray;
       &__top {
         &--red {
           @include require_red();
@@ -25,9 +25,8 @@
       }
       .image_form {
         height: 158px;
-        background-color: #f8f8f8;
+        background-color: $main_light_gray;
         border: 1px dotted grey;
-        // borderの色は再度調整の必要あり
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -36,8 +35,6 @@
         &__item {
           &--icon {
             font-size: 20px;
-            // ここのネスト構造はシンプルにできるかもしれない
-            // font-sizeの兼ね合い次第
           }
           &--display {
             display: none;
@@ -48,7 +45,7 @@
     .overview{
       height: 416px;
       padding: 40px;
-      border: 1px solid #f8f8f8;
+      border: 1px solid $main_light_gray;
       .name{
         height: 118px;;
         &__top {
@@ -84,7 +81,7 @@
     .detail {
       height: 479px;
       padding: 40px;
-      border: 1px solid #f8f8f8;
+      border: 1px solid $main_light_gray;
       .category {
         height: 118px;
         margin-top: 24px;
@@ -120,9 +117,8 @@
       }
     }
     .shipping_relation {
-      // ここの高さはより大きくする可能性あり
       padding: 40px;
-      border: 1px solid #f8f8f8;
+      border: 1px solid $main_light_gray;
       .fee {
         height: 118px;
         margin-top: 24px;
@@ -201,7 +197,7 @@
         padding: 12px 0;
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px solid #f8f8f8;
+        border-bottom: 1px solid $main_light_gray;
       }
       .profit {
         height: 46px;
@@ -215,17 +211,17 @@
       &__btn {
         width: 360px;
         height: 46px;
-        background-color: #3ccace;
-        color: #ffffff;
+        background-color: $main_light_blue;
+        color: $main_white;
         border-radius: 16px;
-        font-size: 25px;
+        font-size: 24px;
       }
     }
     .link_top_page {
       text-align:center;
       margin-top: 12px;
       &__text {
-        color: #3ccace;
+        color: $main_light_blue;
         font-size: 18px;
       }
     }
