@@ -46,28 +46,42 @@
     }
     &__content {
       width: 710px;
+      background-color: yellow;
       &__icon {
+        width: 710px;
+        height: 155px;
+        position: relative;
         &__image {
           width: 710px;
           height: 155px;
-          &--name {
-            text-align: center;
-          }
-          &--status {
-            text-align: center;
-          }
         }
-          &__tab {
-            &__list {
-              display: flex;
-              &__1 {
-                text-align: center;
-              }
-            }
+        &__name {
+          align-items: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          position: relative;
+        }
+        &__status {
+          position: absolute;
+
+          top: 0%;
+          left: 0%;
+        }
+      }
+      &__tab {
+        &__list {
+          display: flex;
+          &__1 {
+            text-align: center;
+          }
+          &__2 {
+
           }
         }
       }
     }
+  }
   .headbar {
     font-size: 15px;
     line-height: 22px;
