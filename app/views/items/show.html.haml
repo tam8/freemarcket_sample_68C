@@ -16,6 +16,16 @@
       %p.main__price__sub
         (税込) 送料込み
     
+    =link_to "#", class:"main__buy" do
+      購入画面に進む
+    
+    =link_to "#", class:"main__edit" do
+      編集
+
+    =link_to "#", class:"main__destroy" do
+      削除
+
+
     %p.main__description
       =@item.explain
 
@@ -86,7 +96,7 @@
       =link_to "#", class: "nextBtn" do
         -# =params[:id].to_i - 1
         -# = "#{item_path}" + "#{params[:id].to_i - 1}"
-        >
+        次の商品 >
     =link_to "#{Category.find(@item.category_id).name}をもっと見る", "#", class:"moreBtn"
 
 
