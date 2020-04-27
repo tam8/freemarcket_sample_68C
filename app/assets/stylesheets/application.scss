@@ -7,8 +7,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "config/colors";
-@import "modules/formbox";
-@import "modules/require_red";
+@import "mixin/formbox";
+@import "mixin/require_red";
 @import "modules/variable";
 @import "modules/header";
 @import "modules/footer";
