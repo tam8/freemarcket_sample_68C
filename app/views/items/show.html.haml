@@ -1,71 +1,78 @@
-.wrap
+.itemsShow
   %main.main
     .main__name
-      商品名
+      =@item.name
     .main__imgs
-      =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: "main__imgs__img"
+      =image_tag @item_imgs[0].image_url, class: "main__imgs__img"
 
       %ul.main__imgs__list
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png", class: ""
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/14/a001.png", class: ""
-        %li.main__imgs__list__img
-          =image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/15/a003.png", class: ""
+        -@item_imgs.each do |i|
+          %li.main__imgs__list__img
+            =image_tag i.image_url, class: ""
 
     %p.main__price
-      \\30,000
+      \\
+      =@item.price
       %p.main__price__sub
         (税込) 送料込み
     
+    =link_to "#", class:"main__buy" do
+      購入画面に進む
+    
+    =link_to "#", class:"main__edit" do
+      編集
+
+    =link_to "#", class:"main__destroy" do
+      削除
+
+
     %p.main__description
-      親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+      =@item.explain
 
     %table.main__info
       %tbody
         %tr
           %th
+            商品の状態
+          %td
+            =@item.status
+        %tr
+          %th
+            ブランド
+          %td
+            %a
+              =@item.brand
+        %tr
+          %th
+            配送料の負担
+          %td
+            =@item.shipping_fee
+        %tr
+          %th
+            配送方法
+          %td
+            =@item.shipping_method
+        %tr
+          %th
+            発送元の地域
+          %td
+            =@item.owners_area
+        %tr
+          %th
+            発送日の目安
+          %td
+            =@item.arrival_date
+        %tr
+          %th
             出品者
           %td
-            hoge
+            =User.find(@item.user_id).nickname
         %tr
           %th
             カテゴリー
           %td
             %a
-              ベビー・キッズ
-              アウター
-        %tr
-          %th
-            ブランド
-          %td
-            エルメス
-        %tr
-          %th
-            商品のサイズ
-          %td
-            60cm
-        %tr
-          %th
-            商品の状態
-          %td
-            未使用に近い
-        %tr
-          %th
-            配送料の負担
-          %td
-            送料込み（出品者負担）
-        %tr
-          %th
-            発送元の地域
-          %td
-            %a
-              岩手県
-        %tr
-          %th
-            発送日の目安
-          %td
-            4-7日で発送
+              =Category.find(@item.category_id).name
 
     .main__low
       %a.main__low--like
@@ -77,7 +84,8 @@
   %form.comment
     %textarea.comment__txt
     .comment__caution
-      相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      相手のことを考え丁寧なコメントを心がけましょう。<br>
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
     %button.comment__btn
       =icon("fas", "comment")
       コメントする
@@ -86,8 +94,10 @@
     .preNextBox
       =link_to "< 前の商品", "#", class: "preBtn"
       =link_to "#", class: "nextBtn" do
+        -# =params[:id].to_i - 1
+        -# = "#{item_path}" + "#{params[:id].to_i - 1}"
         次の商品 >
-    =link_to "ベビー・キッズをもっと見る", "#", class:"moreBtn"
+    =link_to "#{Category.find(@item.category_id).name}をもっと見る", "#", class:"moreBtn"
 
 
 
