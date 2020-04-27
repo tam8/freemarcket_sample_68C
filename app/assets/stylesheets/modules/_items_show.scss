@@ -1,4 +1,4 @@
-.wrap{
+.itemsShow{
   background: #f8f8f8;
   padding-top: 30px;
   a{
@@ -50,6 +50,18 @@
         font-size: 16px;
         font-weight: initial;
       }
+    }
+    &__buy{
+      background: $keyColor;
+      width: 100%;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+      padding: 20px;
+      font-size: 1.5em;
+      color: white;
     }
     &__description{
       margin-top: 20px;
