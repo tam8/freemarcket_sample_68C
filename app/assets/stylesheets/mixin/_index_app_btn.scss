@@ -1,0 +1,27 @@
+@mixin indexAppBtn() {
+  display: flex;
+  align-items: center;
+  &--a-btn {
+    width: 180px;
+  }
+  &--g-btn {
+    width: 220px;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+}
+
+// &__btn {
+//   display: flex;
+//   align-items: center;
+//   &--a-btn {
+//     width: 180px;
+//   }
+//   &--g-btn {
+//     width: 220px;
+//   }
+//   a:hover {
+//     opacity: 0.5;
+//   }
+// }
