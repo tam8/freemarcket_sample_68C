@@ -17,12 +17,7 @@
       border: 1px solid #f8f8f8;
       &__top {
         &--red {
-          background-color: red;
-          color: #ffffff;
-          font-size: 14px;
-          // 文字の大きさは後で調整する
-          margin-left: 8px;
-          padding: 0 4px;
+          @include require_red();
         }
       }
       &__text {
@@ -58,12 +53,7 @@
         height: 118px;;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -71,12 +61,7 @@
       .explain {
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red;
           }
         }
         &__form {
@@ -103,12 +88,7 @@
         margin-top: 24px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red;
           }
         }
         @include formbox();
@@ -130,12 +110,7 @@
         margin-top: 32px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -150,12 +125,7 @@
         margin-top: 24px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -165,12 +135,7 @@
           margin-top: 24px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -180,12 +145,7 @@
         margin-top: 24px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -195,12 +155,7 @@
         margin-top: 24px;
         &__top {
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         @include formbox();
@@ -219,12 +174,7 @@
         &__top {
           line-height: 48px;
           &--red {
-            background-color: red;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include require_red();
           }
         }
         &__form {
