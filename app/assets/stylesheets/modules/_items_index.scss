@@ -175,7 +175,6 @@
       max-width: 1040px;
       width: 100%;
       margin: 0 auto;
-
       .list {
         width: 30%;
         margin: 16px 5% 0 0;
@@ -211,6 +210,226 @@
     }
   }
 
+  .category-pickup {
+    width: 100%;
+    padding: 80px 0 0;
+    background-color: #F8F8F8;
+    height: 100%;
+
+    &__title {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__box {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 26px;
+      &__head {
+        text-align: center;
+        .title {
+        font-size: 24px;
+        text-decoration: none;
+        color: $keyColor;
+          &__text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+      .category-pickup__lists-box {
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 0;
+        .category-lists {
+          width: 220px;
+          display: inline-block;
+          float: left;
+          a {
+            text-decoration: none;
+          }
+          .lists__image--img {
+            width: 220px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+          }
+          .category-lists__box {
+            background-color: white;
+            color: #333;
+            padding: 16px;
+            .category-lists__name {
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            .category-lists__price-box {
+              font-size: 16px;
+                .price {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+                .tax {
+                  font-size: 10px;
+                  text-align: left;
+                }
+            }
+          }
+        }
+        .category-lists:hover {
+          opacity: 0.5;
+        }
+        // .category-lists2 {
+        //   width: 220px;
+        //   display: inline-block;
+        //   float: left;
+        //   .lists__image--img {
+        //     width: 220px;
+        //     height: 150px;
+        //     position: relative;
+        //     overflow: hidden;
+        //     margin: 0;
+        //     z-index: auto;
+        //   }
+        //   .category-lists__box {
+        //     background-color: white;
+        //     color: #333;
+        //     padding: 16px;
+        //     .category-lists__name {
+        //       overflow: hidden;
+        //       line-height: 1.5;
+        //       font-size: 16px;
+        //       text-align: left;
+        //     }
+        //     .category-lists__price-box {
+        //       font-size: 16px;
+        //         .price {
+        //           display: flex;
+        //           align-items: center;
+        //           justify-content: space-between;
+        //         }
+        //         .tax {
+        //           font-size: 10px;
+        //           text-align: left;
+        //         }
+        //     }
+        //   }
+        // }
+      }
+    }
+
+    .brand-pickup {
+      width: 100%;
+      padding: 80px 0 0;
+      background-color: #F8F8F8;
+      height: 100%;
+      &__title {
+        text-align: center;
+        font-size: 28px;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      &__box1 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 26px;
+        .title {
+          font-size: 24px;
+          text-decoration: none;
+          color: #3CCACE;
+        }
+        .box1__heder {
+          text-align: center;
+        }
+      }
+        .brand-pickup__lists-box {
+          width: 780px;
+          margin: 26px auto;
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 0;
+          .brand-lists {
+            width: 220px;
+            display: inline-block;
+            float: left;
+            .lists__image--img {
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+            }
+            .brand-lists__box {
+              background-color: white;
+              color: #333;
+              padding: 16px;
+              .brand-lists__name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              .brand-lists__price-box {
+                font-size: 16px;
+                  .price {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+                  .tax {
+                    font-size: 10px;
+                    text-align: left;
+                  }
+              }
+            }
+          }
+          .brand-lists2 {
+            width: 220px;
+            display: inline-block;
+            float: left;
+            .lists__image--img {
+              width: 220px;
+              height: 150px;
+              position: relative;
+              overflow: hidden;
+              margin: 0;
+              z-index: auto;
+            }
+            .brand-lists__box {
+              background-color: white;
+              color: #333;
+              padding: 16px;
+              .brand-lists__name {
+                overflow: hidden;
+                line-height: 1.5;
+                font-size: 16px;
+                text-align: left;
+              }
+              .brand-lists__price-box {
+                font-size: 16px;
+                  .price {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  }
+                  .tax {
+                    font-size: 10px;
+                    text-align: left;
+                  }
+              }
+            }
+          }
+        }
+    }
+
   .purchace-btn {
     width: 120px;
     background-color: $keyColor;
@@ -232,18 +451,6 @@
   }
   .purchace-btn:hover {
     opacity: 0.8;
-  }
-
-  .category {
-    height: 500px;
-    width: 100%;
-    background-color: green;
-  }
-
-  .brand {
-    height: 500px;
-    width: 100%;
-    background-color: grey;
   }
 
   
