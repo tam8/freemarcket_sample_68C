@@ -100,12 +100,7 @@
       .brand {
         &__top {
           &--gray {
-            background-color: gray;
-            color: #ffffff;
-            font-size: 14px;
-            // 文字の大きさは後で調整する
-            margin-left: 8px;
-            padding: 0 4px;
+            @include arbitrary_gray();
           }
         }
         &__form{
