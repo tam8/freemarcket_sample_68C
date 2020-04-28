@@ -1,0 +1,233 @@
+.wrapper {
+  background-color: $main_light_gray;
+  width: 100vw;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  font-size: $main_font_size;
+  .input_area {
+    background-color: $main_white;
+    height: 100%;
+    width: 700px;
+  // ここの幅・高さは仮置きです。
+    .image {
+      width: 100%;
+      height: 300px;
+      padding: 40px;
+      border: 1px solid  $main_light_gray;
+      &__top {
+        &--red {
+          @include require_red();
+        }
+      }
+      &__text {
+        margin: 16px 0;
+      }
+      .image_form {
+        height: 158px;
+        background-color: $main_light_gray;
+        border: 1px dotted grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &__item {
+          &--icon {
+            font-size: 20px;
+          }
+          &--display {
+            display: none;
+          }
+        }
+      }
+    }
+    .overview{
+      height: 416px;
+      padding: 40px;
+      border: 1px solid $main_light_gray;
+      .name{
+        height: 118px;;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .explain {
+        &__top {
+          &--red {
+            @include require_red;
+          }
+        }
+        &__form {
+          width: 100%;
+          height: 140px;
+          padding: 13px 16px;
+          margin-top: 16px;
+        }
+        .explain_bottom {
+          position: relative;
+          &__caracters_number {
+            position: absolute;
+            right: 0px;   
+          }
+        }
+      }
+    }
+    .detail {
+      height: 479px;
+      padding: 40px;
+      border: 1px solid $main_light_gray;
+      .category {
+        height: 118px;
+        margin-top: 24px;
+        &__top {
+          &--red {
+            @include require_red;
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .brand {
+        &__top {
+          &--gray {
+            @include arbitrary_gray();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .status {
+        margin-top: 32px;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+    }
+    .shipping_relation {
+      padding: 40px;
+      border: 1px solid $main_light_gray;
+      .fee {
+        height: 118px;
+        margin-top: 24px;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .method {
+          height: 118px;
+          margin-top: 24px;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .owner_area {
+        height: 118px;
+        margin-top: 24px;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+      .arrival_date {
+        height: 118px;
+        margin-top: 24px;
+        &__top {
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form{
+          @include formbox();
+        }
+      }
+    }
+    .price {
+      height: 270px;
+      padding: 40px;
+      &__limit {
+        margin-bottom: 16px;
+      }
+      .price_input {
+        margin-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        &__top {
+          line-height: 48px;
+          &--red {
+            @include require_red();
+          }
+        }
+        &__form {
+          &--number {
+            height: 48px;
+            width: 285px;
+            text-align: right;
+          }
+        }
+      }
+      .brokerge_fee {
+        height: 46px;
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid $main_light_gray;
+      }
+      .profit {
+        height: 46px;
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .submit {
+      text-align:center;
+      &__btn {
+        width: 360px;
+        height: 46px;
+        background-color: $main_light_blue;
+        color: $main_white;
+        border-radius: 16px;
+        font-size: 24px;
+      }
+    }
+    .link_top_page {
+      text-align:center;
+      margin-top: 12px;
+      &__text {
+        color: $main_light_blue;
+        font-size: 18px;
+      }
+    }
+    .cautions_information {
+      padding: 30px 30px 60px 30px;
+      font-size: 12px;
+    }
+  }
+}

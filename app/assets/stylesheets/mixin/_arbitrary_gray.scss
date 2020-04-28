@@ -1,0 +1,10 @@
+@mixin arbitrary_gray() {
+  & {
+    background-color: gray;
+    color: #ffffff;
+    font-size: 14px;
+    // 文字の大きさは後で調整する
+    margin-left: 8px;
+    padding: 1px 4px;
+  }
+}

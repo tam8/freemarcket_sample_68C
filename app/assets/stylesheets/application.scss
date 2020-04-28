@@ -7,11 +7,17 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "config/colors";
+@import "mixin/formbox";
+@import "mixin/require_red";
+@import "mixin/arbitrary_gray";
+@import "modules/variable";
 @import "modules/header";
 @import "modules/footer";
 @import "mixin/index_app_btn";
 @import "modules/items";
 @import "modules/items_show";
+@import "modules/items_new"
 @import "modules/items_index";
 @import "modules/users_show";
+
 
