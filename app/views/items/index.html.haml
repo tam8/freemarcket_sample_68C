@@ -155,14 +155,14 @@
   .brand-pickup
     %h1.category-pickup__title
       ピックアップブランド
-    .brand-pickup__box1
-      .box1__heder
+    .brand-pickup__box
+      .brand-pickup__box__head
         =link_to "#",class:"title" do
-          %h3.heder__title アーカイバ
+          %h3.title__text アーカイバ
       .brand-pickup__lists-box
         .brand-lists
           =link_to "#",class:"list" do
-            %img.lists__image--img{ src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png"}
+            = image_tag "icon/a007.png", class: 'lists__image--img'
             .brand-lists__box
               %h3.brand-lists__name
                 ゲゲゲのゲ
@@ -177,7 +177,7 @@
                   (税込)
         .brand-lists
           =link_to "#",class:"list" do
-            %img.lists__image--img{ src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png"}
+            = image_tag "icon/a001.png", class: 'lists__image--img'
             .brand-lists__box
               %h3.category-lists__name
                 カレーは飲み物
@@ -190,9 +190,9 @@
                     0
                 %P.tax
                   (税込)
-        .brand-lists2
+        .brand-lists
           =link_to "#",class:"list" do
-            %img.lists__image--img{ src:"https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png"}
+            = image_tag "icon/a004.png", class: 'lists__image--img'
             .brand-lists__box
               %h3.brand-lists__name
                 餃子の王将
