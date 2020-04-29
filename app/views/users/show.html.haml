@@ -54,16 +54,55 @@
             電話番号の確認
           %li.mainbar__side__list__mypage__part
             ログアウト
-    .mainbar__content
-      .mainbar__content__icon
-        %img.mainbar__content__icon__image{:src => "/assets/180112_haikei.jpg"}/
-        %h4.mainbar__content__icon__name name
-        %h4.mainbar__content__icon__status 評価 0 出品数 0
-      .mainbar__content__tab
-        %ul.mainbar__content__tab__list
-          %li.mainbar__content__tab__list__1
-            お知らせ
-          %li.mainbar__content__tab__list__2
-            やることリスト
+    .maincontent
+      %section.mainbar__content
+        %a.mainbar__content__link{:href => "#"}
+          %figure
+            %img{:alt => "", :height => "60", :src => "/assets/member_photo_noimage_thumb.png", :width => "60"}/
+          %h2.bold takagi
+          .mypage-number
+            .mypage-number__name
+            評価
+            %span.bold 0
+            .mypage-number__name
+            出品数
+            %span.bold 0
+      %section.container
+        %ul.mainbar__mypage
+          %li.active
+            %a.mainbar__mypage__item.active{:href => "#"} お知らせ
+          %li.inactive
+            %a.mainbar__mypage__item.inactive{:href => "#"} やることリスト
+        %ul.contents
+          %li.content.show
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            900円のクーポンを付与しました。
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            500円割引券がもらえる（友達招待のお知らせ）
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content__checking
+            .content__checking__word
+              %p.wordfield 一覧を見る
 
+      %section.mainbar__content2
+        %p.mainbar__content2__link2
+          購入した商品
+      %section.container
+        %ul.mainbar__mypage
+          %li.active
+            %a.mainbar__mypage__item.active{:href => "#"} 取引中
+          %li.inactive
+            %a.mainbar__mypage__item.inactive{:href => "#"} 過去の取引
+        %ul.product
+          %li.content2
+            取引中の商品がありません
 
