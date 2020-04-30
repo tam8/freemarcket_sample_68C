@@ -2,7 +2,8 @@
   .head__in
     .head__in__up
       %h1
-        = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo"
+        =link_to root_path do
+          = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo"
       .head__in__up__search
         .head__in__up__search__txt
           キーワードから探す

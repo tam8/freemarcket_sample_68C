@@ -1,15 +1,13 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: %i[show edit update destroy]
 
   # 商品詳細ページ (田村)
   def show
-    @item = Item.find(params[:id])
-    # 配列なのでs付けておく
-    @item_imgs = ItemImage.where(item_id: params[:id]) 
   end
 
   # トップページ・商品一覧ページ
   def index
-   end
+  end
 
   # 商品出品ページ
   def new
@@ -29,6 +27,15 @@ class ItemsController < ApplicationController
 
   # 商品削除機能
   def destroy
+  end
+
+
+  private
+
+  def set_item
+    @item = Item.find(params[:id])
+    # 配列なのでs付けておく
+    @item_imgs = ItemImage.where(item_id: params[:id]) 
   end
 
 end
