@@ -53,13 +53,7 @@
             商品の状態
             %span.status__top--red
               必須
-          %select.status__form
-            %option
-              ✔︎ 選択してください
-            %option
-              新品
-            %option
-              中古
+          = f.select :status, [["新品"], ["中古"]], {prompt: "✔︎ 選択してください"}, {class: "status__form"}
       .shipping_relation
         配送について
         .fee
@@ -67,49 +61,25 @@
             配送料の負担
             %span.fee__top--red
               必須
-          %select.fee__form
-            %option
-              ✔︎ 選択してください
-            %option
-              送料込み（出品者負担）
-            %option
-              着払い（購入者負担）
+          = f.select :shipping_fee, [["送料込み（出品者負担）"],["着払い（購入者負担）"]], {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
         .method
           .method__top
             配送方法
             %span.method__top--red
               必須
-          %select.method__form
-            %option
-              ✔︎ 選択してください
-            %option
-              通常発送
-            %option
-              お急ぎ便
+          = f.select :shipping_method, [["通常発送"],["お急ぎ便"]],{prompt: "✔︎ 選択してください"}, {class: "method__form"}
         .owner_area
           .owner_area__top
             発送元の地域
             %span.owner_area__top--red
               必須
-          %select.owner_area__form
-            %option
-              ✔︎ 選択してください
-            %option
-              北海道
-            %option
-              グンマー
+          = f.select :owners_area, [["北海道"],["グンマー"]], {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
         .arrival_date
           .arrival_date__top
             発送までの日数
             %span.arrival_date__top--red
               必須
-          %select.arrival_date__form
-            %option
-              ✔︎ 選択してください
-            %option
-              1~2日で発送
-            %option
-              3~4日で発送
+          = f.select :arrival_date, [["1~2日で発送"],["3~4日で発送"]], {prompt: "✔︎ 選択してください"}, {class: "arrival_date__form"}
       .price
         .price__limit
           価格（¥300~9,999,999）
@@ -120,7 +90,7 @@
               必須
           .price_input__form
             ¥
-            %input.price_input__form--number{type: "number", placeholder: "0"}
+            = f.number_field :price, class: "price_input__form--number", placeholder: "0"
         .brokerge_fee
           .brokerge_fee__rate
             販売手数料（10％）
@@ -132,7 +102,8 @@
           .profit__calculation
             ー
       .submit
-        %input{type: "submit", value: "出品する", class: "submit__btn"}
+        = f.submit "出品する", class: "submit__btn"
+        -# %input{type: "submit", value: "出品する", class: "submit__btn"}
       .link_top_page
         =link_to "#", class: "link_top_page__text" do
           もどる

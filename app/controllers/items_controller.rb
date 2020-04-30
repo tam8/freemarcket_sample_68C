@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   end
 
     private
-      def product_params
+      def item_params
         params.require(:item).permit(:name, 
                                      :price, 
                                      :status, 
@@ -53,6 +53,7 @@ class ItemsController < ApplicationController
                                      :category_id, 
                                      :buyer_id,
                                      item_images_attributes: [:image_url]
-                                     ).merge(user_id: current_user.id)
+                                     )
+                                    #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。
       end
 end
