@@ -73,7 +73,8 @@
             発送元の地域
             %span.owner_area__top--red
               必須
-          = f.select :owners_area, [["北海道"],["グンマー"]], {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
+          = f.fields_for :prefecture do |d|
+            = f.collection_select :owners_area, Prefecture.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
         .arrival_date
           .arrival_date__top
             発送までの日数
