@@ -13,6 +13,7 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
+    
   end
 
   # 商品出品機能
