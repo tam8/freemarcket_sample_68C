@@ -62,7 +62,7 @@
 - belongs_to :category
 <!-- 足りない気がする？ (田村) -->
 - has_many :item_images
-
+- accepts_nested_attributes_for :item_images
 
 ## categories
 |Column|Type|Options|
