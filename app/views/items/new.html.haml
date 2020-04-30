@@ -1,6 +1,6 @@
 .wrapper
   .input_area
-    %form
+    = form_for [@item] do |f|
       .image
         .image__top
           出品画像
@@ -16,7 +16,8 @@
               -# ドラックアンドドロップについてはjquery時に作業するorクリック式のみのアップロードにしてドロップアンドドロップを消す
             .image_form__item
               またはクリックしてファイルをアップロード
-            %input.image_form__item--display{type: "file"}
+            = f.fields_for :item_images do |i|
+              = i.file_field :image_url, class: "image_form__item--display" 
       .overview
         .name
           .name__top
