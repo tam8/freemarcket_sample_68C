@@ -13,7 +13,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :category_id
       t.integer :user_id, foreign_key: true, null:false
       t.integer :buyer_id
-      t.integer :item_image_id, foreign_key: true, null:false
       t.timestamps
     end
   end
