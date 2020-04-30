@@ -13,7 +13,8 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
-    
+    @product = Product.new
+    @product.images.new
   end
 
   # 商品出品機能
@@ -32,4 +33,6 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+    private
+      def
 end
