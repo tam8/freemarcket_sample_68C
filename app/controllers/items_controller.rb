@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   # トップページ・商品一覧ページ
   def index
-   end
+  end
 
   # 商品出品ページ
   def new
