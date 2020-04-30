@@ -19,6 +19,12 @@ class ItemsController < ApplicationController
 
   # 商品出品機能
   def create
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   # 商品情報更新ページ
@@ -34,6 +40,19 @@ class ItemsController < ApplicationController
   end
 
     private
-      def
+      def product_params
+        params.require(:item).permit(:name, 
+                                     :price, 
+                                     :status, 
+                                     :brand, 
+                                     :shipping_fee, 
+                                     :shipping_method, 
+                                     :owners_area, 
+                                     :arrival_date, 
+                                     :explain, 
+                                     :category_id, 
+                                     :buyer_id
+                                     item_images_attributes: [:image_url]
+                                     ).merge(user_id: current_user.id)
       end
 end
