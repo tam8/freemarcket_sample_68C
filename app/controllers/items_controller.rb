@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
                                      :arrival_date, 
                                      :explain, 
                                      :category_id, 
-                                     :buyer_id
+                                     :buyer_id,
                                      item_images_attributes: [:image_url]
                                      ).merge(user_id: current_user.id)
       end
