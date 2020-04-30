@@ -1,0 +1,108 @@
+.navbar
+  %ul.navbar__header
+    %li.navbar__header__top
+      フリマサイト >
+    %li.navbar__header__mypage
+      マイページ
+
+.mainbody
+  .mainbar
+    .mainbar__side
+      .mainbar__side__list
+        %ul.mainbar__side__list__mypage
+          %li.mainbar__side__list__mypage__part
+            マイページ
+          %li.mainbar__side__list__mypage__part
+            お知らせ
+          %li.mainbar__side__list__mypage__part
+            やることリスト
+          %li.mainbar__side__list__mypage__part
+            出品する
+          %li.mainbar__side__list__mypage__part
+            出品中
+          %li.mainbar__side__list__mypage__part
+            取引中
+          %li.mainbar__side__list__mypage__part
+            売却済み
+          %li.mainbar__side__list__mypage__part
+            ガイド
+          %li.mainbar__side__list__mypage__part
+            問い合わせ
+
+        %h3.headbar
+          フリマペイ
+        %ul.mainbar__side__list__mypage
+          %li.mainbar__side__list__mypage__part
+            売上・振込申請
+          %li.mainbar__side__list__mypage__part
+            ポイント
+
+        %h3.headbar
+          設定
+        %ul.mainbar__side__list__mypage
+          %li.mainbar__side__list__mypage__part
+            プロフィール
+          %li.mainbar__side__list__mypage__part
+            発送元/お届け先住所変更
+          %li.mainbar__side__list__mypage__part
+            支払い方法
+          %li.mainbar__side__list__mypage__part
+            メールパスワード
+          %li.mainbar__side__list__mypage__part
+            本人情報
+          %li.mainbar__side__list__mypage__part
+            電話番号の確認
+          %li.mainbar__side__list__mypage__part
+            ログアウト
+    .maincontent
+      %section.mainbar__content
+        %a.mainbar__content__link{:href => "#"}
+          %figure
+            %img{:alt => "", :height => "60", :src => "/assets/member_photo_noimage_thumb.png", :width => "60"}/
+          %h2.bold takagi
+          .mypage-number
+            .mypage-number__name
+            評価
+            %span.bold 0
+            .mypage-number__name
+            出品数
+            %span.bold 0
+      %section.container
+        %ul.mainbar__mypage
+          %li.active
+            %a.mainbar__mypage__item.active{:href => "#"} お知らせ
+          %li.inactive
+            %a.mainbar__mypage__item.inactive{:href => "#"} やることリスト
+        %ul.contents
+          %li.content.show
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            900円のクーポンを付与しました。
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            500円割引券がもらえる（友達招待のお知らせ）
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content
+            %img{:alt => "", :height => "50", :src => "/assets/mercari_profile.png", :width => "40"}/
+            コロナ感染に対する支援活動をします
+          %li.content__checking
+            .content__checking__word
+              %p.wordfield 一覧を見る
+
+      %section.mainbar__content2
+        %p.mainbar__content2__link2
+          購入した商品
+      %section.container
+        %ul.mainbar__mypage
+          %li.active
+            %a.mainbar__mypage__item.active{:href => "#"} 取引中
+          %li.inactive
+            %a.mainbar__mypage__item.inactive{:href => "#"} 過去の取引
+        %ul.product
+          %li.content2
+            取引中の商品がありません
+
