@@ -24,7 +24,7 @@
             商品名
             %span.name__top--red
               必須
-          %input.name__form{type: "text", placeholder: "40文字まで"}
+          = f.text_field :name, class: "name__form", placeholder: "40文字まで"
         .explain
           .explain__top
             商品の説明
