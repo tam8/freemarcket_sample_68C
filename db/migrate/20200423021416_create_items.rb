@@ -11,7 +11,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :arrival_date
       t.string  :explain
       t.integer :category_id
-      t.integer :user_id, foreign_key: true, null:false
+      # t.integer :user_id, foreign_key: true, null:false
+      # user関係の作業が進んでから追加させる。その際reference型にさせるべきか 永井
       t.integer :buyer_id
       t.timestamps
     end

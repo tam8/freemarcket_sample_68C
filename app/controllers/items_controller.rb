@@ -19,9 +19,8 @@ class ItemsController < ApplicationController
 
   # 商品出品機能
   def create
-    binding.pry
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path
     else
       render :new
@@ -55,6 +54,6 @@ class ItemsController < ApplicationController
                                      :buyer_id,
                                      item_images_attributes: [:image_url]
                                      )
-                                    #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。
+                                    #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。 永井
       end
 end
