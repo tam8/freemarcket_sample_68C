@@ -41,7 +41,8 @@
             カテゴリー
             %span.category__top--red
               必須
-          = f.select :category_id, [["レディース", 1 ], ["メンズ", 2]], {prompt: "✔︎ 選択してください"}, {class: "category__form"}
+          = f.fields_for :item_category do |d|
+            = f.collection_select :category_id, ItemCategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
         .brand
           .brand__top
             ブランド

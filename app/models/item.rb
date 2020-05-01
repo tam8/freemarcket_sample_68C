@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :item_shipping_fee
   belongs_to_active_hash :item_shipping_method
   belongs_to_active_hash :item_arrival_date
+  belongs_to_active_hash :item_category
 
   belongs_to :user
   belongs_to :category
