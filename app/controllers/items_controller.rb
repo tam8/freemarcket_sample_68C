@@ -19,6 +19,7 @@ class ItemsController < ApplicationController
 
   # 商品出品機能
   def create
+    binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path

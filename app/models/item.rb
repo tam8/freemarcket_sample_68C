@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :status,           presence: true
   validates :shipping_fee,     presence: true
   validates :shipping_method,  presence: true
-  validates :owner_area,       presence: true
+  validates :owners_area,       presence: true
   validates :arrival_date,     presence: true
   validates :explain,          presence: true
   validates :category_id,      presence: true
