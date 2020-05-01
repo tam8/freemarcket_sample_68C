@@ -2,6 +2,8 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :item_status
+  belongs_to_active_hash :item_shipping_fee
+
   belongs_to :user
   belongs_to :category
   # 不足っぽい

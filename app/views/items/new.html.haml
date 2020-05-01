@@ -62,7 +62,8 @@
             配送料の負担
             %span.fee__top--red
               必須
-          = f.select :shipping_fee, [["送料込み（出品者負担）"],["着払い（購入者負担）"]], {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
+          = f.fields_for :item_shipping_fee do |d|
+            = f.collection_select :shipping_fee, ItemShippingFee.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
         .method
           .method__top
             配送方法
