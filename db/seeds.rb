@@ -1,10 +1,28 @@
+# if Rails.env == "development"
+  # (1..5).each do |i|
+  #   User.create!(
+  #     email: "#{i}@mail.com",
+  #     nickname: "ユーザー#{i}",
+  #     password: "#{i}",
+  #     reset_password_token: "#{i}",
+  #     reset_password_sent_at: "#{i}",
+  #     remember_created_at: "#{i}"
+  #   )
+  # end
+# end
+
+
+
+
+
+#CSV記法#############################
 require "csv"
 
 CSV.foreach("db/seeds/user.csv", headers: true) do |row|
   User.create!(
     email: row["email"],
     nickname: row["nickname"],
-    password: row["encrypted_password"],
+    password: row["password"],
     reset_password_token: row["reset_password_token"],
     reset_password_sent_at: row["reset_password_sent_at"],
     remember_created_at: row["remember_created_at"]
@@ -48,6 +66,7 @@ end
 
 
 
+#直接記法#############################
 
 # categoriesテーブル
   # Category.create!(

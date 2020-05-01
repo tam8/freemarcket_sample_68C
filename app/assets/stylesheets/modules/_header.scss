@@ -52,6 +52,13 @@
       }
       &__right{
         display: flex;
+        a{
+          text-decoration: none;
+
+          &:hover{
+            color: $keyColor;
+          }
+        }
         li{
           margin-left: 16px;
         }

@@ -2,7 +2,8 @@
   .head__in
     .head__in__up
       %h1
-        = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo"
+        =link_to root_path do
+          = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo"
       .head__in__up__search
         .head__in__up__search__txt
           キーワードから探す
@@ -17,10 +18,17 @@
           ブランド
 
       %ul.head__in__nav__right
-        %li.head__in__nav__right__login
-          ログイン
-        %li.head__in__nav__right__new
-          新規登録
+        -if user_signed_in?
+          %li.head__in__nav__right__mypage
+            マイページ
+          %li.head__in__nav__right__logout
+            =link_to "ログアウト", destroy_user_session_path, method: :delete
+
+        -else
+          %li.head__in__nav__right__new
+            =link_to "新規登録", new_user_registration_path
+          %li.head__in__nav__right__login
+            =link_to "ログイン", new_user_session_path
 
 
   -# .header__breadcrumb
