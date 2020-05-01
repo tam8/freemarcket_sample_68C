@@ -22,7 +22,7 @@ CSV.foreach("db/seeds/user.csv", headers: true) do |row|
   User.create!(
     email: row["email"],
     nickname: row["nickname"],
-    password: row["encrypted_password"],
+    password: row["password"],
     reset_password_token: row["reset_password_token"],
     reset_password_sent_at: row["reset_password_sent_at"],
     remember_created_at: row["remember_created_at"]
