@@ -1,19 +1,19 @@
 class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
-      t.string :name, null: false
-      t.integer :price, null: false
-      t.string :status
-      t.string :brand
-      t.string :shipping_fee
-      t.string :shipping_method
-      t.string :owners_area
-      t.string :arrival_date
-      t.string :explain
+      t.string  :name,              null: false
+      t.integer :price,             null: false
+      t.integer :status
+      t.string  :brand
+      t.integer :shipping_fee
+      t.integer :shipping_method
+      t.integer :owners_area
+      t.integer :arrival_date
+      t.string  :explain
       t.integer :category_id
-      t.integer :user_id, foreign_key: true, null:false
+      # t.integer :user_id, foreign_key: true, null:false
+      # user関係の作業が進んでから追加させる。その際reference型にさせるべきか 永井
       t.integer :buyer_id
-      t.integer :item_image_id, foreign_key: true, null:false
       t.timestamps
     end
   end

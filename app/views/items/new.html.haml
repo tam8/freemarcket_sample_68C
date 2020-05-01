@@ -1,6 +1,6 @@
 .wrapper
   .input_area
-    %form
+    = form_for [@item] do |f|
       .image
         .image__top
           出品画像
@@ -16,20 +16,21 @@
               -# ドラックアンドドロップについてはjquery時に作業するorクリック式のみのアップロードにしてドロップアンドドロップを消す
             .image_form__item
               またはクリックしてファイルをアップロード
-            %input.image_form__item--display{type: "file"}
+            = f.fields_for :item_images do |i|
+              = i.file_field :image_url, class: "image_form__item--display" 
       .overview
         .name
           .name__top
             商品名
             %span.name__top--red
               必須
-          %input.name__form{type: "text", placeholder: "40文字まで"}
+          = f.text_field :name, class: "name__form", placeholder: "40文字まで"
         .explain
           .explain__top
             商品の説明
             %span.name__top--red
               必須
-          %textarea.explain__form{type: "text", placeholder: "商品の説明 (1000文字まで)"}
+          = f.text_area :explain, class: "explain__form", placeholder: "商品の説明 (1000文字まで)"
           .explain_bottom
             .explain_bottom__caracters_number
               0/1000
@@ -40,29 +41,22 @@
             カテゴリー
             %span.category__top--red
               必須
-          %select.category__form
-            %option
-              ✔︎ 選択してください
-            %option
-              レディース
+          = f.fields_for :item_category do |d|
+            = f.collection_select :category_id, ItemCategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
+          -# ここではactivehashを利用したデータ選択を行っています。category関係の作業が進んだ後、切替を行う。 永井
         .brand
           .brand__top
             ブランド
             %span.brand__top--gray
               任意
-          %input.brand__form{type: "text", placeholder: "例) シャネル"}
+          = f.text_field :brand, class: "brand__form", placeholder: "例) シャネル"
         .status
           .status__top
             商品の状態
             %span.status__top--red
               必須
-          %select.status__form
-            %option
-              ✔︎ 選択してください
-            %option
-              新品
-            %option
-              中古
+          = f.fields_for :item_status do |d|
+            = f.collection_select :status, ItemStatus.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "status__form"}
       .shipping_relation
         配送について
         .fee
@@ -70,49 +64,29 @@
             配送料の負担
             %span.fee__top--red
               必須
-          %select.fee__form
-            %option
-              ✔︎ 選択してください
-            %option
-              送料込み（出品者負担）
-            %option
-              着払い（購入者負担）
+          = f.fields_for :item_shipping_fee do |d|
+            = f.collection_select :shipping_fee, ItemShippingFee.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
         .method
           .method__top
             配送方法
             %span.method__top--red
               必須
-          %select.method__form
-            %option
-              ✔︎ 選択してください
-            %option
-              通常発送
-            %option
-              お急ぎ便
+          = f.fields_for :item_shipping_method do |d|
+            = f.collection_select :shipping_method, ItemShippingMethod.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "method__form"}
         .owner_area
           .owner_area__top
             発送元の地域
             %span.owner_area__top--red
               必須
-          %select.owner_area__form
-            %option
-              ✔︎ 選択してください
-            %option
-              北海道
-            %option
-              グンマー
+          = f.fields_for :prefecture do |d|
+            = f.collection_select :owners_area, Prefecture.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
         .arrival_date
           .arrival_date__top
             発送までの日数
             %span.arrival_date__top--red
               必須
-          %select.arrival_date__form
-            %option
-              ✔︎ 選択してください
-            %option
-              1~2日で発送
-            %option
-              3~4日で発送
+          = f.fields_for :item_arrival_date do |d|
+            = f.collection_select :arrival_date, ItemArrivalDate.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "arrival_date__form"}
       .price
         .price__limit
           価格（¥300~9,999,999）
@@ -123,7 +97,7 @@
               必須
           .price_input__form
             ¥
-            %input.price_input__form--number{type: "number", placeholder: "0"}
+            = f.number_field :price, class: "price_input__form--number", placeholder: "0"
         .brokerge_fee
           .brokerge_fee__rate
             販売手数料（10％）
@@ -135,9 +109,10 @@
           .profit__calculation
             ー
       .submit
-        %input{type: "submit", value: "出品する", class: "submit__btn"}
+        = f.submit '出品する', class: "submit__btn"
+        -# %input{type: "submit", value: "出品する", class: "submit__btn"}
       .link_top_page
-        =link_to "#", class: "link_top_page__text" do
+        =link_to root_path, class: "link_top_page__text" do
           もどる
       .cautions_information
         禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
