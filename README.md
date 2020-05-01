@@ -43,12 +43,12 @@
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|status|string||
-|brand|string||
-|shipping_fee|string|null: false|
-|shipping_method|string|null: false|
-|owners_area|string||
-|arrival_date|string||
+|status|integer||
+|brand|integer||
+|shipping_fee|integer|null: false|
+|shipping_method|integer|null: false|
+|owners_area|integer||
+|arrival_date|integer||
 |explain|string||
 <!-- _id不要な気がする？ (田村) -->
 |category_id|references|foreign_key: true|
@@ -56,10 +56,16 @@
 |user_id|references|null: false, foreign_key: true|
 |buyer_id|integer||
 <!-- 足りない気がする？ (田村) -->
-|item_image|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :category
+- belongs_to_active_hash :prefecture
+- belongs_to_active_hash :item_status
+- belongs_to_active_hash :item_shipping_fee
+- belongs_to_active_hash :item_shipping_method
+- belongs_to_active_hash :item_arrival_date
+- belongs_to_active_hash :item_category
+
 <!-- 足りない気がする？ (田村) -->
 - has_many :item_images
 - accepts_nested_attributes_for :item_images
@@ -91,3 +97,34 @@
 |Building_name|string|true, null: false|
 ### Association
 - belongs_to :user
+
+## item_statusテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+
+## item_shipping_feeテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+
+## item_shipping_methodテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+
+## item_arrival_dateテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+
+## item_categoryテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+
