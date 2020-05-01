@@ -53,7 +53,8 @@
             商品の状態
             %span.status__top--red
               必須
-          = f.select :status, [["新品"], ["中古"]], {prompt: "✔︎ 選択してください"}, {class: "status__form"}
+          = f.fields_for :item_status do |d|
+            = f.collection_select :status, ItemStatus.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "status__form"}
       .shipping_relation
         配送について
         .fee
