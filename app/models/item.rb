@@ -10,6 +10,16 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   # 不足っぽい
+  validates :name,             presence: true
+  validates :price,            presence: true
+  validates :status,           presence: true
+  validates :shipping_fee,     presence: true
+  validates :shipping_method,  presence: true
+  validates :owner_area,       presence: true
+  validates :arrival_date,     presence: true
+  validates :explain,          presence: true
+  validates :category_id,      presence: true
+  
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true  
 
