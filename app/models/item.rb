@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :item_status
   belongs_to_active_hash :item_shipping_fee
+  belongs_to_active_hash :item_shipping_method
 
   belongs_to :user
   belongs_to :category

@@ -69,7 +69,8 @@
             配送方法
             %span.method__top--red
               必須
-          = f.select :shipping_method, [["通常発送"],["お急ぎ便"]],{prompt: "✔︎ 選択してください"}, {class: "method__form"}
+          = f.fields_for :item_shipping_method do |d|
+            = f.collection_select :shipping_method, ItemShippingMethod.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "method__form"}
         .owner_area
           .owner_area__top
             発送元の地域
