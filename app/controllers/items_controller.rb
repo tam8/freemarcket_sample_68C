@@ -62,3 +62,4 @@ class ItemsController < ApplicationController
     　　@item_imgs = ItemImage.where(item_id: params[:id]) 
   　end
 end
+end
