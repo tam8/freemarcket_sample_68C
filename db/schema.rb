@@ -28,14 +28,14 @@ ActiveRecord::Schema.define(version: 2020_04_26_030030) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
-    t.integer "status"
+    t.integer "status_id"
     t.string "brand"
-    t.integer "shipping_fee"
-    t.integer "shipping_method"
-    t.integer "owners_area"
-    t.integer "arrival_date"
+    t.integer "shipping_fee_id"
+    t.integer "shipping_method_id"
+    t.integer "owners_area_id"
+    t.integer "arrival_date_id"
     t.string "explain"
-    t.integer "category_id"
+    t.integer "a_category_id"
     t.integer "buyer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

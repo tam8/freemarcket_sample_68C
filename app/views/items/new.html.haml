@@ -42,8 +42,8 @@
             カテゴリー
             %span.category__top--red
               必須
-          = f.fields_for :item_category do |d|
-            = f.collection_select :category_id, ItemCategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
+          = f.fields_for :a_category do |d|
+            = f.collection_select :a_category_id, ACategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
           -# ここではactivehashを利用したデータ選択を行っています。category関係の作業が進んだ後、切替を行う。 永井
         .brand
           .brand__top
@@ -56,8 +56,8 @@
             商品の状態
             %span.status__top--red
               必須
-          = f.fields_for :item_status do |d|
-            = f.collection_select :status, ItemStatus.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "status__form"}
+          = f.fields_for :status do |d|
+            = f.collection_select :status_id, Status.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "status__form"}
       .shipping_relation
         配送について
         .fee
@@ -65,29 +65,29 @@
             配送料の負担
             %span.fee__top--red
               必須
-          = f.fields_for :item_shipping_fee do |d|
-            = f.collection_select :shipping_fee, ItemShippingFee.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
+          = f.fields_for :shipping_fee do |d|
+            = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
         .method
           .method__top
             配送方法
             %span.method__top--red
               必須
-          = f.fields_for :item_shipping_method do |d|
-            = f.collection_select :shipping_method, ItemShippingMethod.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "method__form"}
+          = f.fields_for :shipping_method do |d|
+            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "method__form"}
         .owner_area
           .owner_area__top
             発送元の地域
             %span.owner_area__top--red
               必須
-          = f.fields_for :prefecture do |d|
-            = f.collection_select :owners_area, Prefecture.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
+          = f.fields_for :oweners_area do |d|
+            = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
         .arrival_date
           .arrival_date__top
             発送までの日数
             %span.arrival_date__top--red
               必須
-          = f.fields_for :item_arrival_date do |d|
-            = f.collection_select :arrival_date, ItemArrivalDate.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "arrival_date__form"}
+          = f.fields_for :arrival_date do |d|
+            = f.collection_select :arrival_date_id, ArrivalDate.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "arrival_date__form"}
       .price
         .price__limit
           価格（¥300~9,999,999）
