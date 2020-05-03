@@ -25,11 +25,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  # 商品情報更新ページ
+  # 商品情報更新ページ (田村)
   def edit
   end
 
-  # 商品情報更新機能
+  # 商品情報更新機能 (田村)
   def update
   end
 
@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
   end
 
   private
+  # 出品時にフォーム入力されるデータ
   def item_params
     params.require(:item).permit(:name, 
                                    :price, 
@@ -58,7 +59,21 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    @name = @item.name
+    @price = @item.price
+    @brand = @item.brand
+    @status = ItemStatus.find(@item.status).name
+    @shipping_fee = ItemShippingFee.find(@item.shipping_fee).name
+    @shipping_method = ItemShippingMethod.find(@item.shipping_method).name
     # 配列なのでs付けておく
-    @item_imgs = ItemImage.where(item_id: params[:id]) 
+    @owners_area = Prefecture.find(@item.owners_area).name
+    @arrival_date = ItemArrivalDate.find(@item.arrival_date).name
+    @explain = @item.explain
+    @category = ItemCategory.find(@item.category_id).name
+    @imgs = ItemImage.where(item_id: params[:id]) 
+
+
+
+
   end
 end
