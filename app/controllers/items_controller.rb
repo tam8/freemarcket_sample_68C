@@ -62,19 +62,19 @@ class ItemsController < ApplicationController
     @name = @item.name
     @price = @item.price
     @brand = @item.brand
-    @status = ItemStatus.find(@item.status).name
-    @shipping_fee = ItemShippingFee.find(@item.shipping_fee).name
-    @shipping_method = ItemShippingMethod.find(@item.shipping_method).name
-    # 配列なのでs付けておく
-    @owners_area = Prefecture.find(@item.owners_area).name
-    @arrival_date = ItemArrivalDate.find(@item.arrival_date).name
     @explain = @item.explain
-    @category = ItemCategory.find(@item.category_id).name
+    @category = @item.a_category.name
+
+    # active_hashを利用
+    @status = @item.status.name
+    @shipping_fee = @item.shipping_fee.name
+    @shipping_method = @item.shipping_method.name 
+    @owners_area = @item.owners_area.name
+    @arrival_date = @item.arrival_date.name
+
+    # 配列なのでs付けておく
     @imgs = ItemImage.where(item_id: params[:id]) 
-
-
-
-
   end
-end
+
+
 end
