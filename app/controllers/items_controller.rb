@@ -38,28 +38,28 @@ class ItemsController < ApplicationController
   end
 
   private
-    def item_params
-      params.require(:item).permit(:name, 
+  def item_params
+    params.require(:item).permit(:name, 
                                    :price, 
-                                   :status, 
+                                   :status_id, 
                                    :brand, 
-                                   :shipping_fee, 
-                                   :shipping_method, 
-                                   :owners_area, 
-                                   :arrival_date, 
+                                   :shipping_fee_id, 
+                                   :shipping_method_id, 
+                                   :owners_area_id, 
+                                   :arrival_date_id, 
                                    :explain, 
-                                   :category_id, 
+                                   :a_category_id, 
                                    :buyer_id,
                                    item_images_attributes: [:image_url]
                                    )
                                     #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。 永井
-    end
+  end
 
 
-    def set_item
-    　　@item = Item.find(params[:id])
-    　　# 配列なのでs付けておく
-    　　@item_imgs = ItemImage.where(item_id: params[:id]) 
-  　end
+  def set_item
+    @item = Item.find(params[:id])
+    # 配列なのでs付けておく
+    @item_imgs = ItemImage.where(item_id: params[:id]) 
+  end
 end
 end
