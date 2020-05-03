@@ -33,20 +33,22 @@
 
 $(function(){
 
-  // let buildFileField = (index => {
-  //   const html = '
-  //               ';
-
-  // })
+  let buildFileField = (index) => {
+    const html = `<div data-index="${index}" class="js-file_group">
+                    <input class="js-file" type="file"
+                    name="product[images_attributes][${index}][src]"
+                    id="product_images_attributes_${index}_src"><br>
+                    <div class="js-remove">削除</div>
+                  </div>`;
+        return html;
+  }
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   $('.image_form').on('change', '.js_file_group__display', function(e) {
-    // $('.image_form').append(buiildFileField(fileIndex[0]));
+    $('.image_form').append(buiildFileField(fileIndex[0]));
     fileIndex.shift();
     // 末尾の数に1足した数を追加する
     fileIndex.push(fileIndex[fileIndex.length -1] +1)
-    console.log(this);
-    console.log(fileIndex);
   });
 })
