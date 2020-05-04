@@ -3,12 +3,12 @@
     .main__name
       =@name
     .main__imgs
-      -# =image_tag @imgs[0].image_url, class: "main__imgs__img"
+      =image_tag @imgs[0].image_url, class: "main__imgs__img"
 
-      -# %ul.main__imgs__list
-      -#   -@imgs.each do |i|
-      -#     %li.main__imgs__list__img
-      -#       =image_tag i.image_url, class: ""
+      %ul.main__imgs__list
+        -@imgs.each do |i|
+          %li.main__imgs__list__img
+            =image_tag i.image_url, class: ""
 
     %p.main__price
       \\
