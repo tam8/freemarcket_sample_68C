@@ -27,6 +27,9 @@ class ItemsController < ApplicationController
 
   # 商品情報更新ページ (田村)
   def edit
+    if user_signed_in? && current_user.id == @item.user_id
+      redirect_to item_path
+    end
   end
 
   # 商品情報更新機能 (田村)
