@@ -4,7 +4,7 @@
 
   .buy-head
     = link_to "#", class:"header__link" do
-      = image_tag 'logo/logo.png', alt: 'アイコン',width: '180px', class: 'header__link__img'
+      = image_tag asset_path('/assets/logo/logo.png'), alt: 'アイコン',width: '180px', class: 'header__link__img'
 
   .buy-main
     .buy-main__head
@@ -13,7 +13,7 @@
       .buy-main__item__inner
         .item-box
           .item-box__img
-            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'item-box__img'
+            = image_tag asset_path("/assets/icon/a007.png"), class: 'item-box__img'
           .item-box__details
             %p.item-box__details--name
               商品名：サンプル
@@ -72,7 +72,7 @@
           
       .buy-footer__logo
         = link_to "#", class:"footer__logo__link" do
-          = image_tag 'logo/logo.png', alt: 'アイコン',width: '120px', class: 'footer__logo__link--img'
+          = image_tag asset_path('/assets/logo/logo.png'), alt: 'アイコン',width: '120px', class: 'footer__logo__link--img'
         .copy-right
           ©️FURUMA
 
