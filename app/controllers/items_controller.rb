@@ -61,5 +61,5 @@ class ItemsController < ApplicationController
     # 配列なのでs付けておく
     @item_imgs = ItemImage.where(item_id: params[:id]) 
   end
-end
+
 end
