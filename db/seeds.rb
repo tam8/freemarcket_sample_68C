@@ -55,12 +55,13 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
   )
 end
 
-CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
-  ItemImage.create!(
-    image: row["image"],
-    item_id: row["item_id"]
-  )
-end
+# item_imageはCarrierWaveでseedするため、CSV記法が使えない
+# CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
+#   ItemImage.create!(
+#     image: row["image"],
+#     item_id: row["item_id"]
+#   )
+# end
 
 
 
@@ -79,23 +80,23 @@ end
   # )
 
 
-# # item_imagesテーブル
-#   ItemImage.create!(
-#     image_url: "https://images-na.ssl-images-amazon.com/images/I/31EskQ9W9iL._AC_SY400_.jpg",
-#     item_id: "2"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://item-shopping.c.yimg.jp/i/n/lifestyle-007_70738",
-#     item_id: "2"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://www.momofukugyu.jp/choice/yakiniku/img/kv_img01.jpg",
-#     item_id: "1"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://m.media-amazon.com/images/G/01/mobile-apps/dex/firetv/catthumb_firetv_cube._CB1570429193_.png",
-#     item_id: "2"
-#   )
+# item_imagesテーブル
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+    item_id: "2"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+    item_id: "2"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+    item_id: "2"
+  )
 
 
 # # usersテーブル
