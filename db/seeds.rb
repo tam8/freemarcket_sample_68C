@@ -29,36 +29,39 @@ CSV.foreach("db/seeds/user.csv", headers: true) do |row|
   )
 end
 
-CSV.foreach("db/seeds/category.csv", headers: true) do |row|
-  Category.create!(
-    name: row["name"]
-  )
-end
+# active_hashの方を利用
+# CSV.foreach("db/seeds/category.csv", headers: true) do |row|
+#   Category.create!(
+#     name: row["name"]
+#   )
+# end
 
 CSV.foreach("db/seeds/item.csv", headers: true) do |row|
   Item.create!(
     name: row["name"],
     price: row["price"],
-    status: row["status"],
+    status_id: row["status_id"],
     brand: row["brand"],
-    shipping_fee: row["shipping_fee"],
-    shipping_method: row["shipping_method"],
-    owners_area: row["owners_area"],
-    arrival_date: row["arrival_date"],
+    shipping_fee_id: row["shipping_fee_id"],
+    shipping_method_id: row["shipping_method_id"],
+    owners_area_id: row["owners_area_id"],
+    arrival_date_id: row["arrival_date_id"],
     explain: row["explain"],
-    category_id: row["category_id"],
-    user_id: row["user_id"],
-    buyer_id: row["buyer_id"],
-    item_image_id: row["item_image_id"]
+    a_category_id: row["a_category_id"],
+    # user_id: row["user_id"],
+    buyer_id: row["buyer_id"]
+    # 不要っぽい
+    # item_image_id: row["item_image_id"]
   )
 end
 
-CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
-  ItemImage.create!(
-    image_url: row["image_url"],
-    item_id: row["item_id"]
-  )
-end
+# item_imageはCarrierWaveでseedするため、CSV記法が使えない
+# CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
+#   ItemImage.create!(
+#     image: row["image"],
+#     item_id: row["item_id"]
+#   )
+# end
 
 
 
@@ -77,23 +80,23 @@ end
   # )
 
 
-# # item_imagesテーブル
-#   ItemImage.create!(
-#     image_url: "https://images-na.ssl-images-amazon.com/images/I/31EskQ9W9iL._AC_SY400_.jpg",
-#     item_id: "2"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://item-shopping.c.yimg.jp/i/n/lifestyle-007_70738",
-#     item_id: "2"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://www.momofukugyu.jp/choice/yakiniku/img/kv_img01.jpg",
-#     item_id: "1"
-#   )
-#   ItemImage.create!(
-#     image_url: "https://m.media-amazon.com/images/G/01/mobile-apps/dex/firetv/catthumb_firetv_cube._CB1570429193_.png",
-#     item_id: "2"
-#   )
+# item_imagesテーブル
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+    item_id: "2"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+    item_id: "1"
+  )
 
 
 # # usersテーブル
