@@ -21,7 +21,7 @@
         購入画面に進む
     
     -if user_signed_in? && current_user.id == @item.user_id
-      =link_to "#", class:"main__edit" do
+      =link_to edit_item_path, class:"main__edit" do
         商品の編集
 
       =link_to "#", class:"main__destroy" do
@@ -68,7 +68,7 @@
           %th
             出品者
           %td
-            -# =User.find(@item.user_id).nickname
+            =@user
         %tr
           %th
             カテゴリー
