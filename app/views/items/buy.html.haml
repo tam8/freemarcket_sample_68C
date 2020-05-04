@@ -1,0 +1,82 @@
+-# %body
+-#   %header.header
+.buy-wrap
+
+  .buy-head
+    = link_to "#", class:"header__link" do
+      = image_tag 'logo/logo.png', alt: 'アイコン',width: '180px', class: 'header__link__img'
+
+  .buy-main
+    .buy-main__head
+      購入内容の確認
+    .buy-main__item
+      .buy-main__item__inner
+        .item-box
+          .item-box__img
+            = image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png', class: 'item-box__img'
+          .item-box__details
+            %p.item-box__details--name
+              商品名：サンプル
+            %p.item-box__details--price
+              ¥800（税込）送料込み
+    
+    .buy-main__content
+      .buy-main__content__inner
+        %form.buy-form
+          .buy-price-box
+            .buy-price-box__title
+              支払い金額
+            .buy-price-box__price
+              ¥800 
+        
+          .pay-method-box
+            .pay-method-box__inner
+              .pay-method-box__inner__top
+                .pay-method-box__inner__top__left
+                  支払い方法
+                .pay-method-box__inner__top__right
+                  = link_to "変更する", "#", class: "pay-method-box__inner__top__right--link"
+              .pay-method-box__inner__text
+                クレジットカード
+                %br 
+                ********1234
+                %br
+                有効期限 11/11
+              .pay-method-box__inner__logo
+                = image_tag 'logo_visa.gif', alt: 'ロゴ', height: '20px', width: '26'
+          
+          .delivery-address-box
+            .delivery-address-box__inner
+              .delivery-address-box__inner__top
+                .delivery-address-box__inner__top__left
+                  配送先
+                .delivery-address-box__inner__top__right
+                  = link_to "変更する", "#"
+              .delivery-address-box__inner__text
+                〒111-1111
+                %br
+                東京都世田谷区〇〇1-1-1
+                %br
+                テックキャンプ 太郎
+          
+          .bottom-box
+            %button.bottom-box__btn{type: "submit"} 購入する
+
+    .buy-footer
+      .buy-footer__nav
+        %ul.buy-footer__nav__list
+          %li.buy-footer__nav__list--text
+            = link_to "会社概要（運営会社）"
+          %li.buy-footer__nav__list--text
+            = link_to "プライバシーポリシー"
+          %li.buy-footer__nav__list--text
+            = link_to "FURUMA 利用規約"
+          
+      .buy-footer__logo
+        = link_to "#", class:"footer__logo__link" do
+          = image_tag 'logo/logo.png', alt: 'アイコン',width: '120px', class: 'footer__logo__link--img'
+        .copy-right
+          ©️FURUMA
+
+        
+
