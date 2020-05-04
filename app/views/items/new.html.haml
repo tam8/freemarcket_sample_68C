@@ -18,7 +18,7 @@
               またはクリックしてファイルをアップロード
             = f.fields_for :item_images do |image|
               .js_file_group{data: {index: {id: image}}}
-                = image.file_field :image_url, class: "js_file_group__display" 
+                = image.file_field :image, class: "js_file_group__display" 
       .overview
         .name
           .name__top

@@ -25,11 +25,11 @@ class ItemsController < ApplicationController
     end
   end
 
-  # 商品情報更新ページ
+  # 商品情報更新ページ (田村)
   def edit
   end
 
-  # 商品情報更新機能
+  # 商品情報更新機能 (田村)
   def update
   end
 
@@ -38,6 +38,7 @@ class ItemsController < ApplicationController
   end
 
   private
+  # 出品時にフォーム入力されるデータ
   def item_params
     params.require(:item).permit(:name, 
                                    :price, 
@@ -50,7 +51,7 @@ class ItemsController < ApplicationController
                                    :explain, 
                                    :a_category_id, 
                                    :buyer_id,
-                                   item_images_attributes: [:image_url]
+                                   item_images_attributes: [:image]
                                    )
                                     #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。 永井
   end
@@ -58,8 +59,25 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+    @name = @item.name
+    @price = @item.price
+    @brand = @item.brand
+    @explain = @item.explain
+
+    # active_hashを利用
+    @status = @item.status.name
+    @shipping_fee = @item.shipping_fee.name
+    @shipping_method = @item.shipping_method.name 
+    @owners_area = @item.owners_area.name
+    @arrival_date = @item.arrival_date.name
+
+    # 仮
+    @category = @item.a_category.name
+    # @user = 
+    # @buyer =
+
     # 配列なのでs付けておく
-    @item_imgs = ItemImage.where(item_id: params[:id]) 
+    @imgs = ItemImage.where(item_id: params[:id]) 
   end
 
 end
