@@ -73,7 +73,7 @@ class ItemsController < ApplicationController
 
     # 仮
     @category = @item.a_category.name
-    # @user = 
+    @user = User.find(@item.user_id).nickname
     # @buyer =
 
     # 配列なのでs付けておく

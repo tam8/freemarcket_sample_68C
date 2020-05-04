@@ -21,6 +21,7 @@
         .list__image
           %span.list__image--number 1
           = image_tag asset_path("/assets/pict/pict-reason-01"), class: 'list__image--img'
+
         %h3.list__text
           %span.list__text--strong 
             3分
@@ -191,7 +192,6 @@
                 %P.tax
                   (税込)
         .brand-lists
-          =link_to "#",class:"list" do
             = image_tag asset_path("/assets/icon/a004.png"), class: 'lists__image--img'
             .brand-lists__box
               %h3.brand-lists__name

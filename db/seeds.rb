@@ -48,7 +48,7 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
     arrival_date_id: row["arrival_date_id"],
     explain: row["explain"],
     a_category_id: row["a_category_id"],
-    # user_id: row["user_id"],
+    user_id: row["user_id"],
     buyer_id: row["buyer_id"]
     # 不要っぽい
     # item_image_id: row["item_image_id"]
