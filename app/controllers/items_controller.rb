@@ -31,6 +31,11 @@ class ItemsController < ApplicationController
 
   # 商品情報更新機能 (田村)
   def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   # 商品削除機能
