@@ -83,19 +83,19 @@ end
 # item_imagesテーブル
   ItemImage.create!(
     image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
-    item_id: "2"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
-    item_id: "2"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
     item_id: "1"
   )
   ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
     item_id: "2"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+    item_id: "1"
   )
 
 
