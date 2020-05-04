@@ -63,7 +63,6 @@ class ItemsController < ApplicationController
     @price = @item.price
     @brand = @item.brand
     @explain = @item.explain
-    @category = @item.a_category.name
 
     # active_hashを利用
     @status = @item.status.name
@@ -71,6 +70,11 @@ class ItemsController < ApplicationController
     @shipping_method = @item.shipping_method.name 
     @owners_area = @item.owners_area.name
     @arrival_date = @item.arrival_date.name
+
+    # 仮
+    @category = @item.a_category.name
+    # @user = 
+    # @buyer =
 
     # 配列なのでs付けておく
     @imgs = ItemImage.where(item_id: params[:id]) 

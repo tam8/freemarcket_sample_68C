@@ -29,33 +29,35 @@ CSV.foreach("db/seeds/user.csv", headers: true) do |row|
   )
 end
 
-CSV.foreach("db/seeds/category.csv", headers: true) do |row|
-  Category.create!(
-    name: row["name"]
-  )
-end
+# active_hashの方を利用
+# CSV.foreach("db/seeds/category.csv", headers: true) do |row|
+#   Category.create!(
+#     name: row["name"]
+#   )
+# end
 
 CSV.foreach("db/seeds/item.csv", headers: true) do |row|
   Item.create!(
     name: row["name"],
     price: row["price"],
-    status: row["status"],
+    status_id: row["status_id"],
     brand: row["brand"],
-    shipping_fee: row["shipping_fee"],
-    shipping_method: row["shipping_method"],
-    owners_area: row["owners_area"],
-    arrival_date: row["arrival_date"],
+    shipping_fee_id: row["shipping_fee_id"],
+    shipping_method_id: row["shipping_method_id"],
+    owners_area_id: row["owners_area_id"],
+    arrival_date_id: row["arrival_date_id"],
     explain: row["explain"],
-    category_id: row["category_id"],
-    user_id: row["user_id"],
-    buyer_id: row["buyer_id"],
-    item_image_id: row["item_image_id"]
+    a_category_id: row["a_category_id"],
+    # user_id: row["user_id"],
+    buyer_id: row["buyer_id"]
+    # 不要っぽい
+    # item_image_id: row["item_image_id"]
   )
 end
 
 CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
   ItemImage.create!(
-    image_url: row["image_url"],
+    image: row["image"],
     item_id: row["item_id"]
   )
 end
