@@ -11,8 +11,13 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
-    @item = Item.new
-    @item.item_images.new
+    if user_signed_in?
+      @item = Item.new
+      @item.item_images.new
+    else
+      flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
+      redirect_to new_user_registration_path
+    end
   end
 
   # 商品出品機能
