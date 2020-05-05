@@ -16,9 +16,11 @@ class ItemsController < ApplicationController
   end
 
   # 商品出品機能
+  # createしてしまうよりも、newでsaveすれば、true・false判定ができる
   def create
     @item = Item.new(item_params)
     if @item.save!
+      # flash[:notice] = "#{@item.name}を出品しました"
       redirect_to root_path
     else
       render :new
@@ -27,6 +29,7 @@ class ItemsController < ApplicationController
 
   # 商品情報更新ページ (田村)
   def edit
+    @imgs.map { |img| img.image.cache! } unless @imgs.blank?
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
     end
@@ -44,7 +47,9 @@ class ItemsController < ApplicationController
   # 商品削除機能
   def destroy
     if user_signed_in? && current_user.id == @item.user_id
+      flash[:notice] = "「#{@item.name}」を削除しました"
       @item.destroy
+      redirect_to root_path
     else
       redirect_to item_path
     end
