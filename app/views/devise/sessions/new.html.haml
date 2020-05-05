@@ -1,17 +1,39 @@
-%h2.login ログイン
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :Eメール, { :class => 'submit-btn1' }
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in", { :class => 'submit-btn2' }
-= render "devise/shared/links"
+.main
+  .main__header
+    = link_to '#', class:"main-box__header--link" do
+      = image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23"
+    %h2.login ログイン
+  .main__contents
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .field
+        = f.label :Eメール
+        %span 必須
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :パスワード
+        %span 必須
+        %br/
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :記憶します
+      .actions
+        = f.submit "ログイン", { :class => 'submit-btn' }
+    -# = render "devise/shared/links"
+  .main__footer
+    .main__footer__message
+      %ul.menu
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            プライバシーポリシー
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            メルカリ利用規約
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            特定商取引に関する表記
+      = link_to '#', class:"main-box__header--link" do
+        = image_tag "logo-white-f61961ed5170064c5f33dd4524bdceeb5a5df2c83eb76fba31143f63fbab2c5e.svg"
+      %p© FURIMA

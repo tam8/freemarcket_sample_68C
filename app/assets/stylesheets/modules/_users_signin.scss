@@ -1,0 +1,63 @@
+.main{
+  
+  &__header{
+    // height: 128px;
+    // width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    // padding-right: 30px;
+    // padding-top: 35px;
+  }
+
+  &__contents{
+    text-align: center;
+    padding-top: 30px;
+    .field{
+      height: 100px;
+    }
+    label{
+      font-size: 20px;
+      padding-right: 80px;
+    }
+    span{
+      background-color: red;
+      color: black;
+    }
+    .actions{
+      height: 100px;
+      .submit-btn{
+        background-color: red;
+        color: white;
+        width: 300px;
+        height: 55px;
+      }
+    }
+  }
+  
+  &__footer{
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: lightgray;
+    height: 240px;
+    &__message{
+      height: 200px;
+      text-align: center;
+      color: white;
+      .menu{
+        display: flex;
+        width: 500px;
+        margin-left: 440px;
+        justify-content: space-around;
+        text-decoration: none;
+        
+        &__me{
+          
+          .me1{
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
