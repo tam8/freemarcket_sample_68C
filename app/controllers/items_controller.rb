@@ -37,6 +37,10 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  #商品購入機能（仮）
+  def buy
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
