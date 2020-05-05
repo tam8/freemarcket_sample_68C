@@ -27,14 +27,27 @@ class ItemsController < ApplicationController
 
   # 商品情報更新ページ (田村)
   def edit
+    if user_signed_in? && current_user.id != @item.user_id
+      redirect_to item_path
+    end
   end
 
   # 商品情報更新機能 (田村)
   def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   # 商品削除機能
   def destroy
+    if user_signed_in? && current_user.id == @item.user_id
+      @item.destroy
+    else
+      redirect_to item_path
+    end
   end
 
   #商品購入機能（仮）
