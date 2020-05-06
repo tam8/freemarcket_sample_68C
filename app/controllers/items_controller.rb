@@ -89,7 +89,7 @@ class ItemsController < ApplicationController
     @arrival_date = @item.arrival_date.name
 
     # 仮
-    @category = @item.a_category.name
+    # @category = @item.a_category.name
     @user = User.find(@item.user_id).nickname
     # @buyer =
 
