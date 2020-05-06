@@ -160,52 +160,54 @@
       .brand-pickup__box__head
         =link_to "#",class:"title" do
           %h3.title__text アーカイバ
+
       .brand-pickup__lists-box
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("/assets/icon/a007.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.brand-lists__name
-                ゲゲゲのゲ
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("/assets/icon/a001.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.category-lists__name
-                カレーは飲み物
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("/assets/icon/a004.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.brand-lists__name
-                餃子の王将
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
+        - @items.each do |item|
+          .brand-lists
+            =link_to "#",class:"list" do
+              = image_tag item.item_images.image, class: 'lists__image--img'
+              .brand-lists__box
+                %h3.brand-lists__name
+                  = item.name
+                .brand-lists__price-box
+                  %ul.price
+                    %li.price-list
+                      = "#{item.price}円" 
+                    %li.favorite
+                      = icon('fas', 'star', class: 'icon_favorite')
+                      0
+                  %P.tax
+                    (税込)
+        -# .brand-lists
+        -#   =link_to "#",class:"list" do
+        -#     = image_tag asset_path("/assets/icon/a001.png"), class: 'lists__image--img'
+        -#     .brand-lists__box
+        -#       %h3.category-lists__name
+        -#         カレーは飲み物
+        -#       .brand-lists__price-box
+        -#         %ul.price
+        -#           %li.price-list
+        -#             30000円
+        -#           %li.favorite
+        -#             = icon('fas', 'star', class: 'icon_favorite')
+        -#             0
+        -#         %P.tax
+        -#           (税込)
+        -# .brand-lists
+        -#   =link_to "#",class:"list" do
+        -#     = image_tag asset_path("/assets/icon/a004.png"), class: 'lists__image--img'
+        -#     .brand-lists__box
+        -#       %h3.brand-lists__name
+        -#         餃子の王将
+        -#       .brand-lists__price-box
+        -#         %ul.price
+        -#           %li.price-list
+        -#             30000円
+        -#           %li.favorite
+        -#             = icon('fas', 'star', class: 'icon_favorite')
+        -#             0
+        -#         %P.tax
+        -#           (税込)
   
 
   = link_to "#" do
