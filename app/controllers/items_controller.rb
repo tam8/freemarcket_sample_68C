@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   # トップページ・商品一覧ページ
   def index
+    @items = Item.limit(3).order('created_at DESC')
   end
 
   # 商品出品ページ
