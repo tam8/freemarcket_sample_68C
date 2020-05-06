@@ -69,8 +69,7 @@ class ItemsController < ApplicationController
                                    :a_category_id, 
                                    :buyer_id,
                                    item_images_attributes: [:image]
-                                   )
-                                    #  .merge(user_id: current_user.id)をユーザー登録機能が出来たら追記する。 永井
+                                   ).merge(user_id: current_user.id)
   end
 
 
@@ -89,7 +88,7 @@ class ItemsController < ApplicationController
     @arrival_date = @item.arrival_date.name
 
     # 仮
-    # @category = @item.a_category.name
+    @category = @item.a_category.name
     @user = User.find(@item.user_id).nickname
     # @buyer =
 
