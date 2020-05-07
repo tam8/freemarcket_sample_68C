@@ -9,9 +9,7 @@
     padding-right: 30px;
     padding-top: 35px;
     
-    &--link{
-      
-    }
+
   }
 }
 
@@ -28,16 +26,13 @@
     margin: 0 auto;
   }
   &__form{
-    // height: 1400px;
     width: 750px;
     padding: 50px;
     background-color: white;
     margin: 0 auto;
   }
   &__footer{
-    // width: 750px;
     margin: 0 auto;
-    // padding: 40px;
     padding: 40px 0;
     background-color: lightgray;
     &__message{
@@ -61,8 +56,6 @@
         }
       }
       .main-box__header--link{
-        // position: relative;
-        // top: 50px;
         img{
           padding-top: 30px;
         }
@@ -77,7 +70,6 @@
   .field{
   &__nickname{
     border: none;
-    // background-color: orange;
     color: black;
     text-align: center;
     height: 85px;
@@ -95,7 +87,6 @@
 
   &__email{
     border: none;
-    // background-color: lightseagreen;
     color: black;
     text-align: center;
     width: 300px;
@@ -113,17 +104,13 @@
 
   &__password{
     border: none;
-    // background-color: lightgreen;
-    
     text-align: center;
-    // width: 300px;
     margin: 0 auto;
     height: 85px;
     padding-top: 5px;
     label{
       color: black;
       font-size: 20px;
-      // padding-left: 57px;
     }
     span{
       color: white;
@@ -133,7 +120,6 @@
 
   &__confirmation{
     border: none;
-    // background-color: pink;
     color: black;
     text-align: center;
     width: 300px;
@@ -162,15 +148,6 @@
   color: blue;
   
   }
-  // .submit-btn1{
-    
-  //   background-color: royalblue;
-  //   color: white;
-  //   }
-  // .submit-btn2{
-  //   background-color: yellowgreen;
-  //   color: white;
-  // }
   }
 
 

@@ -2,7 +2,6 @@
   background-color: lightgrey;
   &__header{
     height: 150px;
-    // width: 100%;
     background-color: lightgray;
     text-align: center;
     padding-top: 50px;
@@ -30,12 +29,8 @@
     }
     label{
       font-size: 20px;
-      // padding-right: 80px;
     }
-    span{
-      background-color: red;
-      color: black;
-    }
+
     .actions{
       height: 100px;
       .submit-btn{

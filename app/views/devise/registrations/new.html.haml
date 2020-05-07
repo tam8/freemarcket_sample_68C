@@ -6,7 +6,6 @@
     .box__header
       %h3 会員情報登録
     .box__form
-      -# %h2 会員情報登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field__nickname
