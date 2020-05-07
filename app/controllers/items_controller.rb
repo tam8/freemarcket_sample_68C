@@ -70,18 +70,18 @@ class ItemsController < ApplicationController
   # 出品時にフォーム入力されるデータ
   def item_params
     params.require(:item).permit(:name, 
-                                   :price, 
-                                   :status_id, 
-                                   :brand, 
-                                   :shipping_fee_id, 
-                                   :shipping_method_id, 
-                                   :owners_area_id, 
-                                   :arrival_date_id, 
-                                   :explain, 
-                                   :a_category_id, 
-                                   :buyer_id,
-                                   item_images_attributes: [:image]
-                                   ).merge(user_id: current_user.id)
+                                 :price, 
+                                 :status_id, 
+                                 :brand, 
+                                 :shipping_fee_id, 
+                                 :shipping_method_id, 
+                                 :owners_area_id, 
+                                 :arrival_date_id, 
+                                 :explain, 
+                                 :a_category_id, 
+                                 :buyer_id,
+                                 item_images_attributes: [:image]
+                                 ).merge(user_id: current_user.id)
   end
 
 
