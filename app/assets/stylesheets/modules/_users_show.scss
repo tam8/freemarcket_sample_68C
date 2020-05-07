@@ -1,0 +1,176 @@
+.navbar {
+  position: relative;
+  z-index: 1;
+  height: 50px;
+  border-top: 1px solid #eee;
+  width: 1040px;
+  margin: 0 auto;
+    &__header {
+      font-size: 14px;
+      line-height: 50px;
+      display: flex;
+      &__top {
+        padding-right: 5px;
+      }
+      &__mypage {
+        font-weight: bold;
+      }
+    }
+}
+
+.mainbody {
+  width: 100%;
+  padding: 40px 0 40px;
+  background-color: #ebe7e7;
+  .mainbar {
+    width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    &__side {
+      width: 280px;
+      margin: 0 40px 0 0;
+      z-index: 1;
+      &__list {
+        &__mypage {
+          margin-bottom: 50px;
+          background-color: white;
+          &__part {
+            border-top: 1px solid #eee;
+            font-size: 14px;
+            line-height: 50px;
+            padding-left: 5px;
+            display: list-item
+          }
+        }
+      }
+    }
+    .maincontent {
+      width: 710px;
+    }
+    &__content {
+      position: relative;
+      width: 710px;
+      height: 155px;
+      padding: 20px;
+      background: url(/assets/180112_haikei.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      &__link {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        color: #333;
+        text-decoration: none;
+      }
+    }
+    .mainbar__content figure{
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    .bold {
+      font-weight: 600;
+      padding-left: 5px;
+    }
+    .mypage-number {
+      display: flex;
+      justify-content: center;
+      &__name {
+        padding-left: 10px;
+      }
+    }
+
+  }
+}
+  .headbar {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: bold;
+  }
+
+
+  .container {
+    padding: 0;
+    margin: 0 auto;
+    width: 710px;
+    background: #dce0e0;
+    margin-bottom: 50px;
+  }
+  .mainbar__mypage {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    li.active {
+      width: 50%;
+      height: 80px;
+      background-color: white;
+      text-align: center;
+      line-height: 80px;
+      color: black;
+      border-top: 2px solid #ea352d;
+
+    }
+    .inactive {
+      width: 50%;
+      height: 80px;
+      background-color: #c9c7c7;
+      text-align: center;
+      line-height: 80px;
+      color: black;
+    }
+    .mainbar__mypage__item {
+      text-decoration: none;
+      color: black;
+    }
+  }
+    .content {
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+      line-height: 60px;
+      padding-left: 5px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    .content__checking {
+      background-color: white;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+
+      &__word {
+        margin-top: 10px;
+        height: 40px;
+        width: 690px;
+        background-color: #c9c7c7;
+        .wordfield {
+          text-align: center;
+          line-height: 40px;
+        }
+      }
+    }
+
+    .mainbar__content2 {
+      background-color: rgba(255, 255, 255, 0.876);
+      .mainbar__content2__link2{
+        line-height: 60px;
+        margin-left: 10px;
+      }
+    }
+    .product {
+      background-color: white;
+    }
+    .content2 {
+      height: 180px;
+      color: grey;
+      line-height: 180px;
+      text-align: center;
+    }

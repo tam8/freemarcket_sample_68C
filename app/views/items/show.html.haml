@@ -1,33 +1,35 @@
 .itemsShow
   %main.main
     .main__name
-      =@item.name
+      =@name
     .main__imgs
-      =image_tag @item_imgs[0].image_url, class: "main__imgs__img"
+      =image_tag @imgs[0].image_url, class: "main__imgs__img"
 
       %ul.main__imgs__list
-        -@item_imgs.each do |i|
+        -@imgs.each do |i|
           %li.main__imgs__list__img
             =image_tag i.image_url, class: ""
 
     %p.main__price
       \\
-      =@item.price
+      =@price
       %p.main__price__sub
         (税込) 送料込み
     
-    =link_to "#", class:"main__buy" do
-      購入画面に進む
+    -if user_signed_in? && current_user.id != @item.user_id
+      =link_to "#", class:"main__buy" do
+        購入画面に進む
     
-    =link_to "#", class:"main__edit" do
-      編集
+    -if user_signed_in? && current_user.id == @item.user_id
+      =link_to edit_item_path, class:"main__edit" do
+        商品の編集
 
-    =link_to "#", class:"main__destroy" do
-      削除
+      =link_to item_path, method: :delete, class:"main__destroy" do
+        商品の削除
 
 
     %p.main__description
-      =@item.explain
+      =@explain
 
     %table.main__info
       %tbody
@@ -35,44 +37,44 @@
           %th
             商品の状態
           %td
-            =@item.status
+            =@status
         %tr
           %th
             ブランド
           %td
             %a
-              =@item.brand
+              =@brand
         %tr
           %th
             配送料の負担
           %td
-            =@item.shipping_fee
+            =@shipping_fee
         %tr
           %th
             配送方法
           %td
-            =@item.shipping_method
+            =@shipping_method
         %tr
           %th
             発送元の地域
           %td
-            =@item.owners_area
+            =@owners_area
         %tr
           %th
             発送日の目安
           %td
-            =@item.arrival_date
+            =@arrival_date
         %tr
           %th
             出品者
           %td
-            =User.find(@item.user_id).nickname
+            =@user
         %tr
           %th
             カテゴリー
           %td
             %a
-              =Category.find(@item.category_id).name
+              =@category
 
     .main__low
       %a.main__low--like
@@ -97,7 +99,7 @@
         -# =params[:id].to_i - 1
         -# = "#{item_path}" + "#{params[:id].to_i - 1}"
         次の商品 >
-    =link_to "#{Category.find(@item.category_id).name}をもっと見る", "#", class:"moreBtn"
+    -# =link_to "#{Category.find(@item.category_id).name}をもっと見る", "#", class:"moreBtn"
 
 
 

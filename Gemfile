@@ -67,6 +67,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
+  gem "annotate"
 end
 
 group :test do
@@ -101,3 +102,6 @@ gem 'mini_magick'
 gem 'fog-aws'
 
 gem 'erb2haml'
+gem 'active_hash'
+
+gem 'jquery-rails' 

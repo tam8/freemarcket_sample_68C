@@ -1,6 +1,14 @@
 .head{
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   padding-bottom: 20px;;
+  &__flash{
+    background: $keyColor;
+    color: white;
+    text-align: center;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
   &__in{
     width: 1040px;
     margin: auto;
@@ -53,6 +61,13 @@
       }
       &__right{
         display: flex;
+        a{
+          text-decoration: none;
+
+          &:hover{
+            color: $keyColor;
+          }
+        }
         li{
           margin-left: 16px;
         }

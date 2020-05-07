@@ -1,3 +1,3 @@
-﻿id,name,price,status,brand,shipping_fee,shipping_method,owners_area,arrival_date,explain,category_id,user_id,buyer_id,item_image_id
-1,お肉,1000,中古,,,,,,,2,1,,1
-2,FireTV,4000,中古,Amazon,出品者負担,メルカリ便,東京,1～2日で発送,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,1,1,2,2
+id,name,price,status_id,brand,shipping_fee_id,shipping_method_id,owners_area_id,arrival_date_id,explain,a_category_id,user_id,buyer_id,item_image_id
+1,FireTV,4000,1,Amazon,1,2,13,1,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,1,1,2,2
+2,お肉,1000,1,松坂牛,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,2,,1
