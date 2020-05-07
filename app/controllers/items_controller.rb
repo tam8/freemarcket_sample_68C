@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save!
-      # flash[:notice] = "#{@item.name}を出品しました"
+      flash[:notice] = "「#{@item.name}」を出品しました"
       redirect_to root_path
     else
       render :new
@@ -84,26 +84,34 @@ class ItemsController < ApplicationController
 
 
   def set_item
-    @item = Item.find(params[:id])
-    @name = @item.name
-    @price = @item.price
-    @brand = @item.brand
-    @explain = @item.explain
+  
+    # finb_byでないとエラーになる (nilを返さない)
+    if Item.find_by_id(params[:id]).nil?
+      flash[:notice] = "指定の商品は存在しません"
+      redirect_to root_path
+    else
+      @item = Item.find(params[:id])
+      @name = @item.name
+      @price = @item.price
+      @brand = @item.brand
+      @explain = @item.explain
 
-    # active_hashを利用
-    @status = @item.status.name
-    @shipping_fee = @item.shipping_fee.name
-    @shipping_method = @item.shipping_method.name 
-    @owners_area = @item.owners_area.name
-    @arrival_date = @item.arrival_date.name
+      # active_hashを利用
+      @status = @item.status.name
+      @shipping_fee = @item.shipping_fee.name
+      @shipping_method = @item.shipping_method.name 
+      @owners_area = @item.owners_area.name
+      @arrival_date = @item.arrival_date.name
 
-    # 仮
-    @category = @item.a_category.name
-    @user = User.find(@item.user_id).nickname
-    # @buyer =
+      # 仮
+      @category = @item.a_category.name
+      @user = User.find(@item.user_id).nickname
+      # @buyer =
 
-    # 配列なのでs付けておく
-    @imgs = ItemImage.where(item_id: params[:id]) 
+      # 配列なのでs付けておく
+      @imgs = ItemImage.where(item_id: params[:id]) 
+    end
+ 
   end
 
 end
