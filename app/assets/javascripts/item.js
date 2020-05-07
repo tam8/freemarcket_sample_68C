@@ -33,14 +33,15 @@
 
 $(function(){
 
-  let buildFileField = (index) => {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <input class="js-file" type="file"
-                    name="product[images_attributes][${index}][src]"
-                    id="product_images_attributes_${index}_src"><br>
+  let buiildFileField = (index) => {
+    
+    const html = `<div class="js_file_group" data-index-id="${index}">
+                    <input class="js_file_group__display" type="file" 
+                    name="item[item_images_attributes][${index}][image_url]" 
+                    id="item_item_images_attributes_${index}_image_url">
                     <div class="js-remove">削除</div>
                   </div>`;
-        return html;
+                return html;
   }
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
