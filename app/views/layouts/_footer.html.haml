@@ -7,13 +7,13 @@
         今すぐ無料ダウンロード！
       .download_form
         = link_to "#" do
-          =image_tag src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "download_form__icon download_form__icon--app_store"
+          =image_tag asset_path("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"), class: "download_form__icon download_form__icon--app_store"
         = link_to "#" do
-          =image_tag src="google-play-badge.png", class: "download_form__icon download_form__icon--google_play"
+          =image_tag asset_path("google-play-badge.png"), class: "download_form__icon download_form__icon--google_play"
   .low_area
     %ul.contents
-      %li.content
-        .content__title
+      %li.low-content
+        .low-content__title
           Fulimaについて
         %ul
           %li.list
@@ -28,8 +28,8 @@
           %li.list
             = link_to "#", class: "list__link" do
               ポイントに関する特約
-      %li.content
-        .content__title
+      %li.low-content
+        .low-content__title
           Fulimaを見る
         %ul
           %li.list
@@ -38,8 +38,8 @@
           %li.list
             = link_to "#", class: "list__link" do
               ブランド一覧
-      %li.content
-        .content__title
+      %li.low-content
+        .low-content__title
           ヘルプ＆ガイド
         %ul
           %li.list
@@ -53,6 +53,6 @@
               お知らせ
     .footer_logo
       = link_to '#' do
-        = image_tag src="logo/logo-white.png", class: "footer_logo__icon"
+        = image_tag asset_path("logo/logo-white.png"), class: "footer_logo__icon"
       .footer_logo__copyright
         ©︎ FURIMA

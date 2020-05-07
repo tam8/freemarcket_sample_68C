@@ -1,4 +1,4 @@
-.container
+.index-container
   .intro
     .intro__content
       %h2.intro__content__subtitle
@@ -9,9 +9,9 @@
         フリマアプリです
       .intro__content__btn
         = link_to "#" do
-          =image_tag src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "intro__content__btn--a-btn"
+          =image_tag asset_path("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"), class: "intro__content__btn--a-btn"
         = link_to "#" do
-          =image_tag src="google-play-badge.png", class: "intro__content__btn--g-btn"
+          =image_tag asset_path("google-play-badge.png"), class: "intro__content__btn--g-btn"
   
   .top-container
     %h2.top-container__title
@@ -20,7 +20,8 @@
       %li.list
         .list__image
           %span.list__image--number 1
-          = image_tag "pict/pict-reason-01", class: 'list__image--img'
+          = image_tag asset_path("pict-reason-01.jpg"), class: 'list__image--img'
+
         %h3.list__text
           %span.list__text--strong 
             3分
@@ -31,7 +32,7 @@
       %li.list
         .list__image
           %span.list__image--number 2
-          = image_tag "pict/pict-reason-02", class: 'list__image--img'
+          = image_tag asset_path("pict-reason-02.jpg"), class: 'list__image--img'
         %h3.list__text
           %span.list__text--strong 
             シンプル
@@ -42,7 +43,7 @@
       %li.list.list__last
         .list__image
           %span.list__image--number 3
-          = image_tag "pict/pict-reason-03", class: 'list__image--img'
+          = image_tag asset_path("pict-reason-03.jpg"), class: 'list__image--img'
         %h3.list__text
           手数料
           %span.list__text--strong 
@@ -62,9 +63,9 @@
         ほしかったあの商品に出会えるかもしれません。
       .intro-middle__content__btn
         = link_to "#" do
-          =image_tag src="Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "intro__content__btn--a-btn"
+          =image_tag asset_path("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"), class: "intro__content__btn--a-btn"
         = link_to "#" do
-          =image_tag src="google-play-badge.png", class: "intro__content__btn--g-btn"
+          =image_tag asset_path("google-play-badge.png"), class: "intro__content__btn--g-btn"
 
   .middle-container
     %h2.middle-container__title
@@ -72,7 +73,7 @@
     %ul.middle-container__lists
       %li.list
         .list__image
-          = image_tag "icon/icon-01.png", class: 'list__image--img'
+          = image_tag asset_path("/assets/icon/icon-01.png"), class: 'list__image--img'
         %h3.list__text
           簡単に売り買いできる
         %p.list__description
@@ -80,7 +81,7 @@
 
       %li.list
         .list__image
-          = image_tag "icon/icon-03.png", class: 'list__image--img'
+          = image_tag asset_path("/assets/icon/icon-03.png"), class: 'list__image--img'
         %h3.list__text
           売上金は即日振り込みに対応
         %p.list__description
@@ -88,7 +89,7 @@
 
       %li.list.list__last
         .list__image
-          = image_tag "icon/icon-04.png", class: 'list__image--img'
+          = image_tag asset_path("/assets/icon/icon-04.png"), class: 'list__image--img'
         %h3.list__text
           様々な支払いに対応
         %p.list__description
@@ -106,7 +107,7 @@
 
         .category-lists
           =link_to "#" do
-            = image_tag "icon/a007.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a007.png"), class: 'lists__image--img'
             .category-lists__box
               %h3.category-lists__name
                 ゲゲゲのゲ
@@ -122,7 +123,7 @@
 
         .category-lists
           =link_to "#" do
-            = image_tag "icon/a001.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a001.png"), class: 'lists__image--img'
             .category-lists__box
               %h3.category-lists__name
                 カレーは飲み物
@@ -138,7 +139,7 @@
                 
         .category-lists
           =link_to "#" do
-            = image_tag "icon/a004.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a004.png"), class: 'lists__image--img'
             .category-lists__box
               %h3.category-lists__name
                 餃子の王将
@@ -162,7 +163,7 @@
       .brand-pickup__lists-box
         .brand-lists
           =link_to "#",class:"list" do
-            = image_tag "icon/a007.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a007.png"), class: 'lists__image--img'
             .brand-lists__box
               %h3.brand-lists__name
                 ゲゲゲのゲ
@@ -177,7 +178,7 @@
                   (税込)
         .brand-lists
           =link_to "#",class:"list" do
-            = image_tag "icon/a001.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a001.png"), class: 'lists__image--img'
             .brand-lists__box
               %h3.category-lists__name
                 カレーは飲み物
@@ -192,7 +193,7 @@
                   (税込)
         .brand-lists
           =link_to "#",class:"list" do
-            = image_tag "icon/a004.png", class: 'lists__image--img'
+            = image_tag asset_path("/assets/icon/a004.png"), class: 'lists__image--img'
             .brand-lists__box
               %h3.brand-lists__name
                 餃子の王将
@@ -211,4 +212,4 @@
     .purchace-btn
       .span.purchace-btn__text
         出品する
-      = image_tag 'icon/icon_camera.png', class: 'purchace-btn__img' 
+      = image_tag asset_path('/assets/icon/icon_camera.png'), class: 'purchace-btn__img' 
