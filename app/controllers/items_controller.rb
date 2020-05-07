@@ -25,14 +25,10 @@ class ItemsController < ApplicationController
   # createしてしまうよりも、newでsaveすれば、true・false判定ができる
   def create
     @item = Item.new(item_params)
-<<<<<<< HEAD
     if @item.save
-=======
-    if @item.save!
       flash[:notice] = "「#{@item.name}」を出品しました"
->>>>>>> 63293dee66a8bbdddb6bb8e8c93eb4da5dda90a2
       redirect_to root_path
-    else
+    elses
       render :new
     end
   end
