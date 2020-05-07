@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
+  before_action :request_path
 
   # 商品詳細ページ (田村)
   def show
@@ -35,6 +36,7 @@ class ItemsController < ApplicationController
   # 商品情報更新ページ (田村)
   def edit
     @imgs.map { |img| img.image.cache! } unless @imgs.blank?
+    
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
     end
@@ -84,7 +86,6 @@ class ItemsController < ApplicationController
 
 
   def set_item
-  
     # finb_byでないとエラーになる (nilを返さない)
     if Item.find_by_id(params[:id]).nil?
       flash[:notice] = "指定の商品は存在しません"
@@ -111,7 +112,14 @@ class ItemsController < ApplicationController
       # 配列なのでs付けておく
       @imgs = ItemImage.where(item_id: params[:id]) 
     end
- 
+  end
+
+  # アクション毎にビューを条件分岐可能にする
+  def request_path
+      @path = controller_path + '#' + action_name
+      def @path.is(*str)
+          str.map{|s| self.include?(s)}.include?(true)
+      end
   end
 
 end
