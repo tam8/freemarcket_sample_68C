@@ -24,7 +24,7 @@
       =link_to edit_item_path, class:"main__edit" do
         商品の編集
 
-      =link_to "#", class:"main__destroy" do
+      =link_to item_path, method: :delete, class:"main__destroy" do
         商品の削除
 
 
