@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "「#{@item.name}」を出品しました"
       redirect_to root_path
-    elses
+    else
       render :new
     end
   end
