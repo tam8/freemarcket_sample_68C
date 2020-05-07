@@ -2,9 +2,12 @@
   .main__header
     = link_to '#', class:"main-box__header--link" do
       = image_tag "logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23"
-    %h2.login ログイン
+    %h2.login 
   .main__contents
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      %a アカウントをお持ちではない方はこちら
+      .sign_up
+        = f.submit "新規登録", { :class => 'submit-btn' }
       .field
         = f.label :Eメール
         %span 必須

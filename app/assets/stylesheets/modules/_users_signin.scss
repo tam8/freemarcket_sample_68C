@@ -1,23 +1,36 @@
 .main{
-  
+  background-color: lightgrey;
   &__header{
-    // height: 128px;
+    height: 150px;
     // width: 100%;
     background-color: lightgray;
     text-align: center;
-    // padding-right: 30px;
-    // padding-top: 35px;
+    padding-top: 50px;
   }
 
   &__contents{
+    background-color: white;
     text-align: center;
+    width: 600px;
     padding-top: 30px;
+    margin: auto;
+    .sign_up{
+      .submit-btn {
+        width: 300px;
+        height: 55px;
+        margin-bottom: 30px;
+        font-size: 20px;
+        background-color: lightseagreen;
+        color: white;
+      }
+    }
+  }
     .field{
       height: 100px;
     }
     label{
       font-size: 20px;
-      padding-right: 80px;
+      // padding-right: 80px;
     }
     span{
       background-color: red;
@@ -32,7 +45,7 @@
         height: 55px;
       }
     }
-  }
+  
   
   &__footer{
     margin: 0 auto;
