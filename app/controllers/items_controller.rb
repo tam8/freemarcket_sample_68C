@@ -27,7 +27,8 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       flash[:notice] = "「#{@item.name}」を出品しました"
-      redirect_to root_path
+      # データの作成時点で、@itemにIDをが付与されている
+      redirect_to @item
     else
       render :new
     end
@@ -80,7 +81,8 @@ class ItemsController < ApplicationController
                                  :explain, 
                                  :a_category_id, 
                                  :buyer_id,
-                                 item_images_attributes: [:image]
+                                 item_images_attributes: [:image],
+                                #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
 
