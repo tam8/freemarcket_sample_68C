@@ -36,7 +36,12 @@ class ItemsController < ApplicationController
 
   # 商品情報更新ページ (田村)
   def edit
-    @imgs.map { |img| img.image.cache! } unless @imgs.blank?
+    # @imgs[]
+
+    # @item = current_user.items.find(params[:id])
+
+    # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
+    # binding.pry
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
