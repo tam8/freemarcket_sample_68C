@@ -31,6 +31,6 @@ class Item < ApplicationRecord
 
   # item削除時にimageも削除される
   accepts_nested_attributes_for :item_images, allow_destroy: true  
-  # validates :item_images,       presence: true
+  validates :item_images,       presence: true
 
 end
