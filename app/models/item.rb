@@ -26,11 +26,11 @@ class Item < ApplicationRecord
                                                greater_than_or_equal_to: 300,
                                                less_than: 10000000}
 
-
-  has_many :item_images
+  # dependentで商品削除時に画像も削除
+  has_many :item_images, dependent: :destroy
 
   # item削除時にimageも削除される
   accepts_nested_attributes_for :item_images, allow_destroy: true  
-  validates :item_images,       presence: true
+  # validates :item_images,       presence: true
 
 end
