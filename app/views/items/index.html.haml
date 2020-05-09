@@ -164,7 +164,7 @@
       .brand-pickup__lists-box
         - @items.each do |item|
           .brand-lists
-            =link_to "#",class:"list" do
+            =link_to item_path(item.id),class:"list" do
               -# - item.item_images.each do |img|
               = image_tag item.item_images.first.image.url, class: 'lists__image--img'
               .brand-lists__box
