@@ -26,11 +26,13 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = "「#{@item.name}」を出品しました"
+      flash[:notice] = "
+      「#{@item.name}」を出品しました"
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
       render :new
+      flash[:notice] = @item.errors.full_messages
     end
   end
 
