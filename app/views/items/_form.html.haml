@@ -1,6 +1,7 @@
 .wrapper
   .input_area
     = form_for [@item] do |f|
+
       .image
         .image__top
           出品画像
@@ -16,9 +17,24 @@
               -# ドラックアンドドロップについてはjquery時に作業するorクリック式のみのアップロードにしてドロップアンドドロップを消す
             .image_form__item
               またはクリックしてファイルをアップロード
+
+            -# field_for 親モデルと子モデルを同時に保存・更新できる (1投稿に対して、複数の画像)
             = f.fields_for :item_images do |image|
               .js_file_group{data: {index: {id: image}}}
                 = image.file_field :image, class: "js_file_group__display" 
+
+            .imgBox
+              -# アクション毎にビューの表示を条件分岐
+              -if @path.is('items#new')
+                new
+              -if @path.is('items#edit')
+                edit
+                -# = f.hidden_field :img.image_cache
+                -# %ul.main__imgs__list
+                -#   -@imgs.each do |i|
+                -#     %li.main__imgs__list__img
+                -#       =image_tag i.image_url, class: ""
+
       .overview
         .name
           .name__top
