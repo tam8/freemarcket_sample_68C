@@ -14,7 +14,6 @@
 
 
 
-
 #CSV記法#############################
 require "csv"
 
@@ -55,6 +54,25 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
   )
 end
 
+# item_imagesテーブル
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+    item_id: "1"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+    item_id: "2"
+  )
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+    item_id: "1"
+  )
+
+
 # item_imageはCarrierWaveでseedするため、CSV記法が使えない
 # CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
 #   ItemImage.create!(
@@ -80,23 +98,6 @@ end
   # )
 
 
-# item_imagesテーブル
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
-    item_id: "1"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
-    item_id: "1"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
-    item_id: "2"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
-    item_id: "1"
-  )
 
 
 # # usersテーブル
