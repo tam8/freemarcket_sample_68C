@@ -165,7 +165,8 @@
         - @items.each do |item|
           .brand-lists
             =link_to "#",class:"list" do
-              = image_tag item.item_images.image, class: 'lists__image--img'
+              -# - item.item_images.each do |img|
+              = image_tag item.item_images.first.image.url, class: 'lists__image--img'
               .brand-lists__box
                 %h3.brand-lists__name
                   = item.name
