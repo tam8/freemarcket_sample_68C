@@ -21,9 +21,14 @@ class Item < ApplicationRecord
   validates :owners_area,      presence: true
   validates :arrival_date,     presence: true
   validates :explain,          presence: true
-  validates :a_category_id,      presence: true
-  
+  validates :a_category_id,    presence: true
+  validates :price,            numericality: { only_integer: true,
+                                               greater_than_or_equal_to: 300,
+                                               less_than: 10000000}
+
+
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true  
+  validates :item_images,       presence: true
 
 end

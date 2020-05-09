@@ -1,4 +1,8 @@
 %header.head
+  -if flash[:notice]
+    .head__flash
+      =flash[:notice]
+
   .head__in
     .head__in__up
       %h1
