@@ -13,23 +13,26 @@ class Item < ApplicationRecord
   # category関係が終わった際に追加 永井
   
   # 不足っぽい
-  validates :name,             presence: true
-  validates :price,            presence: true
-  validates :status_id,        presence: true
-  validates :shipping_fee,     presence: true
-  validates :shipping_method,  presence: true
-  validates :owners_area,      presence: true
-  validates :arrival_date,     presence: true
-  validates :explain,          presence: true
-  validates :a_category_id,    presence: true
+  validates :name,                presence: true
+  validates :price,               presence: true
+  validates :status_id,           presence: true
+  validates :shipping_fee_id,     presence: true
+  validates :shipping_method_id,  presence: true
+  validates :owners_area_id,      presence: true
+  validates :arrival_date_id,     presence: true
+  validates :explain,             presence: true
+  validates :a_category_id,       presence: true
   
-  validates :status_id         numericality: { only_integer: true,
-                                               greater_than_or_equal_to: 1,
-                                               less_than: 7}
+
   validates :price,            numericality: { only_integer: true,
                                                greater_than_or_equal_to: 300,
                                                less_than: 10000000}
-
+  validates :status_id         numericality: { only_integer: true,
+                                               greater_than_or_equal_to: 1,
+                                               less_than: 7}
+  validates :shipping_fee_id         numericality: { only_integer: true,
+                                               greater_than_or_equal_to: 1,
+                                               less_than: 7}
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true  
