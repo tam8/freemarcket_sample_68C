@@ -36,7 +36,9 @@ class Item < ApplicationRecord
   validates :shipping_method_id  numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 9}
-  
+  validates :owners_area_id      numericality: { only_integer: true,
+                                                 greater_than_or_equal_to: 1,
+                                                 less_than: 48}
 
   has_many :item_images
   accepts_nested_attributes_for :item_images, allow_destroy: true  
