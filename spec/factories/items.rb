@@ -4,7 +4,7 @@ FactoryBot.define do
     price                    {"300"}
     status_id                {"2"}
     brand                    {"シャネル"}
-    shipping_fee_id          {"3"}
+    shipping_fee_id          {"2"}
     shipping_method_id       {"3"}
     owners_area_id           {"3"}
     arrival_date_id          {"2"}
