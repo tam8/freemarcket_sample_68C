@@ -87,7 +87,7 @@ RSpec.describe Item, type: :model  do
     it "user_idがない場合は登録できないこと" do
       item = build(:item, user_id: nil)
       item.valid?
-      expect(item.errors[:user_id]).to include("can't be blank")
+      expect(item.errors[:user]).to include("can't be blank")
     end
   end
 end
