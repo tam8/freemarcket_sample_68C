@@ -34,6 +34,11 @@ describe Item do
       expect(item.errors[:price]).to include("is too cheap (minimum is 300)")
     end
   
+    it "priceが300以上の場合は登録できること" do
+      item = build(:item, price: "300")
+      expect(item).to be_valid
+    end    
+
     it "priceが10000000以上の場合は登録出来ないこと" do
       item = build(:item, price: "10000000")
       item.valid?
