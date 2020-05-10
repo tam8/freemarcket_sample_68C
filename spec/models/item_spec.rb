@@ -68,5 +68,10 @@ describe Item do
       expect(item.errors[:owners_area_id]).to include("can't be blank")
     end
 
+    it "arrival_date_idがない場合は登録できないこと" do
+      item = build(:item, arrival_date_id: nil)
+      item.valid?
+      expect(item.errors[:arrival_date_id]).to include("can't be blank")
+    end
   end
 end
