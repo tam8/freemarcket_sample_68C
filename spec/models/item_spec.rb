@@ -85,11 +85,14 @@ describe Item do
       item.valid?
       expect(item.errors[:a_category_id]).to include("can't be blank")
     end
+    # カテゴリ機能のサーバサイドが完成してから修正の必要あり
+    # 現在はactive_hashを利用したa_categoryのidデータを登録させるシステムになっています。
 
     it "user_idがない場合は登録できないこと" do
       item = build(:item, user_id: nil)
       item.valid?
       expect(item.errors[:user_id]).to include("can't be blank")
     end
+
   end
 end
