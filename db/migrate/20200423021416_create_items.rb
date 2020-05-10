@@ -11,8 +11,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :arrival_date_id
       t.string  :explain
       t.integer :a_category_id
-      t.integer :user_id, foreign_key: true, null:false
-      # user関係の作業が進んでから追加させる。その際reference型にさせるべきか 永井
+      # t.references :user, foreign_key: true, null:false
+      # 後のマイグレーションファイルにてuser_idの外部キーを設定しています。
       t.integer :buyer_id
       t.timestamps
     end

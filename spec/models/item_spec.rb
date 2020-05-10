@@ -27,7 +27,7 @@ RSpec.describe Item, type: :model  do
     it "priceが300未満の場合は登録出来ないこと" do
       item = build(:item, price: "299")
       item.valid?
-      expect(item.errors[:price]).to include("is too cheap (minimum is 300)")
+      expect(item.errors[:price]).to include("must be greater than or equal to 300")
     end
   
     it "priceが300以上の場合は登録できること" do
@@ -38,7 +38,7 @@ RSpec.describe Item, type: :model  do
     it "priceが10000000以上の場合は登録出来ないこと" do
       item = build(:item, price: "10000000")
       item.valid?
-      expect(item.errors[:price]).to include("is too expensive (maximum is 9999999)")
+      expect(item.errors[:price]).to include("must be less than 10000000")
     end
   
     it "priceが9999999以下の場合は登録できること" do

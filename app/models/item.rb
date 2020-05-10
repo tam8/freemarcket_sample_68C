@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :arrival_date
   belongs_to_active_hash :a_category
 
-  # belongs_to :user
+  belongs_to :user
   # user管理関係が終わった際に追加 永井
   # belongs_to :category
   # category関係が終わった際に追加 永井

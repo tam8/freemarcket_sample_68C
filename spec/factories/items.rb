@@ -11,7 +11,7 @@ FactoryBot.define do
     explain                  {"これはいいテストです。"}
     a_category_id            {"2"}
     # a_categoryは後にcategoryに変更する
-    user_id                  {"1"}
+    user
     buyer_id                 {"1"}
   end
 end
