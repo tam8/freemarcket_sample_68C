@@ -73,5 +73,11 @@ describe Item do
       item.valid?
       expect(item.errors[:arrival_date_id]).to include("can't be blank")
     end
+
+    it "explainがない場合は登録できないこと" do
+      item = build(:item, explain: nil)
+      item.valid?
+      expect(item.errors[:explain]).to include("can't be blank")
+    end
   end
 end
