@@ -1,10 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Item, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
-
-describe Item do
+RSpec.describe Item, type: :model  do
   describe '#create' do
     it "全てのカラム情報が存在し、priceが300以上10000000未満の値が存在している時" do
       item = build(:item)
@@ -93,6 +89,5 @@ describe Item do
       item.valid?
       expect(item.errors[:user_id]).to include("can't be blank")
     end
-
   end
 end
