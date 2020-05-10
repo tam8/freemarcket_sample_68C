@@ -56,5 +56,10 @@ describe Item do
       expect(item.errors[:status_id]).to include("can't be blank")
     end
 
+    it "shipping_fee_idがない場合は登録できないこと" do
+      item = build(:item, shipping_fee_id: nil)
+      item.valid?
+      expect(item.errors[:shipping_fee_id]).to include("can't be blank")
+    end
   end
 end
