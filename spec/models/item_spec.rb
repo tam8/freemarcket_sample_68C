@@ -16,6 +16,9 @@ describe Item do
     expect(item).to be_valid
   end
 
-
+  it "nameがないと場合は登録できないこと" do
+    item = build(:item, name: nil)
+    item.valid?
+    expect(item.errors[:name]).to include("can't be blank")
   end
 end
