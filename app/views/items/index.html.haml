@@ -104,54 +104,25 @@
           %h3.title__text 新規投稿商品
 
       .category-pickup__lists-box
+        - @items.each do |item|
+          .category-lists
+            =link_to item_path(item.id) do
+              - if item.buyer_id?
+                .sold-badge
+              = image_tag item.item_images.first.image.url, class: 'lists__image--img'
+              .category-lists__box
+                %h3.category-lists__name
+                  = item.name
+                .category-lists__price-box
+                  %ul.price
+                    %li.price-list
+                      = "#{item.price}円" 
+                    %li.favorite
+                      = icon('fas', 'star', class: 'icon_favorite')
+                      0
+                  %P.tax
+                    (税込)
 
-        .category-lists
-          =link_to "#" do
-            = image_tag asset_path("a007.png"), class: 'lists__image--img'
-            .category-lists__box
-              %h3.category-lists__name
-                ゲゲゲのゲ
-              .category-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-
-        .category-lists
-          =link_to "#" do
-            = image_tag asset_path("a001.png"), class: 'lists__image--img'
-            .category-lists__box
-              %h3.category-lists__name
-                カレーは飲み物
-              .category-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-                
-        .category-lists
-          =link_to "#" do
-            = image_tag asset_path("a004.png"), class: 'lists__image--img'
-            .category-lists__box
-              %h3.category-lists__name
-                餃子の王将
-              .category-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
 
   .brand-pickup
     %h1.category-pickup__title
@@ -206,7 +177,6 @@
                     0
                 %P.tax
                   (税込)
-  
 
   = link_to new_item_path do
     .purchace-btn
