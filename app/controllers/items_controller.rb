@@ -116,7 +116,7 @@ class ItemsController < ApplicationController
       # 仮
       @category = @item.a_category.name
       @user = User.find(@item.user_id).nickname
-      # @buyer =
+      @buyer = @item.buyer_id
 
       # 配列なのでs付けておく
       @imgs = ItemImage.where(item_id: params[:id]) 
