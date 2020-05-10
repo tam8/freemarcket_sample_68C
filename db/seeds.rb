@@ -53,7 +53,10 @@ end
     image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
     item_id: "1"
   )
-
+  ItemImage.create!(
+    image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
+    item_id: "3"
+  )
 
 CSV.foreach("db/seeds/item.csv", headers: true) do |row|
   Item.create!(
