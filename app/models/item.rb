@@ -27,22 +27,22 @@ class Item < ApplicationRecord
   validates :price,              numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 300,
                                                  less_than: 10000000}
-  validates :status_id           numericality: { only_integer: true,
+  validates :status_id,          numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 7}
-  validates :shipping_fee_id     numericality: { only_integer: true,
+  validates :shipping_fee_id,    numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 3}
-  validates :shipping_method_id  numericality: { only_integer: true,
+  validates :shipping_method_id, numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 9}
-  validates :owners_area_id      numericality: { only_integer: true,
+  validates :owners_area_id,     numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 48}
-  validates :arrival_date_id     numericality: { only_integer: true,
+  validates :arrival_date_id,    numericality: { only_integer: true,
                                                   greater_than_or_equal_to: 1,
                                                   less_than: 4}
-  validates :a_category          numericality: { only_integer: true,
+  validates :a_category,         numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 1,
                                                  less_than: 14}  
 
