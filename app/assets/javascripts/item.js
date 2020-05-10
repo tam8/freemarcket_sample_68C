@@ -2,9 +2,9 @@ $(function(){
 
   let buildFileField = (index) => {
     
-    const html = `<div class="js_file_group" data-index-id="${index}">
+    const html = `<div class="js_file_group" data-index="${index}">
                     <input class="js_file_group__display" type="file" 
-                    name="item[item_images_attributes][${index}][image_url]" 
+                    name="item[item_images_attributes][${index}][image]" 
                     id="item_item_images_attributes_${index}_image">
                     <div class="js-remove">削除</div>
                   </div>`;
