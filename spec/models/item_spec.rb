@@ -85,6 +85,11 @@ describe Item do
       item.valid?
       expect(item.errors[:a_category_id]).to include("can't be blank")
     end
-    
+
+    it "user_idがない場合は登録できないこと" do
+      item = build(:item, user_id: nil)
+      item.valid?
+      expect(item.errors[:user_id]).to include("can't be blank")
+    end
   end
 end
