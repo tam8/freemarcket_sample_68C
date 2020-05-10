@@ -22,6 +22,10 @@ class Item < ApplicationRecord
   validates :arrival_date,     presence: true
   validates :explain,          presence: true
   validates :a_category_id,    presence: true
+  
+  validates :status_id         numericality: { only_integer: true,
+                                               greater_than_or_equal_to: 1,
+                                               less_than: 7}
   validates :price,            numericality: { only_integer: true,
                                                greater_than_or_equal_to: 300,
                                                less_than: 10000000}
