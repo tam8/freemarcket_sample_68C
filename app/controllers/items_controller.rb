@@ -88,7 +88,7 @@ class ItemsController < ApplicationController
                                  :explain, 
                                  :a_category_id, 
                                  :buyer_id,
-                                 item_images_attributes: [:image],
+                                 item_images_attributes: [:image]
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
