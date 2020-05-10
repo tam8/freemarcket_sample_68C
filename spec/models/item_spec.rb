@@ -49,5 +49,12 @@ describe Item do
       item = build(:item, price: "9999999")
       expect(item).to be_valid
     end
+
+    it "status_idがない場合は登録できないこと" do
+      item = build(:item, status_id: nil)
+      item.valid?
+      expect(item.errors[:status_id]).to include("can't be blank")
+    end
+
   end
 end
