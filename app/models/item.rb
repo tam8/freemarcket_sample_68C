@@ -21,7 +21,7 @@ class Item < ApplicationRecord
   validates :owners_area_id,      presence: true
   validates :arrival_date_id,     presence: true
   validates :explain,             presence: true
-  # validates :a_category_id,       presence: true
+  validates :a_category_id,       presence: true
   # validates :user_id,             presence: true
 
   validates :price,              numericality: { only_integer: true,

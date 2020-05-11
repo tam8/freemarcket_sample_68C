@@ -9,12 +9,15 @@ FactoryBot.define do
     owners_area              { OwnersArea.all.sample}
     arrival_date             { ArrivalDate.all.sample}
     explain                  {"これはいいテストです。"}
-    a_category               
+    a_category               { FactoryBot.create(:a_category)}
     # a_categoryは後にcategoryに変更する
-    user
+    user                     { FactoryBot.create(:user)}
+    # a_category,userは通常item_spec.rbでのFactoryBotの記述で十分なはずですが、
+    # それで上手くいかなかったため、キーにバリューを直接セットしています。
     buyer_id                 {"1"}
     after(:build) do |item|
       item.item_images << build(:item_image, item: item)
     end
+
   end
 end
