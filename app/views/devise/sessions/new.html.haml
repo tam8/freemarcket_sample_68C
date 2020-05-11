@@ -5,7 +5,7 @@
     %h2.login 
   .main__contents
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      %a アカウントをお持ちではない方はこちら
+      アカウントをお持ちではない方はこちら
       .sign_up
         = f.submit "新規登録", { :class => 'submit-btn' }
       .field
