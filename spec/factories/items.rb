@@ -16,7 +16,8 @@ FactoryBot.define do
     # それで上手くいかなかったため、キーにバリューを直接セットしています。
     buyer_id                 {"1"}
     after(:build) do |item|
-      item.item_images << build(:item_image, item: item)
+      
+      item.item_images << FactoryBot.build(:item_image, item: item)
     end
 
   end

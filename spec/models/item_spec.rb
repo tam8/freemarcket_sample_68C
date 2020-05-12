@@ -89,5 +89,14 @@ RSpec.describe Item, type: :model  do
       item.valid?
       expect(item.errors[:user]).to include("must exist")
     end
+
+    it "画像がない場合は登録できないこと" do
+      item = FactoryBot.build(:item)
+      item.item_images = []
+      # 94行目のitemが保存されたタイミングでitem_imagesが紐づけられるので、95行目でitem.saveが行われた後にitem_imagesを空にしています。
+      item.valid?
+      binding.pry
+      expect(item.errors[:item_images]).to include("can't be blank")
+    end
   end
 end
