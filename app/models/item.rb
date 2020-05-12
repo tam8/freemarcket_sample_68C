@@ -8,7 +8,6 @@ class Item < ApplicationRecord
   belongs_to_active_hash :a_category
 
   belongs_to :user
-  # user管理関係が終わった際に追加 永井
   # belongs_to :category
   # category関係が終わった際に追加 永井
   
@@ -22,7 +21,6 @@ class Item < ApplicationRecord
   validates :arrival_date_id,     presence: true
   validates :explain,             presence: true
   validates :a_category_id,       presence: true
-  # validates :user_id,             presence: true
 
 
   validates :price,              numericality: { only_integer: true,
@@ -43,9 +41,7 @@ class Item < ApplicationRecord
   validates :arrival_date_id,    numericality: { only_integer: true,
                                                   greater_than_or_equal_to: 1,
                                                   less_than: 4}
-  # validates :a_category,         numericality: { only_integer: true,
-  #                                                greater_than_or_equal_to: 1,
-  #                                                less_than: 14}  
+
 
   # dependentで商品削除時に画像も削除
   has_many :item_images, dependent: :destroy
