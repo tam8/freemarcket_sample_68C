@@ -95,8 +95,14 @@ RSpec.describe Item, type: :model  do
       item.item_images = []
       # 94行目のitemが保存されたタイミングでitem_imagesが紐づけられるので、95行目でitem.saveが行われた後にitem_imagesを空にしています。
       item.valid?
-      binding.pry
       expect(item.errors[:item_images]).to include("can't be blank")
     end
+
+    it "画像が2枚以上の場合でも登録できること" do
+      item = FactoryBot.build(:item)
+      item.item_images << FactoryBot.build(:item_image)
+      expect(item).to be_valid
+    end
+
   end
 end
