@@ -6,8 +6,12 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # トップページ・商品一覧ページ
+  # トップページ・商品一覧ページ(本間・林)
   def index
+    @items = Item.includes(:item_images).limit(3).order('created_at DESC')
+    # itemに紐づいているitem_imagesを取得するためにincludesを使用
+    # limit(3)でデータを３つまでしか表示できないように設定
+    # order('created_at DESC')を使用することで、新しく出品された順に表示されるよう設定
   end
 
   # 商品出品ページ
@@ -26,16 +30,24 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
-      flash[:notice] = "「#{@item.name}」を出品しました"
-      redirect_to root_path
+      flash[:notice] = "
+      「#{@item.name}」を出品しました"
+      # データの作成時点で、@itemにIDをが付与されている
+      redirect_to @item
     else
       render :new
+      flash[:notice] = @item.errors.full_messages
     end
   end
 
   # 商品情報更新ページ (田村)
   def edit
-    @imgs.map { |img| img.image.cache! } unless @imgs.blank?
+    # @imgs[]
+
+    # @item = current_user.items.find(params[:id])
+
+    # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
+    # binding.pry
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
@@ -81,6 +93,7 @@ class ItemsController < ApplicationController
                                  :a_category_id, 
                                  :buyer_id,
                                  item_images_attributes: [:image]
+                                #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
 
@@ -107,7 +120,7 @@ class ItemsController < ApplicationController
       # 仮
       @category = @item.a_category.name
       @user = User.find(@item.user_id).nickname
-      # @buyer =
+      @buyer = @item.buyer_id
 
       # 配列なのでs付けておく
       @imgs = ItemImage.where(item_id: params[:id]) 

@@ -24,6 +24,7 @@ class Item < ApplicationRecord
   validates :a_category_id,       presence: true
   # validates :user_id,             presence: true
 
+
   validates :price,              numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 300,
                                                  less_than: 10000000}
@@ -46,7 +47,11 @@ class Item < ApplicationRecord
   #                                                greater_than_or_equal_to: 1,
   #                                                less_than: 14}  
 
-  has_many :item_images
+  # dependentで商品削除時に画像も削除
+  has_many :item_images, dependent: :destroy
+
+
+  # item削除時にimageも削除される
   accepts_nested_attributes_for :item_images, allow_destroy: true  
   validates :item_images,       presence: true
 

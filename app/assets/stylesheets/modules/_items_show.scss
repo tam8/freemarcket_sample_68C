@@ -66,6 +66,19 @@
       padding: 20px;
       font-size: 1.5em;
       color: white;
+
+      &__soldout{
+        background: red;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0 0;
+        padding: 20px;
+        font-size: 1.5em;
+        color: white;
+      }
     }
     &__edit, &__destroy{
       background: $keyColor;
