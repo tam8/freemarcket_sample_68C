@@ -137,7 +137,83 @@
   }
   
 
-  
+  &__reference{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin: auto;
+    width: 320px;
+    
+    .check{
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  &__fullname{
+    margin: auto;
+    margin-top: 20px;
+    width: 320px;
+    .input-default.half{
+      width: 130px;
+      margin-right: 20px;
+    }
+    label{
+      font-size: 20px;
+    }
+    span{
+      font-size: 13px;
+      margin-left: 5px;
+      background-color: red;
+      color: white;
+    }
+  }
+
+  &__fullname_reading{
+    margin: auto;
+    margin-top: 20px;
+    width: 320px;
+    .input-default.half{
+      width: 130px;
+      margin-right: 20px;
+    }
+    label{
+      font-size: 20px;
+    }
+    span{
+      font-size: 13px;
+      margin-left: 5px;
+      background-color: red;
+      color: white;
+    }
+
+  }
+
+  &__birthday{
+    margin: auto;
+    margin-top: 20px;
+    width: 320px;
+    label{
+      font-size: 20px;
+    }
+    span{
+      font-size: 13px;
+      margin-left: 5px;
+      background-color: red;
+      color: white;
+    }
+
+    .birthday-select-wrap{
+      width: 320px;  
+      .select-wrap{
+        display: inline;
+        margin-right: 5px;
+      }
+    }
+    .form-info-text{
+      color: lightslategrey;
+    }
+
+  }
 
   .login{
   border: 1px solid;
@@ -153,6 +229,7 @@
 
 .actions__sign_up{
   color: white;
+  margin-top: 90px;
     .submit-btn {
       width: 300px;
       line-height: 85px;

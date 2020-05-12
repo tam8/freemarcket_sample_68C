@@ -13,16 +13,20 @@
     width: 600px;
     padding-top: 30px;
     margin: auto;
-    .sign_up{
-      .submit-btn {
-        width: 300px;
-        height: 55px;
-        margin-bottom: 30px;
-        font-size: 20px;
-        background-color: lightseagreen;
-        color: white;
-      }
+    
+    .submit-btn {
+      width: 300px;
+      height: 55px;
+      margin-bottom: 30px;
+      font-size: 20px;
+      background-color: lightseagreen;
+      color: white;
+      display: block;
+      margin: auto;
+      text-decoration: none;
+      padding-top: 10px;
     }
+    
   }
     .field{
       height: 100px;
