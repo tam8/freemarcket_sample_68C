@@ -23,6 +23,14 @@ describe ItemsController do
         expect(response).to redirect_to(new_user_registration_path)
       end
     end
-  
+  end
+
+  describe '#create' do
+    let(:params) {{user_id: user.id, item: item}}
+    context  '保存に成功した場合' do
+    end
+
+    context '保存に失敗した場合' do
+    end
   end
 end
