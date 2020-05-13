@@ -6,9 +6,19 @@
     %br/
     = f.text_field :zipcode
   .field
-    = f.label :address
+    = f.label :"都道府県"
+    = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}
+  .field
+    = f.label :"市区町村"
     %br/
-    = f.text_field :address
+    = f.text_field :city_name
+  .field
+    = f.label :"番地"
+    = f.text_field :city_number
+  .field
+    = f.label :"建物名"
+    = f.text_field :building_name
+    
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"
