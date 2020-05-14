@@ -38,8 +38,14 @@
           }
         }
         .js_file_group{
+            margin-bottom: 10px;
           &__display {
             // display: none;
+          }
+          .js-remove{
+            // color: blue;
+            // margin-right: 5px;
+            // font-size: 1.2em;
           }
         }
       }
