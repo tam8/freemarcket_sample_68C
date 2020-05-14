@@ -2,14 +2,14 @@ FactoryBot.define do
   factory :item do
     name                     {"test"}
     price                    {"300"}
-    status                   { Status.all.sample }
+    status_id                { Status.all.sample }
     brand                    {"シャネル"}
-    shipping_fee             { ShippingFee.all.sample}
-    shipping_method          { ShippingMethod.all.sample}
-    owners_area              { OwnersArea.all.sample}
-    arrival_date             { ArrivalDate.all.sample}
+    shipping_fee_id          { ShippingFee.all.sample}
+    shipping_method_id       { ShippingMethod.all.sample}
+    owners_area_id           { OwnersArea.all.sample}
+    arrival_date_id          { ArrivalDate.all.sample}
     explain                  {"これはいいテストです。"}
-    a_category               { FactoryBot.create(:a_category)}
+    a_category_id            { FactoryBot.create(:a_category)}
     # a_categoryは後にcategoryに変更する
     user                     { FactoryBot.create(:user)}
     # a_category,userは通常item_spec.rbでのFactoryBotの記述で十分なはずですが、
