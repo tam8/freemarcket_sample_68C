@@ -252,6 +252,30 @@
             text-decoration: none;
             cursor: pointer;
           }
+          .sold-badge {
+            position: relative;
+            top: 0;
+            left: 0;
+          }
+          .sold-badge:before {
+            content: "";
+            top: 0;
+            left: 0;
+            border-bottom:  4.5em solid transparent;
+            border-left: 4.5em solid $keyColor;
+            position: absolute;
+            z-index: 100;
+          }
+          .sold-badge:after {
+            content: "SOLD";
+            display: block;
+            top: 15px;
+            transform: rotate( -45deg);
+            color: white;
+            left: 0;
+            position: absolute;
+            z-index: 101;
+          }
           .lists__image--img {
             width: 220px;
             height: 150px;
@@ -339,12 +363,37 @@
           .brand-lists {
             width: 220px;
             display: inline-block;
+            position: relative;
             float: left;
             a {
               text-decoration: none;
               cursor: pointer;
             }
-            .lists__image--img {
+            .sold-badge {
+              position: relative;
+              top: 0;
+              left: 0;
+            }
+            .sold-badge:before {
+              content: "";
+              top: 0;
+              left: 0;
+              border-bottom:  4.5em solid transparent;
+              border-left: 4.5em solid $keyColor;
+              position: absolute;
+              z-index: 100;
+            }
+            .sold-badge:after {
+              content: "SOLD";
+              display: block;
+              top: 15px;
+              transform: rotate( -45deg);
+              color: white;
+              left: 0;
+              position: absolute;
+              z-index: 101;
+            }
+            .lists__image__img {
               width: 220px;
               height: 150px;
               position: relative;

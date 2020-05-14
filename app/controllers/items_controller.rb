@@ -6,8 +6,12 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # トップページ・商品一覧ページ
+  # トップページ・商品一覧ページ(本間・林)
   def index
+    @items = Item.includes(:item_images).limit(3).order('created_at DESC')
+    # itemに紐づいているitem_imagesを取得するためにincludesを使用
+    # limit(3)でデータを３つまでしか表示できないように設定
+    # order('created_at DESC')を使用することで、新しく出品された順に表示されるよう設定
   end
 
   # 商品出品ページ
