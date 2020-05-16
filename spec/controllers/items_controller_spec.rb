@@ -3,6 +3,7 @@ require 'rails_helper'
 describe ItemsController do
   let(:user) { create(:user)}
   let(:item) { create(:item)}
+  let(:item_image){ create()}
   describe '#new' do
     
     context 'ログインしている場合' do
@@ -29,13 +30,13 @@ describe ItemsController do
       login user
     end
     context  '保存に成功した場合' do
-      let(:params) do
-        {item:  attributes_for(:item), user_id: user.id }
-        item.item_images << FactoryBot.build(:item_image)
+      let(:item_image_params) do
+        {item_images_attributes: {'0':attributes_for(:item_image)}}
       end
+
       subject {
         post :create,
-        params: params
+        params: {id: 1, item: attributes_for(:item).merge(item_image_params).merge(user_id: user.id)}
       }
 
       it 'itemを保存すること' do
@@ -44,8 +45,10 @@ describe ItemsController do
 
       it '詳細ページにリダイレクトされること'do
         subject
-        expect(response).to redirect_to(item_path(item))
+        expect(response).to redirect_to(item_path(item.id - 1))
+      # 48行目のitemが新規作成されているので-1している。
       end
+
     end
 
     context '保存に失敗した場合' do
