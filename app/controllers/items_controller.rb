@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
     # itemに紐づいているitem_imagesを取得するためにincludesを使用
     # limit(3)でデータを３つまでしか表示できないように設定
     # order('created_at DESC')を使用することで、新しく出品された順に表示されるよう設定
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   # 商品出品ページ
