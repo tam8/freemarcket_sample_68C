@@ -82,7 +82,6 @@ class ItemsController < ApplicationController
 
   #商品検索機能
   def search
-    binding.pry
     @items = Item.search(params[:keyword])
   end
 
