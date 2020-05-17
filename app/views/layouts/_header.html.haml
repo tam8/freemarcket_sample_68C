@@ -4,7 +4,7 @@
       =flash[:notice]
 
   .head__in
-    =form_for [@search] do |f|
+    = form_for @search, url: search_items_path, local: true, method: :get do |f|
       .head__in__up
         %h1
           =link_to root_path do
@@ -12,7 +12,7 @@
         .head__in__up__search
           = f.text_field :name, class: "head__in__up__search__txt", placeholder: "キーワードから探す"
           %label.head__in__up__search__btn
-            = f.submit "" 
+            = f.submit "", class: "head__in__up__search__btn--display"
             = icon('fas', 'search', class: '')
 
     .head__in__nav

@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
-  before_action :search_item
 
   # 商品詳細ページ (田村)
   def show
@@ -83,6 +82,7 @@ class ItemsController < ApplicationController
 
   #商品検索機能
   def search
+    binding.pry
     @items = Item.search(params[:keyword])
   end
 
@@ -103,10 +103,6 @@ class ItemsController < ApplicationController
                                  item_images_attributes: [:image]
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
-  end
-
-  def search_item
-    @search = Item.new
   end
 
   def set_item
