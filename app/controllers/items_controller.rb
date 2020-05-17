@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
+  before_action :search_item
 
   # 商品詳細ページ (田村)
   def show
@@ -104,6 +105,9 @@ class ItemsController < ApplicationController
                                  ).merge(user_id: current_user.id)
   end
 
+  def search_item
+    @search = Item.new
+  end
 
   def set_item
     # finb_byでないとエラーになる (nilを返さない)
