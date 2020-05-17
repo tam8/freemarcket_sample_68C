@@ -12,8 +12,12 @@ class ItemsController < ApplicationController
     # itemに紐づいているitem_imagesを取得するためにincludesを使用
     # limit(3)でデータを３つまでしか表示できないように設定
     # order('created_at DESC')を使用することで、新しく出品された順に表示されるよう設定
-    @item = Item.new
-    # @itemは検索用に作成したインスタンスです。他のアクションとの兼ね合いでインスタンス名を変更する。 永井
+
+    # 商品検索機能
+    respond_to do |format|
+      format.html
+      format.json
+    end    
   end
 
   # 商品出品ページ
@@ -78,11 +82,6 @@ class ItemsController < ApplicationController
 
   #商品購入機能（仮）
   def buy
-  end
-
-  #商品検索機能
-  def search
-    @items = Item.search(params[:keyword])
   end
 
   private
