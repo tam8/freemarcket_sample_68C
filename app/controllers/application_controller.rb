@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
 
+  before_action :set_category, if: :devise_controller?
+  def set_category
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+
   private
 
   def production?

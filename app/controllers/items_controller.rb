@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_category
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
 
@@ -12,7 +13,6 @@ class ItemsController < ApplicationController
     # itemに紐づいているitem_imagesを取得するためにincludesを使用
     # limit(3)でデータを３つまでしか表示できないように設定
     # order('created_at DESC')を使用することで、新しく出品された順に表示されるよう設定
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
   # 商品出品ページ
@@ -134,6 +134,10 @@ class ItemsController < ApplicationController
       def @path.is(*str)
           str.map{|s| self.include?(s)}.include?(true)
       end
+  end
+
+  def set_category
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
 end
