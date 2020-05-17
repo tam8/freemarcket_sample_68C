@@ -1,4 +1,5 @@
 json.array! @items do |item|
+  json.id  item.id
   json.name  item.name
   json.price  item.price
   json.status_id  item.status_id
@@ -11,4 +12,5 @@ json.array! @items do |item|
   json.a_category_id  item.a_category_id
   json.buyer_id item.buyer_id
   json.user_id  item.user_id
+  json.item_images item.item_images.first
 end
