@@ -1,13 +1,11 @@
 $(function() {
-    $(".category-wrap").hover(function() {
+    $("ul.category1, ul.category2, ul.category3").hide();
+    $(".head__in__nav__left__cate").hover(function() {
       $("ul.category1").toggle();
     });
-    $(".category-wrap li ul").hide();
-    $(".category-wrap li").hover(function() {
-        $(">ul:not(:animated)", this).stop(true, true).slideDown("fast");
-        $(">a", this).addClass("active");
+    $("ul.category1 li").hover(function() {
+        $(">ul:not(:animated)", this).show(100);
     }, function() {
-        $(">ul:not(:animated)", this).stop(true, true).slideUp("fast");
-        $(">a", this).removeClass("active");
+        $(">ul:not(:animated)", this).hide(100);
   });
 });
