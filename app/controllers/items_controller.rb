@@ -80,6 +80,11 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  #商品検索機能
+  def search
+    @items = Item.search(params[:keyword])
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
