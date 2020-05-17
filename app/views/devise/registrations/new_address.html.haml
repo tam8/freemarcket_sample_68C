@@ -2,7 +2,7 @@
 = form_for @address do |f|
   = render "devise/shared/error_messages", resource: @address
   .field
-    = f.label :zipcode
+    = f.label :"郵便番号"
     %br/
     = f.text_field :zipcode
   .field

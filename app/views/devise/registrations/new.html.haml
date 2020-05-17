@@ -1,45 +1,45 @@
-%h2 Sign up
+%h2 新規会員登録
 = form_for(@user, url: user_registration_path) do |f|
   = render "devise/shared/error_messages", resource: @user
   .field
-    = f.label :nickname
+    = f.label :"ニックネーム"
     %br/
     = f.text_field :nickname, autofocus: true
   .field
-    = f.label :email
+    = f.label :"メールアドレス"
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
   .field
-    = f.label :password
+    = f.label :"パスワード"
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
-    = f.label :password_confirmation
+    = f.label :"パスワード確認用"
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .field
-    = f.label :first_name
+    = f.label :"名字"
     %br/
     = f.text_field :first_name
   .field
-    = f.label :last_name
+    = f.label :"名前"
     %br/
     = f.text_field :last_name
 
   .field
-    = f.label :first_name_kana
+    = f.label :"名字（かな）"
     %br/
     = f.text_field :first_name_kana
   .field
-    = f.label :last_name_kana
+    = f.label :"名前（かな）"
     %br/
     = f.text_field :last_name_kana
 
   .field
-    = f.label :birth_date
+    = f.label :"誕生日"
     %br/
     = f.date_select :birth_date, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
 

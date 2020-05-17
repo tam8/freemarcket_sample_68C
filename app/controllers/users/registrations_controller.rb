@@ -6,8 +6,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    @user = User.new(sign_up_params)
-    # @user = User.new(user_params)
+    # @user = User.new(sign_up_params)
+    @user = User.new(user_params)
     # binding.pry
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -35,16 +35,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def address_params
-    params.require(:address).permit(:zipcode, :city_name)
+    params.require(:address).permit(:zipcode, :city_name, :owners_area_id, :city_number, :building_name)
   end
 
-  # private
-  # def user_params
-  #   birth = params[:user]["birth_date(1i)"] + "-" +params[:user]["birth_date(2i)"] + "-" +  params[:user]["birth_date(3i)"]
-  #   params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :first_name, :last_name).merge(birth_date: birth)
-  #   params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :first_name, :last_name, :birth_date)
+  private
+  def user_params
+    birth = params[:user]["birth_date(1i)"] + "-" +params[:user]["birth_date(2i)"] + "-" +  params[:user]["birth_date(3i)"]
+    params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :first_name, :last_name, :first_name_kana, :last_name_kana).merge(birth_date: birth)
+    # params.require(:user).permit(:nickname, :email, :password, :password_confirmation, :first_name, :last_name, :birth_date)
 
-  # end
+  end
 
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
