@@ -9,8 +9,8 @@ $(function(){
       dataType: "json"
     })
       .done(function(items) {
-        console.log("成功です。");
-        console.log(items)
+        $(".category-pickup__lists-box").empty();
+        
       })
       .fail(function() {
         console.log("失敗です。");
