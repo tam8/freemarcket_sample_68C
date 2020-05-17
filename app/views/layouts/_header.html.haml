@@ -4,15 +4,16 @@
       =flash[:notice]
 
   .head__in
-    .head__in__up
-      %h1
-        =link_to root_path do
-          = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo"
-      .head__in__up__search
-        .head__in__up__search__txt
-          キーワードから探す
-        .head__in__up__search__btn
-          = icon('fas', 'search', class: '')
+    =form_for [@item] do |f|
+      .head__in__up
+        %h1
+          =link_to root_path do
+            = image_tag "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg", class: "head__in__up__logo" 
+        .head__in__up__search
+          = f.text_field :name, class: "head__in__up__search__txt", placeholder: "キーワードから探す"
+          %label.head__in__up__search__btn
+            = f.submit "" 
+            = icon('fas', 'search', class: '')
 
     .head__in__nav
       .head__in__nav__left
