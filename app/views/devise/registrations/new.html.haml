@@ -23,20 +23,22 @@
   .field
     = f.label :"名字"
     %br/
-    = f.text_field :first_name
+    = f.text_field :last_name
   .field
     = f.label :"名前"
     %br/
-    = f.text_field :last_name
+    = f.text_field :first_name
+
 
   .field
     = f.label :"名字（かな）"
     %br/
-    = f.text_field :first_name_kana
+    = f.text_field :last_name_kana
   .field
     = f.label :"名前（かな）"
     %br/
-    = f.text_field :last_name_kana
+    = f.text_field :first_name_kana
+
 
   .field
     = f.label :"誕生日"
@@ -44,5 +46,5 @@
     = f.date_select :birth_date, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
 
   .actions
-    = f.submit "Next"
+    = f.submit "次へ"
 = render "devise/shared/links"
