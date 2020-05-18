@@ -8,7 +8,7 @@ class User < ApplicationRecord
                                                 format: {
                                                   with: /\A[ぁ-んー－]+\z/,
                                                   # allow_blank: true
-                                                  message: "全角ひらがなのみで入力して下さい"
+                                                  message: "を全角ひらがなのみで入力して下さい"
                                                 }
 
   devise :database_authenticatable, :validatable, password_length: 7..128
