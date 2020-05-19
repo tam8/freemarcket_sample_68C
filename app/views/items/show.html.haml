@@ -77,8 +77,12 @@
           %th
             カテゴリー
           %td
-            %a
-              =@category
+            %div
+              = link_to @item.category.parent.parent.name
+            %div 
+              = link_to @item.category.parent.name
+            %div
+              = link_to @item.category.name
 
     .main__low
       %a.main__low--like
