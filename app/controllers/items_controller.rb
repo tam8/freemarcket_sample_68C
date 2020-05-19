@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
       @item = Item.new
       @item.item_images.new
 
-      @category_parent = Category.where(ancestry: nil)
+      @category_parent = Category.roots
       
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
