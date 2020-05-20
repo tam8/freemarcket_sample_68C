@@ -1,0 +1,141 @@
+.wrapper
+  .input_area
+    = form_for [@item] do |f|
+
+      .image
+        .image__top
+          出品画像
+          %span.image__top--red
+            必須
+        .image__text
+          -# 最大10枚までアップロードできます。
+        -# %label
+        .image_form
+          -# = icon('fas', 'camera', class: "image_form__item image_form__item--icon")
+          -# .image_form__item
+            -# ドラッグアンドドロップ
+            -# ドラックアンドドロップについてはjquery時に作業するorクリック式のみのアップロードにしてドロップアンドドロップを消す
+            -# クリックしてファイルをアップロード
+            -# %br
+            -# %br
+
+            -# field_for 親モデルと子モデルを同時に保存・更新できる (1投稿に対して、複数の画像)
+          = f.fields_for :item_images do |image|
+            .js_file_group{data: {index: image.index}}
+              = icon('fas', 'minus-circle', class: 'js-remove')
+              = image.file_field :image, class: "js_file_group__display" 
+
+
+        .imgBox
+          -# アクション毎にビューの表示を条件分岐
+          -if @path.is('items#new')
+            new
+          -if @path.is('items#edit')
+            edit
+            -# = f.hidden_field :img.image_cache
+            -# %ul.main__imgs__list
+            -#   -@imgs.each do |i|
+            -#     %li.main__imgs__list__img
+            -#       =image_tag i.image_url, class: ""
+
+      .overview
+        .name
+          .name__top
+            商品名
+            %span.name__top--red
+              必須
+          = f.text_field :name, class: "name__form", placeholder: "40文字まで"
+        .explain
+          .explain__top
+            商品の説明
+            %span.name__top--red
+              必須
+          = f.text_area :explain, class: "explain__form", placeholder: "商品の説明 (1000文字まで)"
+          .explain_bottom
+            .explain_bottom__caracters_number
+              0/1000
+      .detail
+        商品の詳細
+        .category
+          .category__top
+            カテゴリー
+            %span.category__top--red
+              必須
+          = f.fields_for :a_category do |d|
+            = f.collection_select :a_category_id, ACategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
+          -# ここではactivehashを利用したデータ選択を行っています。category関係の作業が進んだ後、切替を行う。 永井
+        .brand
+          .brand__top
+            ブランド
+            %span.brand__top--gray
+              任意
+          = f.text_field :brand, class: "brand__form", placeholder: "例) シャネル"
+        .status
+          .status__top
+            商品の状態
+            %span.status__top--red
+              必須
+          = f.fields_for :status do |d|
+            = f.collection_select :status_id, Status.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "status__form"}
+      .shipping_relation
+        配送について
+        .fee
+          .fee__top
+            配送料の負担
+            %span.fee__top--red
+              必須
+          = f.fields_for :shipping_fee do |d|
+            = f.collection_select :shipping_fee_id, ShippingFee.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "fee__form"}
+        .method
+          .method__top
+            配送方法
+            %span.method__top--red
+              必須
+          = f.fields_for :shipping_method do |d|
+            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "method__form"}
+        .owner_area
+          .owner_area__top
+            発送元の地域
+            %span.owner_area__top--red
+              必須
+          = f.fields_for :oweners_area do |d|
+            = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "owner_area__form"}
+        .arrival_date
+          .arrival_date__top
+            発送までの日数
+            %span.arrival_date__top--red
+              必須
+          = f.fields_for :arrival_date do |d|
+            = f.collection_select :arrival_date_id, ArrivalDate.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "arrival_date__form"}
+      .price
+        .price__limit
+          価格（¥300~9,999,999）
+        .price_input
+          .price_input__top
+            販売価格
+            %span.price_input__top--red
+              必須
+          .price_input__form
+            ¥
+            = f.number_field :price, class: "price_input__form--number", placeholder: "0"
+        .brokerge_fee
+          .brokerge_fee__rate
+            販売手数料（10％）
+          .brokerge_fee__calculation
+            ー
+        .profit
+          .profit__text
+            販売利益
+          .profit__calculation
+            ー
+      .submit
+        = f.submit '送信する', class: "submit__btn"
+        -# %input{type: "submit", value: "出品する", class: "submit__btn"}
+      .link_top_page
+        =link_to root_path, class: "link_top_page__text" do
+          もどる
+      .cautions_information
+        禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+
+
+

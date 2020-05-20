@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   end
   root 'items#index'
   resources :items do
-
+    collection do
+      get 'buy'
+    end
   end
   resources :users, only: :show
 end

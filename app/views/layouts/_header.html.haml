@@ -1,4 +1,8 @@
 %header.head
+  -if flash[:notice]
+    .head__flash
+      =flash[:notice]
+
   .head__in
     .head__in__up
       %h1
@@ -18,9 +22,18 @@
           ブランド
 
       %ul.head__in__nav__right
+        %li
+          =link_to "商品1", "/items/1"
+        %li
+          =link_to "商品2", "/items/2"
+        %li
+          =link_to "商品3", "/items/3"
+
         -if user_signed_in?
+          %li.head__in__nav__right__new
+            =link_to "出品", new_item_path
           %li.head__in__nav__right__mypage
-            マイページ
+            =link_to "マイページ", "#"
           %li.head__in__nav__right__logout
             =link_to "ログアウト", destroy_user_session_path, method: :delete
 

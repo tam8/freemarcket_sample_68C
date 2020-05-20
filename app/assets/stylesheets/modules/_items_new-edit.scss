@@ -12,7 +12,7 @@
   // ここの幅・高さは仮置きです。
     .image {
       width: 100%;
-      height: 300px;
+      // height: 300px;
       padding: 40px;
       border: 1px solid  $main_light_gray;
       &__top {
@@ -24,22 +24,28 @@
         margin: 16px 0;
       }
       .image_form {
-        height: 158px;
-        background-color: $main_light_gray;
-        border: 1px dotted grey;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+        // height: 158px;
+        // background-color: $main_light_gray;
+        // border: 1px dotted grey;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // text-align: center;
         &__item {
           &--icon {
             font-size: 20px;
           }
         }
         .js_file_group{
+            margin-bottom: 10px;
           &__display {
-            display: none;
+            // display: none;
+          }
+          .js-remove{
+            // color: blue;
+            // margin-right: 5px;
+            // font-size: 1.2em;
           }
         }
       }

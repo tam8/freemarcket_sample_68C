@@ -1,3 +1,4 @@
-id,name,price,status_id,brand,shipping_fee_id,shipping_method_id,owners_area_id,arrival_date_id,explain,a_category_id,user_id,buyer_id,item_image_id
-1,FireTV,4000,1,Amazon,1,2,13,1,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,1,1,2,2
-2,お肉,1000,1,松坂牛,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,2,,1
+id,name,price,status_id,brand,shipping_fee_id,shipping_method_id,owners_area_id,arrival_date_id,explain,a_category_id,user_id,buyer_id
+1,FireTV,4000,1,Amazon,1,2,13,1,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,1,1,
+2,お肉,1000,1,松坂牛,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,2,
+3,モニター,2000,1,Benq,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,1,2
