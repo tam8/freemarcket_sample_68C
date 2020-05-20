@@ -4,8 +4,6 @@ $(function() {
       $("ul.category1").toggle();
     });
     $("ul.category1 li").hover(function() {
-        $(">ul:not(:animated)", this).show(100);
-    }, function() {
-        $(">ul:not(:animated)", this).hide(100);
+        $(">ul:not(:animated)", this).toggle();
   });
 });
