@@ -25,6 +25,15 @@
               = icon('fas', 'minus-circle', class: 'js-remove')
               = image.file_field :image, class: "js_file_group__display" 
 
+            -# 削除用チェックボックス
+            -if @item.persisted?
+              =image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          
+        -# -# 新規追加
+        -# -if @item.persisted?
+        -#   .js-file_group{data: {index: @item.images.count}}
+        -#   =file_field_tag :image, name: "item_image[images_attributes][#{@item.images.count}][image]", class: 'js-file'
+        -#   = icon('fas', 'minus-circle', class: 'js-remove')
 
         .imgBox
           -# アクション毎にビューの表示を条件分岐
