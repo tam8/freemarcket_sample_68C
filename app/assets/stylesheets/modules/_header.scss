@@ -50,12 +50,88 @@
       font-size: 0.9em;
       &__left{
         display: flex;
-        ul{
+        &__cate {
           margin-right: 32px;
+          position: relative;
+          z-index: 5;
+          left: 0;
+            ul.category1{
+              position: absolute;
+              display: none;
+              box-sizing: border-box;
+              background-color: rgb(255, 255, 255);
+              width: 200px;
+              list-style: none;
+              text-align: left;
+              cursor: pointer;
+              line-height: 40px;
+                a {
+                  text-decoration: none;
+                  color: black;
+                }
+                li{
+                  padding-left: 15px;
+                &:hover {
+                  background-color: $keyColor;
+                  a {
+                    color: #fff;
+                  }
+                }
+              }
+            }
+            ul.category2{
+              background-color: rgb(255, 255, 255);
+              bottom: 0px;
+              position: absolute;
+              left: 200px;
+              top: 0px;
+              width: 200px;
+              line-height: 30px;
+              cursor: pointer;
+              text-align: left;
+              li.child__list{
+                background-color: rgb(255, 255, 255);
+                a{
+                  color:#000;
+                }
+              }
+              li{
+                &:hover {
+                  background-color: $keyColor;
+                  a {
+                    color: #fff;
+                  }
+                }
+              }
+            }
+            ul.category3{
+              background-color: rgb(255, 255, 255);
+              bottom: 0px;
+              left: 200px;
+              position: absolute;
+              top: 0px;
+              width: 320px;
+              cursor: pointer;
+              text-align: left;
+              line-height: 30px;
+              li.grandchild__list{
+                background-color: rgb(255, 255, 255);
+                a{
+                  color:#000;
+                }
+              }
+              li{
+                &:hover {
+                  background-color:$keyColor;
+                  a {
+                    color: #fff;
+                  }
+                }
+              }
+            }
+            
         }
-        &__cate{
-        }
-        &__brand{
+        &__brand {
         }
       }
       &__right{

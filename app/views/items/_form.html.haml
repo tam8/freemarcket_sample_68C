@@ -61,9 +61,9 @@
             カテゴリー
             %span.category__top--red
               必須
-          = f.fields_for :a_category do |d|
-            = f.collection_select :a_category_id, ACategory.all, :id, :name, {prompt: "✔︎ 選択してください"}, {class: "category__form"}
-          -# ここではactivehashを利用したデータ選択を行っています。category関係の作業が進んだ後、切替を行う。 永井
+            .category__top__wrapper
+              = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form"}
+
         .brand
           .brand__top
             ブランド
