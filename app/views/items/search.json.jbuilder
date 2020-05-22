@@ -9,7 +9,7 @@ json.array! @items do |item|
   json.owners_area_id item.owners_area_id
   json.arrival_date_id  item.arrival_date_id
   json.explain  item.explain
-  json.a_category_id  item.a_category_id
+  json.category_id  item.category_id
   json.buyer_id item.buyer_id
   json.user_id  item.user_id
   json.item_images item.item_images.first
