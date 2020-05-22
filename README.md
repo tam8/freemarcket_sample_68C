@@ -1,4 +1,4 @@
-# README2
+# README
 * Deployment instructions
 
 * ...
