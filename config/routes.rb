@@ -15,5 +15,11 @@ Rails.application.routes.draw do
       get 'category_grandchildren', defaults: { format: 'json' }
     end
   end
+  resources :items do
+    member do
+      get 'category_children', defaults: { format: 'json' }
+      get 'category_grandchildren', defaults: { format: 'json' }
+    end
+  end
   resources :users, only: :show
 end
