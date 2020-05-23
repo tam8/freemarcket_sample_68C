@@ -19,6 +19,11 @@
             -# %br
             -# %br
 
+          .image_preview
+            -if @item.persisted?
+              -@imgs.each_with_index do |image, i|
+                =image_tag image.image_url, data: { index: i}, width: "100", height: '100'
+
             -# field_for 親モデルと子モデルを同時に保存・更新できる (1投稿に対して、複数の画像)
           = f.fields_for :item_images do |image|
             .js_file_group{data: {index: image.index}}
@@ -29,7 +34,7 @@
             -if @item.persisted?
               =image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
           
-        -# -# 新規追加
+        -# 新規追加
         -# -if @item.persisted?
         -#   .js-file_group{data: {index: @item.images.count}}
         -#   =file_field_tag :image, name: "item_image[images_attributes][#{@item.images.count}][image]", class: 'js-file'
