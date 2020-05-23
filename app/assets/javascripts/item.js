@@ -10,6 +10,12 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
 
+  // プレビュー用のimgタグを生成する関数
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    return html;
+  }
+
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外 (新規追加するときののため)
