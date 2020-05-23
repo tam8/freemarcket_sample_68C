@@ -60,9 +60,17 @@
           .category__top
             カテゴリー
             %span.category__top--red
-              必須
-            .category__top__wrapper
-              = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form"}
+              必須 
+            - if @path.is('items#new')
+              .category__top__wrapper
+                = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form"}
+            - else
+              .category__top__wrapper
+                = f.collection_select :category_id, @item.category.parent.parent.siblings, :id, :name, {selected: "#{@item.category.parent.parent_id}"},{class: "category__form"}
+              #children_wrapper.category__top__wrapper--added
+                = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {selected: "#{@item.category.parent_id}"},{class: "category__form"}
+              #grandchildren_wrapper.category__top__wrapper--added
+                = f.collection_select :category_id, @item.category.siblings, :id, :name, {selected: "#{@item.category.id}"},{class: "category__form"}
 
         .brand
           .brand__top
