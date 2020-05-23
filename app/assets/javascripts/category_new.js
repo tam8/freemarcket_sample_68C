@@ -8,12 +8,10 @@ $(function (){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class="category__top__wrapper--added" id= "children_wrapper" >
-                         <div class="category__top__wrapper__box">
-                           <select class="category__form__child" id="child_category" name="">
-                             <option value="---">✔︎ 選択してください</option>
-                               ${insertHTML}
-                           </select>
-                         </div>
+                         <select class="category__form__child" id="child_category" name="">
+                           <option value="---">✔︎ 選択してください</option>
+                             ${insertHTML}
+                         </select>
                        </div>`;
     $('.category__top').append(childSelectHtml);
   }
@@ -21,12 +19,10 @@ $(function (){
   function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class="category__top__wrapper--added" id= "grandchildren_wrapper" >
-                              <div class="category__top__wrapper__box">
-                                <select class="category__form__child" id="grandchild_category" name="item[category_id]">
-                                  <option value="---">✔︎ 選択してください</option>
-                                    ${insertHTML}
-                                </select>
-                              </div>
+                             <select class="category__form__child" id="grandchild_category" name="item[category_id]">
+                               <option value="---">✔︎ 選択してください</option>
+                                 ${insertHTML}
+                             </select>
                             </div>`;
     $('.category__top').append(grandchildSelectHtml);
   }
