@@ -60,8 +60,9 @@
           .category__top
             カテゴリー
             %span.category__top--red
-              必須 
-            - if @path.is('items#new')
+              必須
+              -# パスはnewとcereateについて、if文以下、それ以外はelseに飛ぶように設定 
+            - if @path.is('items#new','items#create')
               .category__top__wrapper
                 = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form"}
             - else
