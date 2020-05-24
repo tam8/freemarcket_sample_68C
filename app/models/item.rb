@@ -19,6 +19,7 @@ class Item < ApplicationRecord
   validates :owners_area_id,      presence: true
   validates :arrival_date_id,     presence: true
   validates :explain,             presence: true
+  # validates :category_id,         presence: true
 
 
   validates :price,              numericality: { only_integer: true,
@@ -39,6 +40,8 @@ class Item < ApplicationRecord
   validates :arrival_date_id,    numericality: { only_integer: true,
                                                   greater_than_or_equal_to: 1,
                                                   less_than: 4}
+  validates :category_id,        numericality: { only_integer: true,
+                                                  greater_than: 14}
 
 
   # dependentで商品削除時に画像も削除
