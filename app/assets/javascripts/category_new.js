@@ -31,7 +31,7 @@ $(function (){
     var parentId = $(this).val();
     if (parentId != "") {
       $.ajax({
-        url: 'category_children',
+        url: '/items/category_children',
         type: 'GET',
         data: { parent_id: parentId },
         dataType: 'json'
@@ -58,7 +58,7 @@ $(function (){
     var childId = $(this).val();
     if (childId != "") {
       $.ajax({
-        url: 'category_grandchildren',
+        url: '/items/category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType:'json'
