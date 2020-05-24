@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :last_name, :birth_date, :first_name_kana, :last_name_kana])
   end
 
-  before_action :set_category, if: :devise_controller?
+  before_action :set_category
   def set_category
-    @parents = Category.all.order("id ASC").limit(13)
+    @category_parent = Category.roots
   end
 
   private

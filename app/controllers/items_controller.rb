@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_category
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
 
@@ -22,7 +21,6 @@ class ItemsController < ApplicationController
       @item = Item.new
       @item.item_images.new
 
-      @category_parent = Category.roots
       
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
@@ -42,14 +40,17 @@ class ItemsController < ApplicationController
   # createしてしまうよりも、newでsaveすれば、true・false判定ができる
   def create
     @item = Item.new(item_params)
+ 
     if @item.save
       flash[:notice] = "
       「#{@item.name}」を出品しました"
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
-      render :new
       flash[:notice] = @item.errors.full_messages
+      render :new
+      # redirect_to new_item_path
+
     end
   end
 
@@ -145,10 +146,6 @@ class ItemsController < ApplicationController
       def @path.is(*str)
           str.map{|s| self.include?(s)}.include?(true)
       end
-  end
-
-  def set_category
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
 end
