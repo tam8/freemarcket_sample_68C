@@ -73,6 +73,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path
     else
+      flash[:notice] = @item.errors.full_messages
       render :edit
     end
   end
