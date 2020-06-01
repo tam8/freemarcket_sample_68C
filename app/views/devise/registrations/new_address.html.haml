@@ -1,27 +1,57 @@
-%h2 住所情報登録
-= form_for @address do |f|
-  = render "devise/shared/error_messages", resource: @address
-  .field
-    = f.label :"郵便番号"
-    %br/
-    = f.text_field :zipcode
-  .field
-    = f.label :"都道府県"
-    = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}
-  .field
-    = f.label :"市区町村"
-    %br/
-    = f.text_field :city_name
-  .field
-    = f.label :"番地"
-    = f.text_field :city_number
-  .field
-    = f.label :"建物名"
-    = f.text_field :building_name
-  .field
-    = f.label :"電話番号"
-    = f.text_field :phone_number
+.main-box
+  .main-box__header
+    = link_to '#', class:"main-box__header--link" do
+      = image_tag "logo.png"
+  .box
+    .box__header
+      %h2 住所情報登録
+    .box__form
+      = form_for @address do |f|
+        = render "devise/shared/error_messages", resource: @address
+        .field__confimation
+          = f.label :"郵便番号"
+          %span 必須
+          %br/
+          = f.text_field :zipcode
+        .field__confimation
+          = f.label :"都道府県"
+          %span 必須
+          = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}
+        .field__confimation
+          = f.label :"市区町村"
+          %span 必須
+          %br/
+          = f.text_field :city_name
+        .field__city_number
+          = f.label :"番地"
+          %span 必須
+          = f.text_field :city_number
+        .field__building_name
+          = f.label :"建物名"
+          %span 必須
+          = f.text_field :building_name
+        .field__phone_number
+          = f.label :"電話番号"
+          %span 必須
+          = f.text_field :phone_number
 
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+        .field__actions
+          = f.submit "サインアップ"
+        .field__botan
+          = render "devise/shared/links"
+  
+  .box__footer
+    .box__footer__message
+      %ul.menu
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            プライバシーポリシー
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            メルカリ利用規約
+        %li.menu__me
+          = link_to "#", class: "me1" do
+            特定商取引に関する表記
+      = link_to '#', class:"main-box__header--link" do
+        = image_tag "logo-white.png"
+      %p© FURIMA
