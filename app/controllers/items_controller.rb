@@ -80,12 +80,13 @@ class ItemsController < ApplicationController
 
   #商品検索機能
   def search
-    return nil if params[:keyword] == ""
-    @items = Item.where(['name LIKE ?', "%#{params[:keyword]}%"] )
-    respond_to do |format|
-      format.html
-      format.json
-    end    
+    @items = Item.search(params[:keyword])
+    # return nil if params[:keyword] == ""
+    # @items = Item.where(['name LIKE ?', "%#{params[:keyword]}%"] )
+    # respond_to do |format|
+    #   format.html
+    #   format.json
+    # end    
   end
 
   private

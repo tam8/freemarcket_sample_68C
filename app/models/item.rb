@@ -51,4 +51,9 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :item_images, allow_destroy: true  
   validates :item_images,       presence: true
 
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE ?', "%#{search}%" )
+  end
+
 end
