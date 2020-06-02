@@ -80,7 +80,7 @@ class ItemsController < ApplicationController
 
   #商品検索機能
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).page(params[:page]).per(9)
   end
 
   private
