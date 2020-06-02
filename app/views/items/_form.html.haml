@@ -30,11 +30,11 @@
               = icon('fas', 'minus-circle', class: 'js-remove')
               = image.file_field :image, class: "js_file_group__display" 
 
-            -# 削除用チェックボックス
+            -# 削除用チェックボックス (edit時)
             -if @item.persisted?
               =image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
-          
-        -# 新規追加
+
+        -# 新規追加 (edit時)
         -if @item.persisted?
           .js-file_group{data: {index: @imgs.count}}
             = icon('fas', 'minus-circle', class: 'js-remove')

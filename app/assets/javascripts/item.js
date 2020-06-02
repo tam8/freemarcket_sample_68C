@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', ()=> {
 
 
   // 変数定義 ////////////////////////////////////////////////
- 
+
     // file_fieldのnameに動的なindexをつける為の配列
     let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
@@ -42,21 +42,25 @@ $(document).on('turbolinks:load', ()=> {
       // ターゲットとなるindexを取得
       const targetIndex = $(this).parent().data('index');
       const file = e.target.files[0];
-
       const blobUrl = window.URL.createObjectURL(file);
 
-      // 該当indexのimgがあれば変数imgに入れる(画像変更の処理)
-      if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      // プレビュー画像の更新 (該当indexのimgがあれば)
+      console.log($(`img[data-index="${targetIndex}"]`)[0])
+      if ( img = $(`img[data-index="${targetIndex}"]`)[0]) {
         img.setAttribute('src', blobUrl);
-      } else {  // 新規画像追加の処理
+
+      } else {
+        // 新規画像追加の処理
         $('.image_preview').append(buildImg(targetIndex, blobUrl));
 
-      // fileIndexの先頭の数でinputを生成
-      $('.image_form').append(buildFileField(fileIndex[0]));
-      fileIndex.shift();
+        // fileIndexの先頭の数でinputを生成
+        $('.image_form').append(buildFileField(fileIndex[0]));
+        fileIndex.shift();
 
-      // 末尾に1足した数を追加
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+        // 末尾に1足した数を追加
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+      }
+
     });
 
 
