@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Item, type: :model  do
   describe '#create' do
     it "全てのカラム情報が存在し、priceが300以上10000000未満の値が存在している時" do
-      item = FactoryBot.build :item
+      category = create(:category)
+      item = FactoryBot.build(:item, category_id: category.id)
       expect(item).to be_valid
     end
     
@@ -15,7 +16,7 @@ RSpec.describe Item, type: :model  do
     it "nameがない場合は登録できないこと" do
       item = FactoryBot.build(:item, name: nil)
       item.valid?
-      expect(item.errors[:name]).to include("can't be blank")
+      expect(item.errors[:name]).to include("を入力してください")
     end
   
     it "priceがない場合は登録できないこと" do
@@ -49,7 +50,7 @@ RSpec.describe Item, type: :model  do
     it "status_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, status_id: nil)
       item.valid?
-      expect(item.errors[:status_id]).to include("can't be blank")
+      expect(item.errors[:status_id]).to include()
     end
 
     it "shipping_fee_idがない場合は登録できないこと" do
@@ -76,10 +77,10 @@ RSpec.describe Item, type: :model  do
       expect(item.errors[:explain]).to include("can't be blank")
     end
 
-    it "a_category_idがない場合は登録できないこと" do
-      item = FactoryBot.build(:item, a_category_id: nil)
+    it "category_idがない場合は登録できないこと" do
+      item = FactoryBot.build(:item, category_id: nil)
       item.valid?
-      expect(item.errors[:a_category_id]).to include("can't be blank")
+      expect(item.errors[:category_id]).to include("を入力してください", "は数値で入力してください")
     end
     # カテゴリ機能のサーバサイドが完成してから修正の必要あり
     # 現在はactive_hashを利用したa_categoryのidデータを登録させるシステムになっています。
