@@ -1,11 +1,11 @@
 .index-container
   .category-pickup
     %h1.category-pickup__title
-      ピックアップカテゴリー
+      検索結果
     .category-pickup__box
       .category-pickup__box__head
         = link_to "#", class:"title" do
-          %h3.title__text 新規投稿商品
+          %h3.title__text 
 
       .category-pickup__lists-box
         - @items.each do |item|
@@ -26,64 +26,3 @@
                       0
                   %P.tax
                     (税込)
-
-
-  .brand-pickup
-    %h1.category-pickup__title
-      ピックアップブランド
-    .brand-pickup__box
-      .brand-pickup__box__head
-        =link_to "#",class:"title" do
-          %h3.title__text アーカイバ
-      .brand-pickup__lists-box
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("a007.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.brand-lists__name
-                ゲゲゲのゲ
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("a001.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.category-lists__name
-                カレーは飲み物
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-        .brand-lists
-          =link_to "#",class:"list" do
-            = image_tag asset_path("a004.png"), class: 'lists__image--img'
-            .brand-lists__box
-              %h3.brand-lists__name
-                餃子の王将
-              .brand-lists__price-box
-                %ul.price
-                  %li.price-list
-                    30000円
-                  %li.favorite
-                    = icon('fas', 'star', class: 'icon_favorite')
-                    0
-                %P.tax
-                  (税込)
-
-  = link_to new_item_path do
-    .purchace-btn
-      .span.purchace-btn__text
-        出品する
-      = image_tag asset_path('icon_camera.png'), class: 'purchace-btn__img' 
