@@ -9,7 +9,7 @@ FactoryBot.define do
     shipping_method_id       { "1"}
     owners_area_id           { "1"}
     arrival_date_id          { "1"}
-    a_category_id            { "1"}
+    category
     # a_categoryは後にcategoryに変更する
     user
     # a_category,userは通常item_spec.rbでのFactoryBotの記述で十分なはずですが、
@@ -23,8 +23,8 @@ FactoryBot.define do
       item.shipping_method = ShippingMethod.all.sample
       item.owners_area = OwnersArea.all.sample
       item.arrival_date = ArrivalDate.all.sample
-      item.a_category = ACategory.all.sample
     end
 
   end
+
 end
