@@ -22,13 +22,13 @@ RSpec.describe Item, type: :model  do
     it "priceがない場合は登録できないこと" do
       item = FactoryBot.build(:item, price: nil)
       item.valid?
-      expect(item.errors[:price]).to include("can't be blank")
+      expect(item.errors[:price]).to include("を入力してください")
     end
 
     it "priceが300未満の場合は登録出来ないこと" do
       item = FactoryBot.build(:item, price: "299")
       item.valid?
-      expect(item.errors[:price]).to include("must be greater than or equal to 300")
+      expect(item.errors[:price]).to include("は300以上の値にしてください")
     end
   
     it "priceが300以上の場合は登録できること" do
@@ -39,7 +39,7 @@ RSpec.describe Item, type: :model  do
     it "priceが10000000以上の場合は登録出来ないこと" do
       item = FactoryBot.build(:item, price: "10000000")
       item.valid?
-      expect(item.errors[:price]).to include("must be less than 10000000")
+      expect(item.errors[:price]).to include("は10000000より小さい値にしてください")
     end
   
     it "priceが9999999以下の場合は登録できること" do
@@ -56,25 +56,25 @@ RSpec.describe Item, type: :model  do
     it "shipping_fee_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, shipping_fee_id: nil)
       item.valid?
-      expect(item.errors[:shipping_fee_id]).to include("can't be blank")
+      expect(item.errors[:shipping_fee_id]).to include()
     end
 
     it "owners_area_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, owners_area_id: nil)
       item.valid?
-      expect(item.errors[:owners_area_id]).to include("can't be blank")
+      expect(item.errors[:owners_area_id]).to include()
     end
 
     it "arrival_date_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, arrival_date_id: nil)
       item.valid?
-      expect(item.errors[:arrival_date_id]).to include("can't be blank")
+      expect(item.errors[:arrival_date_id]).to include()
     end
 
     it "explainがない場合は登録できないこと" do
       item = FactoryBot.build(:item, explain: nil)
       item.valid?
-      expect(item.errors[:explain]).to include("can't be blank")
+      expect(item.errors[:explain]).to include()
     end
 
     it "category_idがない場合は登録できないこと" do
@@ -88,7 +88,7 @@ RSpec.describe Item, type: :model  do
     it "user_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, user_id: nil)
       item.valid?
-      expect(item.errors[:user]).to include("must exist")
+      expect(item.errors[:user]).to include("を入力してください")
     end
 
     it "画像がない場合は登録できないこと" do
@@ -96,7 +96,7 @@ RSpec.describe Item, type: :model  do
       item.item_images = []
       # 94行目のitemが保存されたタイミングでitem_imagesが紐づけられるので、95行目でitem.saveが行われた後にitem_imagesを空にしています。
       item.valid?
-      expect(item.errors[:item_images]).to include("can't be blank")
+      expect(item.errors[:item_images]).to include("を入力してください")
     end
 
     it "画像が2枚以上の場合でも登録できること" do
