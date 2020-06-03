@@ -26,7 +26,7 @@ $(document).on('turbolinks:load', ()=> {
     let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
     // 使用済みのindexを削除 (新規追加のため)
-    lastIndex = $('.js-file_group:last').data('index');
+    lastIndex = $('.js_file_group:last').data('index');
     fileIndex.splice(0, lastIndex);
 
 

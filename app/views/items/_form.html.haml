@@ -34,11 +34,11 @@
             -if @item.persisted?
               =image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
 
-        -# 新規追加 (edit時)
-        -if @item.persisted?
-          .js-file_group{data: {index: @imgs.count}}
-            = icon('fas', 'minus-circle', class: 'js-remove')
-            =file_field_tag :image, name: "item[item_images_attributes][#{@imgs.count}][image]", class: "js_file_group__display"
+          -# 新規追加 (edit時)
+          -if @item.persisted?
+            .js_file_group{data: {index: @imgs.count}}
+              = icon('fas', 'minus-circle', class: 'js-remove')
+              =file_field_tag :image, name: "item[item_images_attributes][#{@imgs.count}][image]", class: "js_file_group__display"
           
         -# .imgBox
           -# アクション毎にビューの表示を条件分岐
