@@ -11,5 +11,6 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :validatable, password_length: 7..128
   has_many :items
+  has_many :cards
   has_one :address
 end
