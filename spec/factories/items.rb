@@ -9,6 +9,7 @@ FactoryBot.define do
     shipping_method_id       { "1"}
     owners_area_id           { "1"}
     arrival_date_id          { "1"}
+    created_at {Faker::Time.between(from: DateTime.now - 2, to: DateTime.now)}
     category
     # a_categoryは後にcategoryに変更する（永井）
     # categoryへ変更したため、a_categoryを削除しcategoryへ変更した（林）
@@ -16,6 +17,7 @@ FactoryBot.define do
     # a_category,userは通常item_spec.rbでのFactoryBotの記述で十分なはずですが、
     # それで上手くいかなかったため、キーにバリューを直接セットしています。
     buyer_id                 {"1"}
+
 
     after(:build) do |item|
       item.item_images << FactoryBot.build(:item_image, item: item)
