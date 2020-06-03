@@ -70,4 +70,18 @@ describe ItemsController do
       end
     end
   end
+
+  describe '#index' do
+    it '@itemsに正しい値が入っていること' do
+      items = create_list(:item, 3)
+      get :index
+      expect(assigns(:items)).to match(items.sort{|a,b| b.created_at <=> a.created_at })
+    end
+
+    it 'index.html.hamlに遷移すること' do
+      get :index
+      expect(response).to render_template :index
+    end
+  end
+
 end
