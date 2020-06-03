@@ -84,6 +84,7 @@ RSpec.describe Item, type: :model  do
     end
     # カテゴリ機能のサーバサイドが完成してから修正の必要あり
     # 現在はactive_hashを利用したa_categoryのidデータを登録させるシステムになっています。
+    # カテゴリー機能実装を行い、修正を行った（林）
 
     it "user_idがない場合は登録できないこと" do
       item = FactoryBot.build(:item, user_id: nil)

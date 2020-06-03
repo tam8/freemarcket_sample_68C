@@ -10,7 +10,8 @@ FactoryBot.define do
     owners_area_id           { "1"}
     arrival_date_id          { "1"}
     category
-    # a_categoryは後にcategoryに変更する
+    # a_categoryは後にcategoryに変更する（永井）
+    # categoryへ変更したため、a_categoryを削除しcategoryへ変更した（林）
     user
     # a_category,userは通常item_spec.rbでのFactoryBotの記述で十分なはずですが、
     # それで上手くいかなかったため、キーにバリューを直接セットしています。
