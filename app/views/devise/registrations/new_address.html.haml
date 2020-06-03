@@ -1,0 +1,27 @@
+%h2 住所情報登録
+= form_for @address do |f|
+  = render "devise/shared/error_messages", resource: @address
+  .field
+    = f.label :"郵便番号"
+    %br/
+    = f.text_field :zipcode
+  .field
+    = f.label :"都道府県"
+    = f.collection_select :owners_area_id, OwnersArea.all, :id, :name, {prompt: "✔︎ 選択してください"}
+  .field
+    = f.label :"市区町村"
+    %br/
+    = f.text_field :city_name
+  .field
+    = f.label :"番地"
+    = f.text_field :city_number
+  .field
+    = f.label :"建物名"
+    = f.text_field :building_name
+  .field
+    = f.label :"電話番号"
+    = f.text_field :phone_number
+
+  .actions
+    = f.submit "Sign up"
+= render "devise/shared/links"
