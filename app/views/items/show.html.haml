@@ -25,8 +25,7 @@
         売り切れ
     -else
       -if user_signed_in? && current_user.id == @item.user_id
-        =link_to edit_item_path, class:"main__edit" do
-          商品の編集
+        =link_to "商品の編集", edit_item_path, class:"main__edit"
 
         =link_to item_path, method: :delete, class:"main__destroy" do
           商品の削除
@@ -77,8 +76,12 @@
           %th
             カテゴリー
           %td
-            %a
-              =@category
+            %div
+              = link_to @item.category.parent.parent.name
+            %div 
+              = link_to @item.category.parent.name
+            %div
+              = link_to @item.category.name
 
     .main__low
       %a.main__low--like

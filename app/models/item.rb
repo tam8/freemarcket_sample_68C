@@ -5,10 +5,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :shipping_fee
   belongs_to_active_hash :shipping_method
   belongs_to_active_hash :arrival_date
-  belongs_to_active_hash :a_category
 
   belongs_to :user
-  # belongs_to :category
+  belongs_to :category
   # category関係が終わった際に追加 永井
   
   # 不足っぽい
@@ -20,7 +19,6 @@ class Item < ApplicationRecord
   validates :owners_area_id,      presence: true
   validates :arrival_date_id,     presence: true
   validates :explain,             presence: true
-  validates :a_category_id,       presence: true
 
 
   validates :price,              numericality: { only_integer: true,
