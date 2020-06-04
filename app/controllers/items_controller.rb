@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
       flash[:notice] = @item.errors.full_messages
       render :new
       # redirect_to new_item_path
-
     end
   end
 
