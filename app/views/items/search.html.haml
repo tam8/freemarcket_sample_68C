@@ -2,6 +2,9 @@
   .category-pickup
     %h1.category-pickup__title
       検索結果
+    - if @items.length == 0
+      %h2.category-pickup__none
+        検索した単語が含まれる商品はありません。 
     .category-pickup__box
       .category-pickup__box__head
         = link_to "#", class:"title" do
