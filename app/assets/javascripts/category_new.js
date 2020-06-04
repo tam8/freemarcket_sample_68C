@@ -8,7 +8,7 @@ $(function (){
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class="category__top__wrapper--added" id= "children_wrapper" >
-                         <select class="category__form__child" id="child_category" name="">
+                         <select class="category__form__child" id="child_category" name="children_id">
                            <option value="---">✔︎ 選択してください</option>
                              ${insertHTML}
                          </select>

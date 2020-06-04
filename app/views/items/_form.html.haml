@@ -62,16 +62,25 @@
             %span.category__top--red
               必須
               -# パスはnewとcreateについて、if文以下、それ以外はelseに飛ぶように設定 
-            - if @path.is('items#new','items#create','items#update')
+            - if @path.is('items#new')
               .category__top__wrapper
-                = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form"}
-            - else
+                = f.collection_select :category_id, @category_parent, :id, :name, {prompt: "✔︎ 選択してください"},{class: "category__form",name: "parent_id"}
+            - elsif @path.is('items#edit')
               .category__top__wrapper
-                = f.collection_select :category_id, @item.category.parent.parent.siblings, :id, :name, {selected: "#{@item.category.parent.parent_id}"},{class: "category__form"}
+                = f.collection_select :category_id, @item.category.parent.parent.siblings, :id, :name, {selected: "#{@item.category.parent.parent_id}"},{class: "category__form",name: "parent_id"}
               #children_wrapper.category__top__wrapper--added
-                = f.collection_select :category_id, @item.category.parent.siblings, :id, :name, {selected: "#{@item.category.parent_id}"},{class: "category__form"}
+                = f.collection_select :children_category_id, @item.category.parent.siblings, :id, :name, {selected: "#{@item.category.parent_id}"},{class: "category__form",name: "children_id"}
               #grandchildren_wrapper.category__top__wrapper--added
                 = f.collection_select :category_id, @item.category.siblings, :id, :name, {selected: "#{@item.category.id}"},{class: "category__form"}
+            - else
+              .category__top__wrapper
+                = f.collection_select :category_id, @category_parent, :id, :name, {selected: @parentId },{class: "category__form",name: "parent_id"}
+              - if @parentId
+                #children_wrapper.category__top__wrapper--added
+                  = f.collection_select :children_category_id, @category_children, :id, :name, {selected: @childrenId},{class: "category__form",name: "children_id"}
+              - if @childrenId
+                #grandchildren_wrapper.category__top__wrapper--added
+                  = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @grandchildrenId},{class: "category__form"}
 
         .brand
           .brand__top

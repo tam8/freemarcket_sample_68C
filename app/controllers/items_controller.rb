@@ -48,6 +48,11 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:notice] = @item.errors.full_messages
+      @parentId = params[:parent_id]
+      @childrenId = params[:children_id]
+      @grandchildrenId = params[:item][:category_id]
+      @category_children = Category.find(params[:parent_id]).children
+      @category_grandchildren = Category.find(params[:children_id]).children
       render :new
       # redirect_to new_item_path
     end
@@ -73,6 +78,11 @@ class ItemsController < ApplicationController
       redirect_to item_path
     else
       flash[:notice] = @item.errors.full_messages
+      @parentId = params[:parent_id]
+      @childrenId = params[:children_id]
+      @grandchildrenId = params[:item][:category_id]
+      @category_children = Category.find(params[:parent_id]).children
+      @category_grandchildren = Category.find(params[:children_id]).children
       render :edit
     end
   end
