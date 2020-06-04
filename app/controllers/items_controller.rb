@@ -91,6 +91,11 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  #商品検索機能
+  def search
+    @items = Item.search(params[:keyword]).page(params[:page]).per(9)
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
@@ -110,7 +115,6 @@ class ItemsController < ApplicationController
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
-
 
   def set_item
     # finb_byでないとエラーになる (nilを返さない)

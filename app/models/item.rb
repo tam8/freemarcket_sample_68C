@@ -49,4 +49,5 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :item_images, allow_destroy: true  
   validates :item_images,       presence: true
 
+  scope :search, -> (search){ where('name LIKE ?', "%#{search}%" )}
 end
