@@ -61,6 +61,7 @@ class ItemsController < ApplicationController
 
     # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
     # binding.pry
+    @category_parent = Category.roots
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
