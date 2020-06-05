@@ -106,3 +106,4 @@ gem 'active_hash'
 gem 'jquery-rails' 
 
 gem 'figaro'
+gem "rails-i18n"
