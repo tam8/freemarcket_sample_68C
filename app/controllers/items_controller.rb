@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   # 商品出品ページ
   def new
     if user_signed_in?
-      @item = Item.new
+      @item = Item.new(flash[:item])
       @item.item_images.new
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
@@ -35,7 +35,8 @@ class ItemsController < ApplicationController
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
-      render :new
+      # render :new   この記述だと2回送信しないとエラー表示が出ない
+      redirect_to new_item_path
       flash[:notice] = @item.errors.full_messages
     end
   end
