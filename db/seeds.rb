@@ -59,7 +59,8 @@ end
   )
 
 CSV.foreach("db/seeds/item.csv", headers: true) do |row|
-  Item.create!(
+  image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
+  item = Item.create!(
     name: row["name"],
     price: row["price"],
     status_id: row["status_id"],
@@ -71,9 +72,8 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
     explain: row["explain"],
     a_category_id: row["a_category_id"],
     user_id: row["user_id"],
-    buyer_id: row["buyer_id"]
-    # 不要っぽい
-    # item_image_id: row["item_image_id"]
+    buyer_id: row["buyer_id"],
+    item_images_attributes: [image: image]
   )
 end
 
