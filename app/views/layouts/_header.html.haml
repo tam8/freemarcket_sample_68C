@@ -1,9 +1,13 @@
 %header.head
-  -if flash[:notice]
+  -if flash[:notice].instance_of?(Array)
     %ul.head__flash
       -flash[:notice].each do |notice|
         %li
           =notice
+  -else
+    %ul.head__flash
+      %li
+        =notice
 
   .head__in
     .head__in__up
