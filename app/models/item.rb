@@ -12,16 +12,16 @@ class Item < ApplicationRecord
   # belongs_to :category
   # category関係が終わった際に追加 永井
   
-  # 不足っぽい
+  # belongs_toになっていれば、_idは不要
   validates :name,             presence: true
   validates :price,            presence: true
-  validates :status_id,        presence: true
+  validates :status,           presence: true
   validates :shipping_fee,     presence: true
   validates :shipping_method,  presence: true
   validates :owners_area,      presence: true
   validates :arrival_date,     presence: true
   validates :explain,          presence: true
-  validates :a_category_id,    presence: true
+  validates :a_category,       presence: true
   validates :price,            numericality: { only_integer: true,
                                                greater_than_or_equal_to: 300,
                                                less_than: 10000000}
