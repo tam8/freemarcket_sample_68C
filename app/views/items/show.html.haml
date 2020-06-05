@@ -27,7 +27,7 @@
       -if user_signed_in? && current_user.id == @item.user_id
         =link_to "商品の編集", edit_item_path, class:"main__edit"
 
-        =link_to item_path, method: :delete, class:"main__destroy" do
+        =link_to item_path, method: :delete, class:"main__destroy", data: { confirm: "削除してもよろしいですか？"} do
           商品の削除
 
 
