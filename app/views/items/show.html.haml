@@ -17,7 +17,7 @@
         (税込) 送料込み
     
     -if user_signed_in? && current_user.id != @item.user_id
-      =link_to "#", class:"main__buy" do
+      =link_to "/purchase/#{@item.id}", class:"main__buy" do
         購入画面に進む
     
     -unless @buyer.nil?
