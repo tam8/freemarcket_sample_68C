@@ -1,0 +1,113 @@
+.main{
+  background-color: lightgrey;
+  &__header{
+    height: 150px;
+    background-color: lightgray;
+    text-align: center;
+    padding-top: 50px;
+    img{
+      height: 60px;
+      width: 200px;
+    }
+  }
+
+  &__title{
+    background-color: white;
+    height: 100px;
+    width: 600px;
+    padding-top: 40px;
+    font-size: 30px;
+    margin: auto;
+    text-align: center;
+  }
+
+  
+  &__contents{
+    background-color: white;
+    text-align: center;
+    width: 600px;
+    padding-top: 30px;
+    margin: auto;
+    
+    .field{
+      margin: auto;
+      text-align: center;
+      width: 300px;
+      height: 85px;
+      padding-top: 20px;
+      margin-bottom: 40px;
+      &__email{
+        label{
+          padding-right: 170px;
+        }
+      }
+      &__password{
+        label{
+          padding-right: 130px;
+        }
+      }
+      &__logincheckbox{
+        margin-top: 30px;
+        margin-left: 20px;
+        input{
+          width: 20px;
+          height: 20px;
+        }
+        label{
+          font-size: 20px;
+          padding-right: 70px;
+        }
+      }
+    }
+
+    .actions{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .submit-btn {
+      width: 250px;
+      height: 55px;
+      font-size: 20px;
+      background-color: springgreen;
+      color: black;
+      display: block;
+      margin: auto;
+      text-decoration: none;
+    }
+    
+  }
+  
+  &__footer{
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: lightgray;
+    height: 240px;
+    &__message{
+      height: 200px;
+      text-align: center;
+      color: white;
+      img{
+        height: 60px;
+        width: 200px;
+        margin-top: 20px;
+      }
+
+      .menu{
+        display: flex;
+        width: 500px;
+        margin-left: 440px;
+        justify-content: space-around;
+        text-decoration: none;
+        
+        &__me{
+          
+          .me1{
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
