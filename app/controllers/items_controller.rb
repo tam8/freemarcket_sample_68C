@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_category
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
 
@@ -21,9 +20,6 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new
       @item.item_images.new
-
-      @category_parent = Category.roots
-      
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
       redirect_to new_user_registration_path
@@ -42,14 +38,28 @@ class ItemsController < ApplicationController
   # createしてしまうよりも、newでsaveすれば、true・false判定ができる
   def create
     @item = Item.new(item_params)
+ 
     if @item.save
       flash[:notice] = "
       「#{@item.name}」を出品しました"
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
-      render :new
       flash[:notice] = @item.errors.full_messages
+
+      if params[:parent_id] !=""
+        @parentId = params[:parent_id]
+        @category_children = Category.find(params[:parent_id]).children
+        unless params[:children_id] ==""
+          unless params[:children_id] =="---"
+            @childrenId = params[:children_id]
+            @category_grandchildren = Category.find(params[:children_id]).children
+            @grandchildrenId = params[:item][:category_id]
+          end
+        end
+      end
+
+      render :new
     end
   end
 
@@ -73,6 +83,23 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path
     else
+      flash[:notice] = @item.errors.full_messages
+      # if params[:parent_id] !=""
+      #   @parentId = params[:parent_id]
+      #   @category_children = Category.find(params[:parent_id]).children
+      #   unless params[:children_id] ==""
+      #     unless params[:children_id] =="---"
+      #       @childrenId = params[:children_id]
+      #       @category_grandchildren = Category.find(params[:children_id]).children
+      #       @grandchildrenId = params[:item][:category_id]
+      #     end
+      #   end
+      # end
+      @parentId = params[:parent_id]
+      @childrenId = params[:children_id]
+      @grandchildrenId = params[:item][:category_id]
+      @category_children = Category.find(params[:parent_id]).children
+      @category_grandchildren = Category.find(params[:children_id]).children
       render :edit
     end
   end
@@ -151,10 +178,6 @@ class ItemsController < ApplicationController
       def @path.is(*str)
           str.map{|s| self.include?(s)}.include?(true)
       end
-  end
-
-  def set_category
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
 end
