@@ -78,9 +78,9 @@
               - if @parentId
                 #children_wrapper.category__top__wrapper--added
                   = f.collection_select :children_category_id, @category_children, :id, :name, {selected: @childrenId},{class: "category__form",name: "children_id"}
-              - if @childrenId
-                #grandchildren_wrapper.category__top__wrapper--added
-                  = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @grandchildrenId},{class: "category__form"}
+                - if @childrenId
+                  #grandchildren_wrapper.category__top__wrapper--added
+                    = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @grandchildrenId},{class: "category__form"}
 
         .brand
           .brand__top

@@ -20,8 +20,6 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new
       @item.item_images.new
-
-      
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
       redirect_to new_user_registration_path
@@ -48,13 +46,20 @@ class ItemsController < ApplicationController
       redirect_to @item
     else
       flash[:notice] = @item.errors.full_messages
-      @parentId = params[:parent_id]
-      @childrenId = params[:children_id]
-      @grandchildrenId = params[:item][:category_id]
-      @category_children = Category.find(params[:parent_id]).children
-      @category_grandchildren = Category.find(params[:children_id]).children
+
+      if params[:parent_id] !=""
+        @parentId = params[:parent_id]
+        @category_children = Category.find(params[:parent_id]).children
+        unless params[:children_id] ==""
+          unless params[:children_id] =="---"
+            @childrenId = params[:children_id]
+            @category_grandchildren = Category.find(params[:children_id]).children
+            @grandchildrenId = params[:item][:category_id]
+          end
+        end
+      end
+
       render :new
-      # redirect_to new_item_path
     end
   end
 
@@ -78,6 +83,17 @@ class ItemsController < ApplicationController
       redirect_to item_path
     else
       flash[:notice] = @item.errors.full_messages
+      # if params[:parent_id] !=""
+      #   @parentId = params[:parent_id]
+      #   @category_children = Category.find(params[:parent_id]).children
+      #   unless params[:children_id] ==""
+      #     unless params[:children_id] =="---"
+      #       @childrenId = params[:children_id]
+      #       @category_grandchildren = Category.find(params[:children_id]).children
+      #       @grandchildrenId = params[:item][:category_id]
+      #     end
+      #   end
+      # end
       @parentId = params[:parent_id]
       @childrenId = params[:children_id]
       @grandchildrenId = params[:item][:category_id]
