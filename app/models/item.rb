@@ -24,21 +24,23 @@ class Item < ApplicationRecord
   validates :price,              numericality: { only_integer: true,
                                                  greater_than_or_equal_to: 300,
                                                  less_than: 10000000}
-  validates :status,          numericality: { only_integer: true,
-                                                 greater_than_or_equal_to: 1,
-                                                 less_than: 7}
-  validates :shipping_fee,    numericality: { only_integer: true,
-                                                 greater_than_or_equal_to: 1,
-                                                 less_than: 3}
-  validates :shipping_method, numericality: { only_integer: true,
-                                                 greater_than_or_equal_to: 1,
-                                                 less_than: 9}
-  validates :owners_area,     numericality: { only_integer: true,
-                                                 greater_than_or_equal_to: 1,
-                                                 less_than: 48}
-  validates :arrival_date,    numericality: { only_integer: true,
-                                                  greater_than_or_equal_to: 1,
-                                                  less_than: 4}
+
+  # (田村) 下記を数値に限定すると、バリデーションエラーのメッセージが数値入力を求めるものになるため、(セレクトボックスからの選択のため) ここは不要と思いました
+  # validates :status,          numericality: { only_integer: true,
+  #                                                greater_than_or_equal_to: 1,
+  #                                                less_than: 7}
+  # validates :shipping_fee,    numericality: { only_integer: true,
+  #                                                greater_than_or_equal_to: 1,
+  #                                                less_than: 3}
+  # validates :shipping_method, numericality: { only_integer: true,
+  #                                                greater_than_or_equal_to: 1,
+  #                                                less_than: 9}
+  # validates :owners_area,     numericality: { only_integer: true,
+  #                                                greater_than_or_equal_to: 1,
+  #                                                less_than: 48}
+  # validates :arrival_date,    numericality: { only_integer: true,
+  #                                                 greater_than_or_equal_to: 1,
+  #                                                 less_than: 4}
 
 
   # dependentで商品削除時に画像も削除
