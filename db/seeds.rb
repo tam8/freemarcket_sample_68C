@@ -78,11 +78,6 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
 end
 
 
-
-
-
-
-
 # item_imageはCarrierWaveでseedするため、CSV記法が使えない
 # CSV.foreach("db/seeds/item_image.csv", headers: true) do |row|
 #   ItemImage.create!(

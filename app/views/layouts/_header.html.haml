@@ -25,7 +25,7 @@
         .head__in__nav__left__cate
           カテゴリー
           %ul.category1
-            - @parents.each do |parent|
+            - @category_parent.each do |parent|
               %li.parent__list
                 = link_to parent.name
                 %ul.category2
