@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_category
   before_action :set_item, only: %i[show edit update destroy]
   before_action :request_path
 
@@ -16,13 +17,25 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
+
     if user_signed_in?
       @item = Item.new(flash[:item])
       @item.item_images.new
+
+      @category_parent = Category.roots
+      
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
       redirect_to new_user_registration_path
     end
+  end
+
+  def category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
   end
 
   # 商品出品機能
@@ -49,6 +62,7 @@ class ItemsController < ApplicationController
 
     # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
     # binding.pry
+    @category_parent = Category.roots
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
@@ -79,6 +93,11 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  #商品検索機能
+  def search
+    @items = Item.search(params[:keyword]).page(params[:page]).per(9)
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
@@ -91,14 +110,13 @@ class ItemsController < ApplicationController
                                  :owners_area_id, 
                                  :arrival_date_id, 
                                  :explain, 
-                                 :a_category_id, 
+                                 :category_id, 
                                  :buyer_id,
                                  item_images_attributes: [:image, :_destroy, :id]
                                 #  TODO: :idはもともと無かったけど必要か？
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
-
 
   def set_item
     # finb_byでないとエラーになる (nilを返さない)
@@ -120,7 +138,6 @@ class ItemsController < ApplicationController
       @arrival_date = @item.arrival_date.name
 
       # 仮
-      @category = @item.a_category.name
       @user = User.find(@item.user_id).nickname
       @buyer = @item.buyer_id
 
@@ -135,6 +152,10 @@ class ItemsController < ApplicationController
       def @path.is(*str)
           str.map{|s| self.include?(s)}.include?(true)
       end
+  end
+
+  def set_category
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
 end

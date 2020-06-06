@@ -1,0 +1,112 @@
+.search-container {
+  .category-pickup {
+    width: 100%;
+    padding: 80px 0 0;
+    background-color: #F8F8F8;
+    height: 100%;
+
+    &__title {
+      text-align: center;
+      font-size: 28px;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &__none {
+      text-align: center;
+      font-size: 20px;
+    }
+    &__box {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 26px;
+      &__head {
+        text-align: center;
+        .title {
+        font-size: 24px;
+        text-decoration: none;
+        color: $keyColor;
+          &__text {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+      .category-pickup__lists-box {
+        width: 780px;
+        margin: 26px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-bottom: 0;
+        .category-lists {
+          width: 220px;
+          display: inline-block;
+          float: left;
+          margin-bottom: 20px;
+          a {
+            text-decoration: none;
+            cursor: pointer;
+          }
+          .sold-badge {
+            position: relative;
+            top: 0;
+            left: 0;
+          }
+          .sold-badge:before {
+            content: "";
+            top: 0;
+            left: 0;
+            border-bottom:  4.5em solid transparent;
+            border-left: 4.5em solid $keyColor;
+            position: absolute;
+            z-index: 100;
+          }
+          .sold-badge:after {
+            content: "SOLD";
+            display: block;
+            top: 15px;
+            transform: rotate( -45deg);
+            color: white;
+            left: 0;
+            position: absolute;
+            z-index: 101;
+          }
+          .lists__image--img {
+            width: 220px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+            z-index: auto;
+          }
+          .category-lists__box {
+            background-color: white;
+            color: #333;
+            padding: 16px;
+            .category-lists__name {
+              overflow: hidden;
+              line-height: 1.5;
+              font-size: 16px;
+              text-align: left;
+            }
+            .category-lists__price-box {
+              font-size: 16px;
+                .price {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                }
+                .tax {
+                  font-size: 10px;
+                  text-align: left;
+                }
+            }
+          }
+        }
+        .category-lists:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  
+}
