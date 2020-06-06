@@ -1,0 +1,291 @@
+.main-box{
+  width: 100%;
+
+  &__header {
+    height: 128px;
+    width: 100%;
+    background-color: lightgray;
+    text-align: center;
+    padding-right: 30px;
+    padding-top: 35px;
+    img{
+      height: 60px;
+      width: 200px;
+    }
+  }
+}
+
+.box{
+  background-color: lightgray;
+  margin: 0 auto;
+  &__header{
+    height: 100px;
+    width: 750px;
+    background-color: white;
+    margin-left: 338px;
+    padding-top: 30px;
+    padding-left: 305px;
+    font-size: 24px;
+    margin-bottom: 1px;
+    margin: 0 auto;
+  }
+  &__form{
+    width: 750px;
+    padding: 35px;
+    background-color: white;
+    margin: 0 auto;
+  }
+  &__footer{
+    margin: 0 auto;
+    padding: 40px 0;
+    background-color: lightgray;
+    &__message{
+      height: 200px;
+      text-align: center;
+      color: white;
+      img{
+        height: 90px;
+        width: 200px;
+      }
+
+      .menu{
+        display: flex;
+        width: 500px;
+        margin-left: 440px;
+        justify-content: space-around;
+        text-decoration: none;
+        
+        &__me{
+          
+          .me1{
+            text-decoration: none;
+            color: black;
+          }
+          
+        }
+      }
+      .main-box__header--link{
+        img{
+          padding-top: 30px;
+        }
+        p{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+}
+  .field{
+  &__nickname{
+    border: none;
+    color: black;
+    text-align: center;
+    height: 85px;
+    width: 300px;
+    margin: 0 auto;
+    label{
+      font-size: 20px;
+      padding-right: 70px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__email{
+    border: none;
+    color: black;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 85px;
+    label{
+      font-size: 20px;
+      padding-right: 55px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__password{
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    height: 85px;
+    padding-top: 5px;
+    label{
+      color: black;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__reference{
+    padding-bottom: 40px;
+    margin: auto;
+    width: 320px;
+    
+    .check{
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+
+  &__surname{
+    border: none;
+    color: black;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 85px;
+    label{
+      font-size: 20px;
+      padding-right: 130px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__name{
+    border: none;
+    color: black;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 85px;
+    label{
+      font-size: 20px;
+      padding-right: 130px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__confimation{
+    border: none;
+    color: black;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 85px;
+    label{
+      font-size: 20px;
+      padding-right: 100px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__city_number{
+    border: none;
+    color: black;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    height: 85px;
+    padding-top: 20px;
+    label{
+      font-size: 20px;
+      padding-right: 140px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__building_name{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 85px;
+    padding-top: 20px;
+    label{
+      font-size: 20px;
+      padding-right: 120px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__phone_number{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 85px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    label{
+      font-size: 20px;
+      padding-right: 100px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__birthday{
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 85px;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    label{
+      font-size: 20px;
+      padding-right: 70px;
+    }
+    span{
+      color: white;
+      background-color: red;
+    }
+    select{
+      font-size: 20px;
+      width: 70px;
+    }
+  }
+
+  &__actions{
+    text-align: center;
+    input{
+      color: white;
+      background-color: red;
+      width: 250px;
+      height: 45px;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__botan{
+    text-align: center;
+    background-color: springgreen;
+    width: 250px;
+    height: 45px;
+    margin: auto;
+    padding-top: 8px;
+    margin-top: 20px;
+    a{
+      text-decoration: none;
+      font-size: 20px;
+      color: black;
+    }
+  }
+}

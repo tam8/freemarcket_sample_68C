@@ -16,27 +16,57 @@ class ItemsController < ApplicationController
 
   # 商品出品ページ
   def new
+
     if user_signed_in?
-      @item = Item.new
+      @item = Item.new(flash[:item])
       @item.item_images.new
+      @category_parent = Category.roots
+      
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
       redirect_to new_user_registration_path
     end
   end
 
+  def category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
   # 商品出品機能
   # createしてしまうよりも、newでsaveすれば、true・false判定ができる
   def create
     @item = Item.new(item_params)
+ 
     if @item.save
       flash[:notice] = "
       「#{@item.name}」を出品しました"
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
-      render :new
+      # render :new   この記述だと2回送信しないとエラー表示が出ない
+      redirect_to new_item_path
       flash[:notice] = @item.errors.full_messages
+      # 再入力時に前回のデータを記憶 (#newのflashで受け取り)
+      flash[:item] = @item
+      flash[:notice] = @item.errors.full_messages
+
+      if params[:parent_id] !=""
+        @parentId = params[:parent_id]
+        @category_children = Category.find(params[:parent_id]).children
+        unless params[:children_id] ==""
+          unless params[:children_id] =="---"
+            @childrenId = params[:children_id]
+            @category_grandchildren = Category.find(params[:children_id]).children
+            @grandchildrenId = params[:item][:category_id]
+          end
+        end
+      end
+
+      render :new
     end
   end
 
@@ -48,6 +78,7 @@ class ItemsController < ApplicationController
 
     # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
     # binding.pry
+    @category_parent = Category.roots
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
@@ -59,6 +90,24 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path
     else
+      redirect_to edit_item_path
+      flash[:notice] = @item.errors.full_messages
+      # if params[:parent_id] !=""
+      #   @parentId = params[:parent_id]
+      #   @category_children = Category.find(params[:parent_id]).children
+      #   unless params[:children_id] ==""
+      #     unless params[:children_id] =="---"
+      #       @childrenId = params[:children_id]
+      #       @category_grandchildren = Category.find(params[:children_id]).children
+      #       @grandchildrenId = params[:item][:category_id]
+      #     end
+      #   end
+      # end
+      @parentId = params[:parent_id]
+      @childrenId = params[:children_id]
+      @grandchildrenId = params[:item][:category_id]
+      @category_children = Category.find(params[:parent_id]).children
+      @category_grandchildren = Category.find(params[:children_id]).children
       render :edit
     end
   end
@@ -78,6 +127,11 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  #商品検索機能
+  def search
+    @items = Item.search(params[:keyword]).page(params[:page]).per(9)
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
@@ -90,13 +144,13 @@ class ItemsController < ApplicationController
                                  :owners_area_id, 
                                  :arrival_date_id, 
                                  :explain, 
-                                 :a_category_id, 
+                                 :category_id, 
                                  :buyer_id,
-                                 item_images_attributes: [:image]
+                                 item_images_attributes: [:image, :_destroy, :id]
+                                #  TODO: :idはもともと無かったけど必要か？
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
-
 
   def set_item
     # finb_byでないとエラーになる (nilを返さない)
@@ -118,7 +172,6 @@ class ItemsController < ApplicationController
       @arrival_date = @item.arrival_date.name
 
       # 仮
-      @category = @item.a_category.name
       @user = User.find(@item.user_id).nickname
       @buyer = @item.buyer_id
 

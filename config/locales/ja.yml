@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    attributes:
+      # モデル内のバリデーションの記述を参照する
+      item:
+        name: 商品名
+        price: 価格
+        status: 商品の状態
+        shipping_fee: 配送料の負担
+        shipping_method: 配送方法
+        owners_area: 発送元の地域
+        arrival_date: 発送までの日数
+        explain: 商品説明
+        a_category: カテゴリー
+        item_images: 商品の画像
+        # コントローラー内でitem_images_attributesだから、itemテーブルのものとして扱える
+
+
+
+
