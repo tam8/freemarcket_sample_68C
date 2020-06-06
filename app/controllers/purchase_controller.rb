@@ -3,8 +3,13 @@ class PurchaseController < ApplicationController
   before_action :set_purchase, only: [:show, :pay]
 
   def show
+    if @item.buyer_id.present? 
+      redirect_to controller: "items", action: "show"
+      return
+    elsif
     card = Card.where(user_id: current_user.id).first
     # テーブルからpayjpの顧客IDを検索
+    end
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
       redirect_to controller: "cards", action: "new"
@@ -17,8 +22,7 @@ class PurchaseController < ApplicationController
     end
   end
 
-  def pay
-    
+  def pay  
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     Payjp::Charge.create(
@@ -31,9 +35,6 @@ class PurchaseController < ApplicationController
   else
     flash[:alert] = '購入に失敗しました。'
   end
-
-
-
   end
 
   def set_purchase
