@@ -21,7 +21,6 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new(flash[:item])
       @item.item_images.new
-
       @category_parent = Category.roots
       
     else
@@ -51,6 +50,8 @@ class ItemsController < ApplicationController
       # render :new   この記述だと2回送信しないとエラー表示が出ない
       redirect_to new_item_path
       flash[:notice] = @item.errors.full_messages
+      # 再入力時に前回のデータを記憶 (#newのflashで受け取り)
+      flash[:item] = @item
     end
   end
 
