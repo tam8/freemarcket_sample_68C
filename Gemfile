@@ -105,9 +105,8 @@ gem 'active_hash'
 
 gem 'jquery-rails' 
 
+gem 'figaro'
+gem "rails-i18n"
 gem 'kaminari'
-
 gem 'ancestry'
 
-
-gem 'rails-i18n', '~> 5.1'

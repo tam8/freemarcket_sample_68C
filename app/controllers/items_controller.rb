@@ -18,8 +18,10 @@ class ItemsController < ApplicationController
   def new
 
     if user_signed_in?
-      @item = Item.new
+      @item = Item.new(flash[:item])
       @item.item_images.new
+      @category_parent = Category.roots
+      
     else
       flash[:notice] = "商品の出品にはユーザー登録、もしくはログインをしてください"
       redirect_to new_user_registration_path
@@ -45,6 +47,11 @@ class ItemsController < ApplicationController
       # データの作成時点で、@itemにIDをが付与されている
       redirect_to @item
     else
+      # render :new   この記述だと2回送信しないとエラー表示が出ない
+      redirect_to new_item_path
+      flash[:notice] = @item.errors.full_messages
+      # 再入力時に前回のデータを記憶 (#newのflashで受け取り)
+      flash[:item] = @item
       flash[:notice] = @item.errors.full_messages
 
       if params[:parent_id] !=""
@@ -83,6 +90,7 @@ class ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to item_path
     else
+      redirect_to edit_item_path
       flash[:notice] = @item.errors.full_messages
       # if params[:parent_id] !=""
       #   @parentId = params[:parent_id]

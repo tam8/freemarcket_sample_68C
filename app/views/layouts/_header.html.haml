@@ -1,7 +1,13 @@
 %header.head
-  -if flash[:notice]
-    .head__flash
-      =flash[:notice]
+  -if flash[:notice].instance_of?(Array)
+    %ul.head__flash
+      -flash[:notice].each do |notice|
+        %li
+          =notice
+  -else
+    %ul.head__flash
+      %li
+        =notice
 
   .head__in
     = form_with(url: search_items_path, local: true, method: :get) do |f|
