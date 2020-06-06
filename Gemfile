@@ -105,8 +105,9 @@ gem 'active_hash'
 
 gem 'jquery-rails' 
 
+gem 'kaminari'
+
 gem 'ancestry'
 
-# deviseの日本語化のために必要
-gem 'rails-i18n', '~> 5.1'
 
+gem 'rails-i18n', '~> 5.1'

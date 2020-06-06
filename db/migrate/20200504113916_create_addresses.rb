@@ -7,7 +7,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.text :city_number, null: false
       t.text :building_name
       t.references :user
-      t.integer :phone_number, unique: true
+      t.bigint :phone_number, unique: true
       t.timestamps
     end
   end

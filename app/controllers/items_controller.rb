@@ -71,6 +71,7 @@ class ItemsController < ApplicationController
 
     # @imgs.map { |img| img.image.cache! } unless @imgs.blank?
     # binding.pry
+    @category_parent = Category.roots
     
     if user_signed_in? && current_user.id != @item.user_id
       redirect_to item_path
@@ -118,6 +119,11 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  #商品検索機能
+  def search
+    @items = Item.search(params[:keyword]).page(params[:page]).per(9)
+  end
+
   private
   # 出品時にフォーム入力されるデータ
   def item_params
@@ -132,11 +138,11 @@ class ItemsController < ApplicationController
                                  :explain, 
                                  :category_id, 
                                  :buyer_id,
-                                 item_images_attributes: [:image]
+                                 item_images_attributes: [:image, :_destroy, :id]
+                                #  TODO: :idはもともと無かったけど必要か？
                                 #  :image_cache
                                  ).merge(user_id: current_user.id)
   end
-
 
   def set_item
     # finb_byでないとエラーになる (nilを返さない)
