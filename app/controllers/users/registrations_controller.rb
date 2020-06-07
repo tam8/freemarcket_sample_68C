@@ -15,11 +15,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     # @user = User.new(sign_up_params)
     @user = User.new(user_params)
-    # binding.pry
 
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
-      render :new and return
+      @sns_id = params[:sns_auth]
+      render :new 
+      return @user, @sns_id
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
