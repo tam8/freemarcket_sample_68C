@@ -9,6 +9,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # @user = User.new(sign_up_params)
     @user = User.new(user_params)
     # binding.pry
+    
+    #SNSでのサインアップ時、パスワードを自動生成するためのコード
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+    end
+    
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
       render :new and return

@@ -18,19 +18,23 @@
           %span 必須
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）xxx@gmail.com"
-        .field__password  
-          = f.label :"パスワード"
-          - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} 文字以上)
-          %span 必須
-          %br/
-          = f.password_field :password, autocomplete: "new-password"
-        .field__confimation
-          = f.label :"パスワード確認用"
-          %span 必須
-          %br/
-          = f.password_field :password_confirmation, autocomplete: "new-password"
+        
+        - if @sns_id.present?
+          = hidden_field_tag :sns_auth, true 
+        - else
+          .field__password  
+            = f.label :"パスワード"
+            - if @minimum_password_length
+              %em
+                (#{@minimum_password_length} 文字以上)
+            %span 必須
+            %br/
+            = f.password_field :password, autocomplete: "new-password"
+          .field__confimation
+            = f.label :"パスワード確認用"
+            %span 必須
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password"
 
         .field__reference
           %h7.check 本人確認
