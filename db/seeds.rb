@@ -37,45 +37,45 @@
 
 
 # item_imagesテーブル
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
-    item_id: "1"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
-    item_id: "1"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
-    item_id: "2"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
-    item_id: "1"
-  )
-  ItemImage.create!(
-    image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
-    item_id: "3"
-  )
+#   ItemImage.create!(
+#     image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+#     item_id: "1"
+#   )
+#   ItemImage.create!(
+#     image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+#     item_id: "1"
+#   )
+#   ItemImage.create!(
+#     image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+#     item_id: "2"
+#   )
+#   ItemImage.create!(
+#     image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+#     item_id: "1"
+#   )
+#   ItemImage.create!(
+#     image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
+#     item_id: "3"
+#   )
 
-CSV.foreach("db/seeds/item.csv", headers: true) do |row|
-  image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
-  item = Item.create!(
-    name: row["name"],
-    price: row["price"],
-    status_id: row["status_id"],
-    brand: row["brand"],
-    shipping_fee_id: row["shipping_fee_id"],
-    shipping_method_id: row["shipping_method_id"],
-    owners_area_id: row["owners_area_id"],
-    arrival_date_id: row["arrival_date_id"],
-    explain: row["explain"],
-    a_category_id: row["a_category_id"],
-    user_id: row["user_id"],
-    buyer_id: row["buyer_id"],
-    item_images_attributes: [image: image]
-  )
-end
+# CSV.foreach("db/seeds/item.csv", headers: true) do |row|
+#   image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
+#   item = Item.create!(
+#     name: row["name"],
+#     price: row["price"],
+#     status_id: row["status_id"],
+#     brand: row["brand"],
+#     shipping_fee_id: row["shipping_fee_id"],
+#     shipping_method_id: row["shipping_method_id"],
+#     owners_area_id: row["owners_area_id"],
+#     arrival_date_id: row["arrival_date_id"],
+#     explain: row["explain"],
+#     a_category_id: row["a_category_id"],
+#     user_id: row["user_id"],
+#     buyer_id: row["buyer_id"],
+#     item_images_attributes: [image: image]
+#   )
+# end
 
 
 # item_imageはCarrierWaveでseedするため、CSV記法が使えない

@@ -13,6 +13,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.integer :a_category_id
       # t.references :user, foreign_key: true, null:false
       # 後のマイグレーションファイルにてuser_idの外部キーを設定しています。
+      t.string :user_id, foreign_key: true, null: false
       t.integer :buyer_id
       t.timestamps
     end
