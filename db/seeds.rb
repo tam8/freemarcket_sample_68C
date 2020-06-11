@@ -1,3 +1,35 @@
+require "csv"
+
+CSV.foreach("db/seeds/user.csv", headers: true) do |row|
+  User.create!(
+    email: row["email"],
+    nickname: row["nickname"],
+    first_name: row["first_name"],
+    last_name: row["last_name"],
+    first_name_kana: row["first_name_kana"],
+    last_name_kana: row["last_name_kana"],
+    birth_date: row["birth_date"],
+    password: row["password"],
+    reset_password_token: row["reset_password_token"],
+    reset_password_sent_at: row["reset_password_sent_at"],
+    remember_created_at: row["remember_created_at"]
+  )
+end
+
+CSV.foreach("db/seeds/address.csv", headers: true) do |row|
+  Address.create!(
+    zipcode: row["zipcode"],
+    owners_area_id: row["owners_area_id"],
+    city_name: row["city_name"],
+    city_number: row["city_number"],
+    building_name: row["building_name"],
+    phone_number: row["phone_number"],
+    user_id: row["user_id"],
+  )
+end
+
+
+
 # if Rails.env == "development"
   # (1..5).each do |i|
   #   User.create!(
@@ -12,22 +44,6 @@
 # end
 
 
-
-
-#CSV記法#############################
-# require "csv"
-
-# CSV.foreach("db/seeds/user.csv", headers: true) do |row|
-#   User.create!(
-#     email: row["email"],
-#     nickname: row["nickname"],
-#     password: row["password"],
-#     reset_password_token: row["reset_password_token"],
-#     reset_password_sent_at: row["reset_password_sent_at"],
-#     remember_created_at: row["remember_created_at"]
-#   )
-# end
-
 # active_hashの方を利用
 # CSV.foreach("db/seeds/category.csv", headers: true) do |row|
 #   Category.create!(
@@ -36,46 +52,7 @@
 # end
 
 
-# item_imagesテーブル
-#   ItemImage.create!(
-#     image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
-#     item_id: "1"
-#   )
-#   ItemImage.create!(
-#     image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
-#     item_id: "1"
-#   )
-#   ItemImage.create!(
-#     image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
-#     item_id: "2"
-#   )
-#   ItemImage.create!(
-#     image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
-#     item_id: "1"
-#   )
-#   ItemImage.create!(
-#     image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
-#     item_id: "3"
-#   )
 
-# CSV.foreach("db/seeds/item.csv", headers: true) do |row|
-#   image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
-#   item = Item.create!(
-#     name: row["name"],
-#     price: row["price"],
-#     status_id: row["status_id"],
-#     brand: row["brand"],
-#     shipping_fee_id: row["shipping_fee_id"],
-#     shipping_method_id: row["shipping_method_id"],
-#     owners_area_id: row["owners_area_id"],
-#     arrival_date_id: row["arrival_date_id"],
-#     explain: row["explain"],
-#     a_category_id: row["a_category_id"],
-#     user_id: row["user_id"],
-#     buyer_id: row["buyer_id"],
-#     item_images_attributes: [image: image]
-#   )
-# end
 
 
 # item_imageはCarrierWaveでseedするため、CSV記法が使えない
@@ -361,6 +338,47 @@ other_food.children.create([{ name: "菓子" }, { name: "米" }, { name: "野菜
 other_drink.children.create([{ name: "コーヒー" }, { name: "ソフトドリンク" }, { name: "ミネラルウォーター" }, { name: "茶" }, { name: "ウイスキー" }, { name: "ワイン" }, { name: "ブランデー" }, { name: "焼酎" }, { name: "日本酒" }, { name: "ビール、発泡酒" }, { name: "その他" }])
 other_other.children.create([{ name: "オフィス用品一般" }, { name: "オフィス家具" }, { name: "店舗用品" }, { name: "OA機器" }, { name: "ラッピング/包装" }, { name: "その他" }])
 
+
+ItemImage.create!(
+  image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+  item_id: "1"
+)
+ItemImage.create!(
+  image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+  item_id: "1"
+)
+ItemImage.create!(
+  image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+  item_id: "2"
+)
+ItemImage.create!(
+  image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
+  item_id: "1"
+)
+ItemImage.create!(
+  image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
+  item_id: "3"
+)
+
+
+CSV.foreach("db/seeds/item.csv", headers: true) do |row|
+  image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
+  item = Item.create!(
+    name: row["name"],
+    price: row["price"],
+    status_id: row["status_id"],
+    brand: row["brand"],
+    shipping_fee_id: row["shipping_fee_id"],
+    shipping_method_id: row["shipping_method_id"],
+    owners_area_id: row["owners_area_id"],
+    arrival_date_id: row["arrival_date_id"],
+    explain: row["explain"],
+    category_id: row["category_id"],
+    user_id: row["user_id"],
+    buyer_id: row["buyer_id"],
+    item_images_attributes: [image: image]
+  )
+end
 
 
 

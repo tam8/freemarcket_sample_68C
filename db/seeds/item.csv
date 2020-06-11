@@ -1,4 +1,4 @@
-id,name,price,status_id,brand,shipping_fee_id,shipping_method_id,owners_area_id,arrival_date_id,explain,a_category_id,user_id,buyer_id
-1,FireTV,4000,1,Amazon,1,2,13,1,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,1,1,
-2,お肉,1000,1,松坂牛,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,2,
-3,モニター,2000,1,Benq,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,1,2
+﻿id,name,price,status_id,brand,shipping_fee_id,shipping_method_id,owners_area_id,arrival_date_id,explain,category_id,user_id,buyer_id
+1,FireTV,4000,1,Amazon,1,2,13,1,Amazon Fire TV には複雑な設定は不要。HDMI端子対応テレビに専用ケーブルを使って繋げるだけで、簡単に映画やドラマをテレビの大画面で楽しめるデバイスです。豊富な品ぞろえのAmazonビデオストアからのレンタルや購入だけでなく、HuluやNetflix、YouTube、スポーツや音楽番組等のアプリで、映画やドラマからスポーツまで、お気に入りのコンテンツを一台で楽しめます。,1,1,
+2,お肉,1000,2,松坂牛,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,2,
+3,モニター,2000,3,Benq,2,3,15,2,ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。ここに説明を書きます。,2,1,2
