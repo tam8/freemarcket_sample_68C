@@ -11,7 +11,7 @@ ja:
         owners_area: 発送元の地域
         arrival_date: 発送までの日数
         explain: 商品説明
-        a_category: カテゴリー
+        category: カテゴリー
         item_images: 商品の画像
         # コントローラー内でitem_images_attributesだから、itemテーブルのものとして扱える
 

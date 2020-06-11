@@ -66,7 +66,8 @@ class ItemsController < ApplicationController
         end
       end
 
-      render :new
+      # 上方でredirect_to new_item_pathが呼び出されているのでおそらく不要。エラー出る(田村)
+      # render :new
     end
   end
 
