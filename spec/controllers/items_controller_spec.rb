@@ -3,7 +3,6 @@ require 'rails_helper'
 describe ItemsController do
   let(:user) { create(:user)}
   let(:item) { create(:item)}
-  let(:category) {create(:category)}
   let(:item_image){ create()}
   describe '#new' do
     
@@ -37,7 +36,7 @@ describe ItemsController do
 
       subject {
         post :create,
-        params: {id: 1, item: attributes_for(:item).merge(item_image_params).merge(user_id: user.id).merge(category_id: category.id)}
+        params: {id: 1, item: attributes_for(:item).merge(item_image_params).merge(user_id: user.id)}
       }
 
       it 'itemを保存すること' do
@@ -46,7 +45,7 @@ describe ItemsController do
 
       it '詳細ページにリダイレクトされること'do
         subject
-        expect(response).to redirect_to(item_path(item.id-1))
+        expect(response).to redirect_to(item_path(item.id - 1))
       # 48行目のitemが新規作成されているので-1している。
       end
 
@@ -70,18 +69,4 @@ describe ItemsController do
       end
     end
   end
-
-  describe '#index' do
-    it '@itemsに正しい値が入っていること' do
-      items = create_list(:item, 3)
-      get :index
-      expect(assigns(:items)).to match(items.sort{|a,b| b.created_at <=> a.created_at })
-    end
-
-    it 'index.html.hamlに遷移すること' do
-      get :index
-      expect(response).to render_template :index
-    end
-  end
-
 end

@@ -108,15 +108,15 @@ sub {
 input,
 textarea,
 select {
-    width: 250px;
-    height: 40px;
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
 }
 /*to enable resizing for IE*/
 input,
 textarea,
 select {
-    width: 250px;
-    height: 40px;
+    *font-size:100%;
 }
 /*because legend doesn't inherit in IE */
 legend {

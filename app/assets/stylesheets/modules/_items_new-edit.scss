@@ -87,11 +87,12 @@
       }
     }
     .detail {
+      height: 479px;
       padding: 40px;
       border: 1px solid $main_light_gray;
       .category {
+        height: 118px;
         margin-top: 24px;
-        margin-bottom: 24px;
         &__top {
           &--red {
             @include require_red;
@@ -99,9 +100,6 @@
         }
         &__form{
           @include formbox();
-          &__child {
-            @include formbox();
-          }
         }
       }
       .brand {
