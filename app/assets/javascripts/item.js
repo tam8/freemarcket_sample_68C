@@ -1,3 +1,4 @@
+
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
@@ -27,6 +28,7 @@ $(document).on('turbolinks:load', ()=> {
     if ($('.js_file_group__display').length == 0) $('.image_form').append(buildFileField(fileIndex[0]));
   });
 });
+
 
 
 

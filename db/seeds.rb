@@ -36,6 +36,7 @@ end
 # end
 
 
+
 # item_imagesテーブル
   ItemImage.create!(
     image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
@@ -76,6 +77,7 @@ CSV.foreach("db/seeds/item.csv", headers: true) do |row|
     # item_image_id: row["item_image_id"]
   )
 end
+
 
 
 
