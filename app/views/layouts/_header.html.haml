@@ -52,7 +52,7 @@
           %li.head__in__nav__right__new
             =link_to "出品", new_item_path
           %li.head__in__nav__right__mypage
-            =link_to "マイページ", "#"
+            =link_to "マイページ", user_path(current_user)
           %li.head__in__nav__right__logout
             =link_to "ログアウト", destroy_user_session_path, method: :delete
 
