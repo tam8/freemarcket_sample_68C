@@ -16,9 +16,7 @@
       %p.main__price__sub
         (税込) 送料込み
     
-    -if user_signed_in? && current_user.id != @item.user_id
-      =link_to "#", class:"main__buy" do
-        購入画面に進む
+
     
     -unless @buyer.nil?
       .main__buy__soldout
@@ -29,6 +27,9 @@
 
         =link_to item_path, method: :delete, class:"main__destroy", data: { confirm: "削除してもよろしいですか？"} do
           商品の削除
+      -if user_signed_in? && current_user.id != @item.user_id
+        =link_to "#", class:"main__buy" do
+          購入画面に進む
 
 
     %p.main__description
