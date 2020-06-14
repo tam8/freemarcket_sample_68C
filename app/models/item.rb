@@ -8,7 +8,6 @@ class Item < ApplicationRecord
 
   belongs_to :user
   belongs_to :category
-  # category関係が終わった際に追加 永井
 
 
   # belongs_toになっていれば、_idは不要
@@ -47,7 +46,7 @@ class Item < ApplicationRecord
   has_many :item_images, dependent: :destroy
 
 
-  # item削除時にimageも削除される
+  # item削除時にimageも削除される (Itemテーブル内のものとして扱われる)
   accepts_nested_attributes_for :item_images, allow_destroy: true  
   validates :item_images,       presence: true
 

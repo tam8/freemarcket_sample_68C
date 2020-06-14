@@ -89,6 +89,9 @@ class ItemsController < ApplicationController
   # 商品情報更新機能 (田村)
   def update
     if @item.update(item_params)
+      flash[:notice] = "
+      「#{@item.name}」を編集しました"
+      # データの作成時点で、@itemにIDをが付与されているから、@itemでも良さそう
       redirect_to item_path
     else
       redirect_to edit_item_path
