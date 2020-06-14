@@ -109,7 +109,6 @@ class ItemsController < ApplicationController
       @grandchildrenId = params[:item][:category_id]
       @category_children = Category.find(params[:parent_id]).children
       @category_grandchildren = Category.find(params[:children_id]).children
-      render :edit
     end
   end
 
