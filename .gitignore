@@ -35,3 +35,5 @@ public/uploads/*
 /vendor/bundle/*
 /ssl/
 /memo.txt
+
+/.env

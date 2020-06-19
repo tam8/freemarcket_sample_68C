@@ -21,14 +21,15 @@
     -unless @buyer.nil?
       .main__buy__soldout
         売り切れ
+
     -else
       -if user_signed_in? && current_user.id == @item.user_id
         =link_to "商品の編集", edit_item_path, class:"main__edit"
-
         =link_to item_path, method: :delete, class:"main__destroy", data: { confirm: "削除してもよろしいですか？"} do
           商品の削除
+
       -if user_signed_in? && current_user.id != @item.user_id
-        =link_to "#", class:"main__buy" do
+        =link_to purchase_path(@item), class:"main__buy" do
           購入画面に進む
 
 

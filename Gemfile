@@ -106,7 +106,14 @@ gem 'active_hash'
 gem 'jquery-rails' 
 
 gem 'figaro'
-gem "rails-i18n"
 gem 'kaminari'
 gem 'ancestry'
 
+# deviseの日本語化のために必要
+gem 'rails-i18n', '~> 5.1'
+
+# 商品購入機能実装のために必要なgem
+gem 'payjp'
+
+# 秘密鍵や公開鍵を保存
+gem 'dotenv-rails'
