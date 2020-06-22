@@ -91,6 +91,13 @@ class Main < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
+    create_table :cards do |t|
+      t.integer :user_id
+      t.string :customer_id
+      t.string :card_id
+      t.timestamps
+    end
+
   end
 
   def self.down
