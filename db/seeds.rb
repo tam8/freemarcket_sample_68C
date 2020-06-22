@@ -338,30 +338,38 @@ other_drink.children.create([{ name: "コーヒー" }, { name: "ソフトドリ�
 other_other.children.create([{ name: "オフィス用品一般" }, { name: "オフィス家具" }, { name: "店舗用品" }, { name: "OA機器" }, { name: "ラッピング/包装" }, { name: "その他" }])
 
 
-ItemImage.create!(
-  image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
-  item_id: "1"
-)
-ItemImage.create!(
-  image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
-  item_id: "1"
-)
-ItemImage.create!(
-  image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
-  item_id: "2"
-)
+# ItemImage.create!(
+#   image: open("#{Rails.root}/db/seeds/item_image/1.jpg"),
+#   item_id: "1"
+# )
+# ItemImage.create!(
+#   image: open("#{Rails.root}/db/seeds/item_image/2.jpg"),
+#   item_id: "2"
+# )
+# ItemImage.create!(
+#   image: open("#{Rails.root}/db/seeds/item_image/3.jpg"),
+#   item_id: "3"
+# )
 ItemImage.create!(
   image: open("#{Rails.root}/db/seeds/item_image/4.jpg"),
   item_id: "1"
 )
 ItemImage.create!(
   image: open("#{Rails.root}/db/seeds/item_image/5.jpg"),
-  item_id: "3"
+  item_id: "1"
 )
 
 
+i = 0
 CSV.foreach("db/seeds/item.csv", headers: true) do |row|
-  image = open("#{Rails.root}/db/seeds/item_image/5.jpg")
+  
+  if i <= 2
+    i = i + 1
+  else
+    i = 1
+  end
+
+  image = open("#{Rails.root}/db/seeds/item_image/#{i}.jpg")
   item = Item.create!(
     name: row["name"],
     price: row["price"],
