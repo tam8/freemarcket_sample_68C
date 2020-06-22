@@ -1,0 +1,1 @@
+ssh ec2-user@3.115.55.220 -i /home/ec2-user/.ssh/freemarket_68c.pem
