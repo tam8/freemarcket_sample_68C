@@ -1,3 +1,3 @@
 ﻿id,email,nickname,first_name,last_name,first_name_kana,last_name_kana,birth_date,password,reset_password_token,reset_password_sent_at,remember_created_at
-1,exhibitor@com,exhibitor,出品者,テスト,しゅっぴんしゃ,てすと,1985/1/5,1234567,,,
-2,buyer@com,buyer,購入者,テスト,こうにゅうしゃ,てすと,1987/2/5,1234567,,,
+1,exhibitor@p.com,exhibitor,出品者,テスト,しゅっぴんしゃ,てすと,1985/1/5,1234567,,,
+2,buyer@p.com,buyer,購入者,テスト,こうにゅうしゃ,てすと,1987/2/5,1234567,,,
