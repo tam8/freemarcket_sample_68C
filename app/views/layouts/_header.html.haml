@@ -47,12 +47,19 @@
           =link_to "商品2", "/items/2"
         %li
           =link_to "商品3", "/items/3"
+        %li
+          =link_to "商品4", "/items/4"
+        %li
+          =link_to "商品5", "/items/5"
+
 
         -if user_signed_in?
           %li.head__in__nav__right__new
             =link_to "出品", new_item_path
           %li.head__in__nav__right__mypage
             =link_to "マイページ", user_path(current_user)
+          %li.head__in__nav__right__mypage
+            =link_to "カード情報変更", "/cards/show"
           %li.head__in__nav__right__logout
             =link_to "ログアウト", destroy_user_session_path, method: :delete
 
