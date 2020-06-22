@@ -32,7 +32,8 @@ class PurchaseController < ApplicationController
     currency: 'jpy', #日本円
   )
   if @item.update(buyer_id: current_user.id)
-    redirect_to action: 'done' #完了画面に移動
+      flash[:notice] = "購入完了しました。"
+      redirect_to root_path
   else
     flash[:alert] = '購入に失敗しました。'
   end
