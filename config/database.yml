@@ -51,6 +51,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['HEROKU_POSTGRESQL_GREEN_URL'] %>
   database: freemarket_sample_68c_production
   username: root
   password: <%= ENV['DATABASE_PASSWORD'] %>
