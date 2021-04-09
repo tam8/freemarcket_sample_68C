@@ -236,6 +236,7 @@ GEM
       ast (~> 2.4.1)
     payjp (0.0.7)
       rest-client (~> 2.0)
+    pg (1.2.3)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -422,6 +423,7 @@ DEPENDENCIES
   mini_magick
   mysql2 (>= 0.4.4, < 0.6.0)
   payjp
+  pg
   pry-rails
   puma (~> 3.11)
   rails (~> 5.2.3)
@@ -442,4 +444,4 @@ RUBY VERSION
    ruby 2.7.2p137
 
 BUNDLED WITH
-   2.1.4
+   2.2.14
